@@ -16,7 +16,7 @@ download_enso <- function() {
 library(tidyverse)
 library(lubridate)
 
-enso %>%
+download_enso() %>%
   mutate(Date = ymd(paste0(YR,"-",MON,"-1"))) %>%
   filter(YR >= 2003) %>%
   mutate(variance = ifelse(ANOM > 0,"POS", ifelse(ANOM < 0, "NEG", "NEUTRAL"))) %>%
