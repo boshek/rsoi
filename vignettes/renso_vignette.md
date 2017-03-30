@@ -9,22 +9,8 @@ Packages
 Install renso like so:
 
 ``` r
-devtools::install_github("boshek/renso")
-```
+#devtools::install_github("boshek/renso")
 
-    ## Downloading GitHub repo boshek/renso@master
-    ## from URL https://api.github.com/repos/boshek/renso/zipball/master
-
-    ## Installing renso
-
-    ## "C:/PROGRA~1/R/R-33~1.3/bin/x64/R" --no-site-file --no-environ --no-save  \
-    ##   --no-restore --quiet CMD INSTALL  \
-    ##   "C:/Users/tills/AppData/Local/Temp/RtmpGYcFWt/devtools212c410f6d62/boshek-renso-9a115a1"  \
-    ##   --library="C:/Users/tills/R/win-library/3.3" --install-tests
-
-    ## 
-
-``` r
 library(ggplot2)
 library(renso)
 library(dplyr)

@@ -12,7 +12,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ## Packages
 Install renso like so:
 ```{r pck, warnings=FALSE, message=TRUE}
-devtools::install_github("boshek/renso")
+#devtools::install_github("boshek/renso")
 
 library(ggplot2)
 library(renso)
