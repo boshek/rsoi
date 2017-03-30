@@ -1,0 +1,42 @@
+---
+title: "ENSO download"
+author: "Sam Albers"
+date: "March 30, 2017"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Packages
+Install renso like so:
+```{r pck}
+devtools::install_github("boshek/renso")
+
+library(ggplot2)
+library(renso}
+library(dplyr)
+```
+
+
+##Some plotting examples
+```{r plt1}
+download_enso() %>%
+  ggplot(aes(x = Date, y = ANOM)) +
+  geom_bar(aes(fill = phase), stat = 'identity') +
+  geom_path() +
+  scale_x_date(date_breaks = "3 year", date_labels = "%Y")
+```
+
+```{r plt2}
+enso %>%
+  mutate(Date = ymd(paste0(YR,"-",MON,"-1"))) %>%
+  filter(YR >= 2003) %>%
+  group_by(YR) %>%
+  summarise(ANOM = mean(ANOM, na.rm = TRUE)) %>%
+  mutate(variance = ifelse(ANOM > 0,"POS", ifelse(ANOM < 0, "NEG", "NEUTRAL"))) %>%
+  ggplot(aes(x = YR, y = ANOM)) +
+  geom_bar(aes(fill = phase), stat = 'identity') +
+  scale_x_continuous(breaks = seq(2003, 2016, by = 1))
+```
