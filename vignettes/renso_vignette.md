@@ -12,8 +12,17 @@ Install renso like so:
 devtools::install_github("boshek/renso")
 ```
 
-    ## Skipping install of 'renso' from a github remote, the SHA1 (1c462499) has not changed since last install.
-    ##   Use `force = TRUE` to force installation
+    ## Downloading GitHub repo boshek/renso@master
+    ## from URL https://api.github.com/repos/boshek/renso/zipball/master
+
+    ## Installing renso
+
+    ## "C:/PROGRA~1/R/R-33~1.3/bin/x64/R" --no-site-file --no-environ --no-save  \
+    ##   --no-restore --quiet CMD INSTALL  \
+    ##   "C:/Users/tills/AppData/Local/Temp/RtmpGYcFWt/devtools212c410f6d62/boshek-renso-9a115a1"  \
+    ##   --library="C:/Users/tills/R/win-library/3.3" --install-tests
+
+    ## 
 
 ``` r
 library(ggplot2)
@@ -45,7 +54,7 @@ download_enso() %>%
 
     ## YrMon formatted as date on the first of the month because R only supports one partial date time
 
-![](C:\Users\tills\AppData\Local\Temp\RtmpghzcYi\preview-296c79447ef3.dir\renso_vignette_files/figure-markdown_github/plt1-1.png)
+![](renso_vignette_files/figure-markdown_github/plt1-1.png)
 
 ``` r
 download_enso() %>%
@@ -59,4 +68,4 @@ download_enso() %>%
 
     ## YrMon formatted as date on the first of the month because R only supports one partial date time
 
-![](C:\Users\tills\AppData\Local\Temp\RtmpghzcYi\preview-296c79447ef3.dir\renso_vignette_files/figure-markdown_github/plt2-1.png)
+![](renso_vignette_files/figure-markdown_github/plt2-1.png)
