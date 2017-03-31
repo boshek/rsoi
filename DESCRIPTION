@@ -4,9 +4,7 @@ Title: EL NINO/SOUTHERN OSCILLATION (ENSO)
 Version: 0.1.0
 Authors@R: c(
     person("Sam", "Albers", email = "sam.albers@gmail.com", role = c("aut", "cre")))
-Description: Monthly ENSO data value from 1950 to present. Data scraped
-    from: "http://www.cpc.ncep.noaa.gov/products/analysis_monitoring/ensostuff/
-    detrend.nino34.ascii.txt"
+Description: Monthly ENSO data value from 1950 to present.
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
