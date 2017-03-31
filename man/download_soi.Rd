@@ -6,6 +6,16 @@
 \usage{
 download_soi()
 }
+\value{
+\itemize{
+\item Date: Date object that uses the first of the month as a placeholder
+\item Month: Month of record
+\item Year: Year of record
+\item SOI: Southern Oscillation Index
+\item SOI_3MON_AVG: 3 Month Average Southern Oscillation Index
+\item phase: ENSO phase  
+}
+}
 \description{
 Temperature anomalies:
 \itemize{
@@ -16,6 +26,7 @@ Temperature anomalies:
 }
 \examples{
 soi_df <- download_soi()
+plot(x = soi_df$Date, y = soi_df$SOI, type = "l")
 
 }
 

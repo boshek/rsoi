@@ -15,11 +15,10 @@ URL: https://github.com/boshek/rsoi
 Depends:
     R (>= 3.3.0)
 Imports:
-    dplyr,
     lubridate,
-    knitr
+    utils,
+    stats
 Suggests:
     ggplot2,
     testthat,
     devtools
-VignetteBuilder: knitr
