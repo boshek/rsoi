@@ -1,5 +1,8 @@
-#' @export
+  #' @export
 #' @title Download Southern Oscillation index data
+#' 
+#' @param 
+#' create_csv Logical option to create a local copy of the data. Defaults to FALSE.
 #' 
 #' @description Temperature anomalies:
 #' \itemize{
@@ -10,7 +13,7 @@
 #' 
 #' @return 
 #' \itemize{
-#' \item Date: Date object that uses the first of the month as a placeholder
+#' \item Date: Date object that uses the first of the month as a placeholder. YrMon formatted as date on the first of the month because R only supports one partial of date time
 #' \item Month: Month of record
 #' \item Year: Year of record
 #' \item SOI: Southern Oscillation Index
@@ -24,11 +27,7 @@
 #'
 
 
-download_soi <- function() {
-  message(
-    "YrMon formatted as date on the first of the month because R only supports one partial of date time"
-  )
-  
+download_soi <- function(create_csv = FALSE) {
 
   ## Bring in data
   soi = utils::read.csv(
@@ -52,7 +51,15 @@ download_soi <- function() {
   soi$phase = factor(ifelse(soi$SOI_3MON_AVG >= 0.5,"Warm Phase/La Nina",
                              ifelse(soi$SOI_3MON_AVG <= -0.5, "Cool Phase/El Nino", "Neutral Phase")))
   
-  return(soi[,c("Date","Month","Year","SOI","SOI_3MON_AVG","phase")])
+  soi <- soi[,c("Date","Month","Year","SOI","SOI_3MON_AVG","phase")]
+  
+  if(create_csv==TRUE){
+    write.csv(soi, file = paste0("SOI_Index_",max(soi$Date),".csv"), row.names = FALSE)
+  }
+  
+  return(soi)
+  
+
 }
 
 

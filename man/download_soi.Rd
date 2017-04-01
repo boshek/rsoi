@@ -4,11 +4,14 @@
 \alias{download_soi}
 \title{Download Southern Oscillation index data}
 \usage{
-download_soi()
+download_soi(create_csv = FALSE)
+}
+\arguments{
+\item{create_csv}{Logical option to create a local copy of the data. Defaults to FALSE.}
 }
 \value{
 \itemize{
-\item Date: Date object that uses the first of the month as a placeholder
+\item Date: Date object that uses the first of the month as a placeholder. YrMon formatted as date on the first of the month because R only supports one partial of date time
 \item Month: Month of record
 \item Year: Year of record
 \item SOI: Southern Oscillation Index
@@ -29,4 +32,3 @@ soi_df <- download_soi()
 plot(x = soi_df$Date, y = soi_df$SOI, type = "l")
 
 }
-

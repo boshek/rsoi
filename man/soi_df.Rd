@@ -10,7 +10,7 @@
 \item Month: Month of record
 \item Year: Year of record
 \item SOI: Southern Oscillation Index
-\item SOI_3MON_AVG: 3 Month Average Southern Oscillation Index
+\item SOI_3MON_AVG: 3 Month moving average Southern Oscillation Index
 \item phase: ENSO phase  
 }}
 \source{
@@ -20,7 +20,6 @@
 soi_df
 }
 \description{
-SOI index.
+A data frame of Southern Oscillation Index values
 }
 \keyword{datasets}
-
