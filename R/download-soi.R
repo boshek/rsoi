@@ -54,7 +54,7 @@ download_soi <- function(create_csv = FALSE) {
   soi <- soi[,c("Date","Month","Year","SOI","SOI_3MON_AVG","phase")]
   
   if(create_csv==TRUE){
-    write.csv(soi, file = paste0("SOI_Index_",max(soi$Date),".csv"), row.names = FALSE)
+    utils::write.csv(soi, file = paste0("SOI_Index_",max(soi$Date),".csv"), row.names = FALSE)
   }
   
   return(soi)
