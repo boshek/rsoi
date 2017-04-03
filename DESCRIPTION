@@ -4,7 +4,7 @@ Title: EL NINO/SOUTHERN OSCILLATION (ENSO)
 Version: 0.1.0
 Authors@R: c(
     person("Sam", "Albers", email = "sam.albers@gmail.com", role = c("aut", "cre")))
-Description: Monthly ENSO data value from 1950 to present.
+Description: An R package to download Southern Oscillation Index and Oceanic Nino Index data.
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
