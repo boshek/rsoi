@@ -2,7 +2,7 @@
 
 rsoi
 ------------------
-An R package to download Southern Oscillation Index and Oceanic Nino Index data
+An R package to download the most up to date Southern Oscillation Index and Oceanic Nino Index data. 
 
 Installation
 ------------------
@@ -10,6 +10,13 @@ To install and load the development version from GitHub
 
     devtools::install_github("rsoi")
     library(rsoi)
+    
+Example
+------------------
+
+    enso <- download_enso()
+    head(enso)
+
 
 Inspired by
 ------------------
