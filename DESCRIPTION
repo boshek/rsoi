@@ -1,10 +1,10 @@
 Package: rsoi
 Type: Package
-Title: EL NINO/SOUTHERN OSCILLATION (ENSO)
+Title: El Nino/Southern Oscillation (ENSO) Index
 Version: 0.1.0
 Authors@R: c(
     person("Sam", "Albers", email = "sam.albers@gmail.com", role = c("aut", "cre")))
-Description: An R package to download Southern Oscillation Index and Oceanic Nino Index data.
+Description: Downloads Southern Oscillation Index from <https://www.ncdc.noaa.gov/teleconnections/enso/indicators/soi/> and Oceanic Nino Index data from <http://www.cpc.ncep.noaa.gov/products/analysis_monitoring/ensostuff/detrend.nino34.ascii.txt>.
 License: GPL-3
 Encoding: UTF-8
 LazyData: true

@@ -1,3 +1,10 @@
+## Resubmission
+As requested I have re-submitted. This version:
+
+* Changed title to title case
+* Removed redundant "An R package to" and simply started Description with "Downloads"
+* Added web references to the Description.
+
 ## Test environments
 
 * local Windows 10, R 3.3.3
