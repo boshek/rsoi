@@ -36,5 +36,5 @@ plot(x = enso$Date, y = enso$SOI, type = "l")
 
 }
 \references{
-https://www.ncdc.noaa.gov/teleconnections/enso/indicators/soi/ and http://www.cpc.ncep.noaa.gov/products/analysis_monitoring/ensostuff/detrend.nino34.ascii.txt
+\url{https://www.ncdc.noaa.gov/teleconnections/enso/indicators/soi/} and \url{http://www.cpc.ncep.noaa.gov/products/analysis_monitoring/ensostuff/detrend.nino34.ascii.txt}
 }
