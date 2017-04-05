@@ -6,9 +6,14 @@ An R package to download the most up to date Southern Oscillation Index and Ocea
 
 Installation
 ------------------
+To install and load the CRAN version
+
+    install.package("rsoi")
+    library(rsoi)
+
 To install and load the development version from GitHub
 
-    devtools::install_github("rsoi")
+    devtools::install_github("rsoi", ref = "v0.2.0")
     library(rsoi)
     
 Example
