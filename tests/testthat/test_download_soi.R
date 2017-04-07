@@ -32,6 +32,7 @@ test_that("Test whether ONI values have not changed from February 2017.", {
 })
 
 test_that("Test that download_enso matches most recent value from alternate dataset - 3 months to account for slight data changes",{
+  testthat::skip_on_cran()
   enso_df_current <- download_enso()
   
   ## Most recent from download_enso()

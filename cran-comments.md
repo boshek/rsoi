@@ -1,3 +1,9 @@
+##April 07, 2017 Patch
+* Apologies I submitted the wrong version a few minutes. Sorry to waste your time. Please disregard previous submission and again sorry.
+* Change DESCRIPTION to state v0.1.1 as it previously stated v0.2.0 which was incorrect. 
+* skipping a test on cran because it was taking too long and failing. Test still passes.
+* proper referencing of url in download_soi documentation 
+
 ## Resubmission
 As requested I have re-submitted. This version:
 
