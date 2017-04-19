@@ -18,7 +18,7 @@
 #' \item Year: Year of record
 #' \item dSST3.4: Monthly change in sea surface temperature at Nino region 3.4
 #' \item ONI: Oneanic Oscillation Index
-#' \item month_window: 3 month period over which ONI is calculated
+#' \item ONI_month_window: 3 month period over which the Oneanic Oscillation Index is calculated
 #' \item phase: ENSO phase  
 #' \item SOI: Southern Oscillation Index
 #' \item SOI_3MON_AVG: 3 Month Average Southern Oscillation Index
