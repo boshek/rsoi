@@ -64,7 +64,7 @@ download_enso <- function(create_csv = FALSE) {
   ## Create 3 month average window. Each row is a month
   oni$ONI = as.numeric(stats::filter(oni$dSST3.4,rep(1/3,3), sides=2))
   
-  oni$month_window <- sapply(1:nrow(oni),function(x) paste(substr(oni$Month[x-1],1,1),
+  oni$ONI_month_window <- sapply(1:nrow(oni),function(x) paste(substr(oni$Month[x-1],1,1),
                                                            substr(oni$Month[x],1,1),
                                                            substr(oni$Month[x+1],1,1),
                                                            sep=""))
