@@ -15,7 +15,7 @@ Example
 ------------------
 
     enso <- download_enso()
-    head(enso)
+    enso
 
 
 Inspired by
