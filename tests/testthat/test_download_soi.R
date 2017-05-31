@@ -45,7 +45,8 @@ test_that("Test that download_enso matches most recent value from alternate data
   
     
   expect_equal( recent_enso$ONI,
-                oni_df[oni_df$Year==recent_enso$Year, paste0(recent_enso$Month)])
+                oni_df[oni_df$Year==recent_enso$Year, paste0(recent_enso$Month)],
+                tolerance = 0.01)
 })
 
   
