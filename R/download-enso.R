@@ -82,7 +82,7 @@ download_enso <- function(create_csv = FALSE) {
     utils::write.csv(enso, file = paste0("SOI_ONI_Index_",max(soi$Date),".csv"), row.names = FALSE)
   }
   
-  return(enso)
+  return(tibble::as_tibble(enso))
   
 
 }
