@@ -17,3 +17,9 @@ matrix:
     - os: osx
       osx_image: beta-xcode6.4
     - os: osx
+    
+r_packages:
+  - covr
+
+after_success:
+  - Rscript -e 'covr::codecov()'
