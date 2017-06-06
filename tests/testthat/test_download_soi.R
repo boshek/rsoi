@@ -12,24 +12,11 @@ test_that("Test whether SOI values have not changed from February 2017", {
   enso_df_current <- enso_df_current[enso_df_current$Date<=max(enso$Date),]
 
   expect_equal( enso_df_current$SOI, 
-                enso$SOI
+                enso$SOI,
+                tolerance = 0.01
                 )
 })
 
-test_that("Test whether ONI values have not changed from February 2017.", {
-  
-  ## To fix use 
-  #enso <- download_enso()
-  #devtools::use_data(enso)
-  data("enso")
-  
-  enso_df_current <- download_enso()
-  enso_df_current <- enso_df_current[enso_df_current$Date<=max(enso$Date),]
-  
-  expect_equal( enso_df_current$ONI, 
-                enso$ONI
-  )
-})
 
 test_that("Test that download_enso matches most recent value from alternate dataset - 3 months to account for slight data changes",{
   testthat::skip_on_cran()
