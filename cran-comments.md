@@ -1,3 +1,6 @@
+## v0.2.3
+* Added some tolerance to ALL download_enso() tests to accommodate rounding errors from different sources
+
 ## v0.2.2
 * Added some tolerance to download_enso() tests to accommodate rounding errors from different sources
 * Modified output to be a tibble which then includes the tibble package
