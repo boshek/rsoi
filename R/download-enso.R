@@ -34,9 +34,9 @@
 download_enso <- function(create_csv = FALSE) {
 
   ## Bring in SOI data
-  soi = utils::read.csv(
+  soi = readr::read_csv(
     "https://www.ncdc.noaa.gov/teleconnections/enso/indicators/soi/data.csv",
-    header = TRUE, skip = 1, col.names = c("Date","SOI")
+     skip = 2, col_names = c("Date","SOI")
   )
   
   ## Create Date formatted as date
@@ -50,10 +50,8 @@ download_enso <- function(create_csv = FALSE) {
   soi$SOI_3MON_AVG = as.numeric(stats::filter(soi$SOI,rep(1/3,3), sides=2))
   
   ## Bring in ONI data
-  oni = utils::read.table(
-    "http://www.cpc.ncep.noaa.gov/products/analysis_monitoring/ensostuff/detrend.nino34.ascii.txt",
-    header = TRUE, col.names = c("Year","Month","TOTAL","ClimAdjust","dSST3.4")
-  )[,c("Year","Month","dSST3.4")]
+  oni = readr::read_table(
+    "http://www.cpc.ncep.noaa.gov/products/analysis_monitoring/ensostuff/detrend.nino34.ascii.txt", skip = 1, col_names = c("Year","Month","TOTAL","ClimAdjust","dSST3.4"))[,c("Year","Month","dSST3.4")]
   
   ## Create Date formatted as date
   oni$Date = lubridate::ymd(paste0(oni$Year,"-",oni$Month,"-01"))
@@ -75,14 +73,14 @@ download_enso <- function(create_csv = FALSE) {
   
   
   ## Merge two data frames
-  enso <- merge(oni, soi,  by = c("Date","Month","Year"), all = TRUE)
+  enso <- dplyr::full_join(oni, soi,  by = c("Date","Month","Year"))
   
   
   if(create_csv==TRUE){
-    utils::write.csv(enso, file = paste0("SOI_ONI_Index_",max(soi$Date),".csv"), row.names = FALSE)
+    readr::write_csv(enso, paste0("SOI_ONI_Index_",max(soi$Date),".csv"))
   }
   
-  return(tibble::as_tibble(enso))
+  return(enso)
   
 
 }
