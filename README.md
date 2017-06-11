@@ -5,7 +5,7 @@
 rsoi
 ----
 
-An R package to download the most up to date Southern Oscillation Index and Oceanic Nino Index data.
+An R package to download the most up to date Southern Oscillation Index, Oceanic Nino Index and North Pacific Gyre Oscillation data.
 
 Installation
 ------------
@@ -22,10 +22,13 @@ Usage
 ``` r
 enso <- download_enso()
 enso
+```
 
-## Or
-npgo <- download_npgo()
-npgo
+Or for index specific data use the argument:
+
+``` r
+soi <- download_enso(climate_idx = "soi")
+soi
 ```
 
 Inspired by
