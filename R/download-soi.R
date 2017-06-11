@@ -36,6 +36,7 @@ download_soi <- function(){
   ## Create 3 month average window. Each row is a month
   soi$SOI_3MON_AVG = as.numeric(stats::filter(soi$SOI,rep(1/3,3), sides=2))
   
-  soi <- dplyr::select(soi, Date, Month, Year, SOI, SOI_3MON_AVG)
+  soi = soi[,c(1,3,4,2,5)]
+  #soi <- dplyr::select(soi, Date, Month, Year, SOI, SOI_3MON_AVG)
   soi
 }

@@ -4,9 +4,11 @@
 \alias{download_enso}
 \title{Download Southern Oscillation Index and Oceanic Nino Index data}
 \usage{
-download_enso(create_csv = FALSE, climate_idx = "all")
+download_enso(climate_idx = "all", create_csv = FALSE)
 }
 \arguments{
+\item{climate_idx}{Choose which ENSO related climate index to output. Current options supported are the Southern Oscillation Index, the Oceanic Nino Index and the North Pacific Gyre Oscillation.}
+
 \item{create_csv}{Logical option to create a local copy of the data. Defaults to FALSE.}
 }
 \value{
@@ -14,12 +16,13 @@ download_enso(create_csv = FALSE, climate_idx = "all")
 \item Date: Date object that uses the first of the month as a placeholder. Date formatted as date on the first of the month because R only supports one partial of date time
 \item Month: Month of record
 \item Year: Year of record
-\item dSST3.4: Monthly change in sea surface temperature at Nino region 3.4
 \item ONI: Oneanic Oscillation Index
 \item ONI_month_window: 3 month period over which the Oneanic Oscillation Index is calculated
-\item phase: ENSO phase  
+\item phase: ENSO phase 
+\item dSST3.4: Monthly change in sea surface temperature at Nino region 3.4
 \item SOI: Southern Oscillation Index
 \item SOI_3MON_AVG: 3 Month Average Southern Oscillation Index
+\item NPGO: North Pacific Gyre Oscillation
 }
 }
 \description{

@@ -1,8 +1,10 @@
 #' @export
 #' @title Download Southern Oscillation Index and Oceanic Nino Index data
 #' 
-#' @param 
-#' create_csv Logical option to create a local copy of the data. Defaults to FALSE.
+#' @param climate_idx Choose which ENSO related climate index to output. Current options supported are the Southern Oscillation Index, the Oceanic Nino Index and the North Pacific Gyre Oscillation.
+#' 
+#' @param create_csv Logical option to create a local copy of the data. Defaults to FALSE.
+#' 
 #' 
 #' @description The Southern Oscillation Index is defined as the standardized difference between barometric readings at Darwin, Australia and Tahiti. The Oceanic Nino Index is average sea surface temperature in the Nino 3.4 region (120W to 170W) averaged over three months. Phases are categorized by Oceanic Nino Index:
 #' \itemize{
@@ -16,12 +18,13 @@
 #' \item Date: Date object that uses the first of the month as a placeholder. Date formatted as date on the first of the month because R only supports one partial of date time
 #' \item Month: Month of record
 #' \item Year: Year of record
-#' \item dSST3.4: Monthly change in sea surface temperature at Nino region 3.4
 #' \item ONI: Oneanic Oscillation Index
 #' \item ONI_month_window: 3 month period over which the Oneanic Oscillation Index is calculated
-#' \item phase: ENSO phase  
+#' \item phase: ENSO phase 
+#' \item dSST3.4: Monthly change in sea surface temperature at Nino region 3.4
 #' \item SOI: Southern Oscillation Index
 #' \item SOI_3MON_AVG: 3 Month Average Southern Oscillation Index
+#' \item NPGO: North Pacific Gyre Oscillation
 #' }
 
 #' @examples
@@ -31,28 +34,28 @@
 #' @references \url{https://www.ncdc.noaa.gov/teleconnections/enso/indicators/soi/} and \url{http://www.cpc.ncep.noaa.gov/products/analysis_monitoring/ensostuff/detrend.nino34.ascii.txt}
 
 
-download_enso <- function(create_csv = FALSE, climate_idx = "all") {
+download_enso <- function(climate_idx = "all", create_csv = FALSE) {
   
   if(climate_idx == "soi") {
-    soi_df = download_soi()
+    soi_df = rsoi::download_soi()
     return(soi_df)
   } 
   
   if(climate_idx == "oni") {
-    oni_df = download_oni()
+    oni_df = rsoi::download_oni()
     return(oni_df)
   } 
   
   if(climate_idx == "npgo") {
-    npgo_df = download_npgo()
+    npgo_df = rsoi::download_npgo()
     return(npgo_df)
   }
   
   if(climate_idx == "all"){
   ## Merge two data frames
-    oni_df = download_oni()
-    soi_df = download_soi()
-    npgo_df = download_npgo()
+    oni_df = rsoi::download_oni()
+    soi_df = rsoi::download_soi()
+    npgo_df = rsoi::download_npgo()
     enso <- dplyr::full_join(oni_df, soi_df,  by = c("Date","Month","Year"))
     enso <- dplyr::full_join(enso, npgo_df,  by = c("Date","Month","Year"))
     return(enso)
@@ -61,7 +64,7 @@ download_enso <- function(create_csv = FALSE, climate_idx = "all") {
   
   
   if(create_csv==TRUE){
-    readr::write_csv(enso, paste0("SOI_ONI_Index_",max(soi$Date),".csv"))
+    readr::write_csv(enso, "ENSO_Index.csv")
   }
   
   #return(enso)

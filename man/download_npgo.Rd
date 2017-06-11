@@ -6,14 +6,12 @@
 \usage{
 download_npgo()
 }
-\arguments{
-\item{create_csv}{Logical option to create a local copy of the data. Defaults to FALSE.}
-}
 \value{
 \itemize{
+\item Date
 \item Year
 \item Month: Month of record
-\item North Pacific Gyre Oscillation
+\item NPGO: North Pacific Gyre Oscillation
 }
 }
 \description{

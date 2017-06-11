@@ -49,7 +49,8 @@ download_oni <- function(){
   oni$phase = factor(ifelse(oni$ONI >= 0.5,"Warm Phase/La Nina",
                             ifelse(oni$ONI<= -0.5, "Cool Phase/El Nino", "Neutral Phase")))
   
-  oni <- dplyr::select(oni, Date, Month, Year, ONI, ONI_month_window, phase)
+  oni = oni[,c(4,2,1,5,6,7)]
+  #oni <- dplyr::select(oni, Date, Month, Year, ONI, ONI_month_window, phase)
   
   oni
 }
