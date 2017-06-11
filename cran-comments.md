@@ -2,6 +2,7 @@
 * Adding Northern Pacific Gyre Oscillation
 * Added readr dependencies
 * Made soi and oni data download with readr tools
+* Streamlined download_enso such that each idx is individually called from a separate function.
 
 ## v0.2.3
 * Added some tolerance to ALL download_enso() tests to accommodate rounding errors from different sources
