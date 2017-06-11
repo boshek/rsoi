@@ -19,11 +19,15 @@
 #' @references \url{http://www.o3d.org/npgo/} 
 
 
-download_npgo <- function(create_csv = FALSE) {
+download_npgo <- function() {
   npgo <- readr::read_table("http://www.o3d.org/npgo/data/NPGO.txt", comment = "#", col_names = c("Year","Month","NPGO"))
   
-  if(create_csv==TRUE){
-    readr::write_csv(npgo, paste0("NPGO_",min(npgo$Year),"-",max(npgo$Year),".csv"))
-  }
-  print(npgo)
+  npgo$Date = lubridate::ymd(paste0(npgo$Year,"-",npgo$Month,"-01"))
+  
+  ##Month label to collapse
+  npgo$Month = lubridate::month(npgo$Date, abbr = TRUE, label = TRUE)
+  
+  npgo <- dplyr::select(npgo, Date, Year, Month, NPGO)
+  
+  npgo
 }

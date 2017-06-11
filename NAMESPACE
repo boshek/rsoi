@@ -2,3 +2,5 @@
 
 export(download_enso)
 export(download_npgo)
+export(download_oni)
+export(download_soi)

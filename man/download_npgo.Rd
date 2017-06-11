@@ -4,7 +4,7 @@
 \alias{download_npgo}
 \title{Download North Pacific Gyre Oscillation data}
 \usage{
-download_npgo(create_csv = FALSE)
+download_npgo()
 }
 \arguments{
 \item{create_csv}{Logical option to create a local copy of the data. Defaults to FALSE.}

@@ -4,7 +4,7 @@
 \alias{download_enso}
 \title{Download Southern Oscillation Index and Oceanic Nino Index data}
 \usage{
-download_enso(create_csv = FALSE)
+download_enso(create_csv = FALSE, climate_idx = "all")
 }
 \arguments{
 \item{create_csv}{Logical option to create a local copy of the data. Defaults to FALSE.}
