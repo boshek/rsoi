@@ -11,7 +11,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-[![Travis-CI Build Status](https://travis-ci.org/boshek/rsoi.svg?branch=devel)](https://travis-ci.org/boshek/rsoi) [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/boshek/rsoi?branch=devel&svg=true)](https://ci.appveyor.com/project/boshek/rsoi)[![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/rsoi)](https://cran.r-project.org/package=rsoi) [![CRAN Downloads](http://cranlogs.r-pkg.org/badges/grand-total/rsoi)](https://CRAN.R-project.org/package=rsoi)
+[![Travis-CI Build Status](https://travis-ci.org/boshek/rsoi.svg?branch=master)](https://travis-ci.org/boshek/rsoi) [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/boshek/rsoi?branch=master&svg=true)](https://ci.appveyor.com/project/boshek/rsoi)[![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/rsoi)](https://cran.r-project.org/package=rsoi) [![CRAN Downloads](http://cranlogs.r-pkg.org/badges/grand-total/rsoi)](https://CRAN.R-project.org/package=rsoi)
 
 ## rsoi
 An R package to download the most up to date Southern Oscillation Index, Oceanic Nino Index and North Pacific Gyre Oscillation data. 
