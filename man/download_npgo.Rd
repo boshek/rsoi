@@ -8,8 +8,8 @@ download_npgo()
 }
 \value{
 \itemize{
-\item Date
-\item Year
+\item Date: Date object that uses the first of the month as a placeholder. Date formatted as date on the first of the month because R only supports one partial of date time
+\item Year: Year of Record
 \item Month: Month of record
 \item NPGO: North Pacific Gyre Oscillation
 }

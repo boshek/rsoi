@@ -6,8 +6,8 @@
 #' 
 #' @return 
 #' \itemize{
-#' \item Date
-#' \item Year
+#' \item Date: Date object that uses the first of the month as a placeholder. Date formatted as date on the first of the month because R only supports one partial of date time
+#' \item Year: Year of Record
 #' \item Month: Month of record
 #' \item NPGO: North Pacific Gyre Oscillation
 #' }
@@ -26,9 +26,7 @@ download_npgo <- function() {
   ##Month label to collapse
   npgo$Month = lubridate::month(npgo$Date, abbr = TRUE, label = TRUE)
   
-  npgo = npgo[,c(4,1,2,3)]
-  
-  #npgo <- dplyr::select(npgo, Date, Year, Month, NPGO)
+  npgo = npgo[,c("Date","Year", "Month", "NPGO")]
   
   npgo
 }
