@@ -13,14 +13,10 @@
 #' \item{Date}{Date object that uses the first of the month as a placeholder. Date formatted as date on the first of the month because R only supports one partial of date time.}
 #' \item{Month}{Month of record}
 #' \item{Year}{Year of record}
-#' \item{dSST3.4}{Monthly change in sea surface temperature at Nino region 3.4}
 #' \item{ONI}{Oneanic Oscillation Index}
-#' \item{ONI_month_window}{3 month period over which the Oneanic Oscillation Index is calculated}
 #' \item{phase}{ENSO phase}  
 #' \item{SOI}{Southern Oscillation Index}
-#' \item{SOI_3MON_AVG}{3 Month Average Southern Oscillation Index}
-
-
+#' \item{NPGO}{North Pacific Gyre Oscillation}
 #' }
-#' @source \url{https://www.ncdc.noaa.gov/teleconnections/enso/indicators/soi/data.csv} and \url{http://www.cpc.ncep.noaa.gov/products/analysis_monitoring/ensostuff/detrend.nino34.ascii.txt}
+#' @source \url{https://www.ncdc.noaa.gov/teleconnections/enso/indicators/soi/data.csv} and \url{http://www.cpc.ncep.noaa.gov/products/analysis_monitoring/ensostuff/detrend.nino34.ascii.txt} and \url{http://www.o3d.org/npgo/} 
 "enso"

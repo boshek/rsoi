@@ -7,7 +7,7 @@
 download_enso(climate_idx = "all", create_csv = FALSE)
 }
 \arguments{
-\item{climate_idx}{Choose which ENSO related climate index to output. Current options supported are the Southern Oscillation Index, the Oceanic Nino Index and the North Pacific Gyre Oscillation.}
+\item{climate_idx}{Choose which ENSO related climate index to output. Current arguments supported are soi (the Southern Oscillation Index), oni (the Oceanic Nino Index), npgo (the North Pacific Gyre Oscillation) and all. all outputs each supported index variable as a slimmer dataset than each individual cliamte index call.}
 
 \item{create_csv}{Logical option to create a local copy of the data. Defaults to FALSE.}
 }
@@ -17,11 +17,8 @@ download_enso(climate_idx = "all", create_csv = FALSE)
 \item Month: Month of record
 \item Year: Year of record
 \item ONI: Oneanic Oscillation Index
-\item ONI_month_window: 3 month period over which the Oneanic Oscillation Index is calculated
 \item phase: ENSO phase 
-\item dSST3.4: Monthly change in sea surface temperature at Nino region 3.4
 \item SOI: Southern Oscillation Index
-\item SOI_3MON_AVG: 3 Month Average Southern Oscillation Index
 \item NPGO: North Pacific Gyre Oscillation
 }
 }

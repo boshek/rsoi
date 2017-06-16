@@ -1,7 +1,7 @@
 #' @export
 #' @title Download Southern Oscillation Index and Oceanic Nino Index data
 #' 
-#' @param climate_idx Choose which ENSO related climate index to output. Current options supported are the Southern Oscillation Index, the Oceanic Nino Index and the North Pacific Gyre Oscillation.
+#' @param climate_idx Choose which ENSO related climate index to output. Current arguments supported are soi (the Southern Oscillation Index), oni (the Oceanic Nino Index), npgo (the North Pacific Gyre Oscillation) and all. all outputs each supported index variable as a slimmer dataset than each individual cliamte index call.   
 #' 
 #' @param create_csv Logical option to create a local copy of the data. Defaults to FALSE.
 #' 
@@ -19,11 +19,8 @@
 #' \item Month: Month of record
 #' \item Year: Year of record
 #' \item ONI: Oneanic Oscillation Index
-#' \item ONI_month_window: 3 month period over which the Oneanic Oscillation Index is calculated
 #' \item phase: ENSO phase 
-#' \item dSST3.4: Monthly change in sea surface temperature at Nino region 3.4
 #' \item SOI: Southern Oscillation Index
-#' \item SOI_3MON_AVG: 3 Month Average Southern Oscillation Index
 #' \item NPGO: North Pacific Gyre Oscillation
 #' }
 
@@ -52,12 +49,13 @@ download_enso <- function(climate_idx = "all", create_csv = FALSE) {
   }
   
   if(climate_idx == "all"){
-  ## Merge two data frames
+  ## Join index data
     oni_df = rsoi::download_oni()
     soi_df = rsoi::download_soi()
     npgo_df = rsoi::download_npgo()
     enso <- dplyr::full_join(oni_df, soi_df,  by = c("Date","Month","Year"))
     enso <- dplyr::full_join(enso, npgo_df,  by = c("Date","Month","Year"))
+    enso <- enso[,c("Date", "Year", "Month", "ONI", "phase", "SOI", "NPGO")]
     return(enso)
   }
   
