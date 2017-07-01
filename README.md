@@ -14,6 +14,7 @@ Installation
 install.packages("rsoi")
 
 library(rsoi)
+library(ggplot2)
 ```
 
 Usage
@@ -22,6 +23,20 @@ Usage
 ``` r
 enso <- download_enso()
 enso
+#> # A tibble: 809 x 7
+#>          Date  Year Month        ONI              phase   SOI       NPGO
+#>        <date> <dbl> <ord>      <dbl>             <fctr> <dbl>      <dbl>
+#>  1 1950-01-01  1950   Jan         NA                 NA    NA -2.1883951
+#>  2 1950-02-01  1950   Feb -1.2100000 Cool Phase/El Nino    NA -1.4458314
+#>  3 1950-03-01  1950   Mar -1.1066667 Cool Phase/El Nino    NA -0.9650357
+#>  4 1950-04-01  1950   Apr -1.1566667 Cool Phase/El Nino    NA -0.8587880
+#>  5 1950-05-01  1950   May -1.1066667 Cool Phase/El Nino    NA -0.6340822
+#>  6 1950-06-01  1950   Jun -0.9166667 Cool Phase/El Nino    NA -0.5809843
+#>  7 1950-07-01  1950   Jul -0.6433333 Cool Phase/El Nino    NA -0.7421143
+#>  8 1950-08-01  1950   Aug -0.5766667 Cool Phase/El Nino    NA -0.5493842
+#>  9 1950-09-01  1950   Sep -0.5400000 Cool Phase/El Nino    NA -0.6015450
+#> 10 1950-10-01  1950   Oct -0.5600000 Cool Phase/El Nino    NA  0.1194343
+#> # ... with 799 more rows
 ```
 
 Or for index specific data use the argument:
@@ -29,7 +44,32 @@ Or for index specific data use the argument:
 ``` r
 soi <- download_enso(climate_idx = "soi")
 soi
+#> # A tibble: 797 x 5
+#>          Date Month  Year   SOI SOI_3MON_AVG
+#>        <date> <ord> <dbl> <dbl>        <dbl>
+#>  1 1951-01-01   Jan  1951   1.5           NA
+#>  2 1951-02-01   Feb  1951   0.9    0.7666667
+#>  3 1951-03-01   Mar  1951  -0.1    0.1666667
+#>  4 1951-04-01   Apr  1951  -0.3   -0.3666667
+#>  5 1951-05-01   May  1951  -0.7   -0.2666667
+#>  6 1951-06-01   Jun  1951   0.2   -0.5000000
+#>  7 1951-07-01   Jul  1951  -1.0   -0.3333333
+#>  8 1951-08-01   Aug  1951  -0.2   -0.7666667
+#>  9 1951-09-01   Sep  1951  -1.1   -0.7666667
+#> 10 1951-10-01   Oct  1951  -1.0   -0.9666667
+#> # ... with 787 more rows
 ```
+
+And we can plot these values using `ggpot2` nicely
+
+``` r
+ggplot(enso, aes(x = Date, y = NPGO)) +
+  geom_line() +
+  theme_minimal() +
+  labs(x = "Year", y = "North Pacific Gyre Oscillation")
+```
+
+![](README-plot-1.png)
 
 Inspired by
 -----------

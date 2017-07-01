@@ -15,7 +15,7 @@ download_npgo()
 }
 }
 \description{
-North Pacific Gyre Oscillation data
+North Pacific Gyre Oscillation data also known as the Victoria mode
 }
 \examples{
 npgo <- download_npgo()

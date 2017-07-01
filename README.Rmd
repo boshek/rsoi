@@ -21,20 +21,34 @@ An R package to download the most up to date Southern Oscillation Index, Oceanic
 install.packages("rsoi")
 
 library(rsoi)
+library(ggplot2)
 
 ```
 
+```{r, eval = TRUE, echo = FALSE}
+library(rsoi)
+library(ggplot2)
+```
+
 ## Usage
-```{r, eval = FALSE, echo = TRUE}
+```{r, eval = TRUE, echo = TRUE, warning=FALSE, message=FALSE}
 enso <- download_enso()
 enso
 ```
 
 Or for index specific data use the \code{cliamte_idx} argument:
-```{r, eval = FALSE, echo = TRUE}
+```{r, eval = TRUE, echo = TRUE, warning=FALSE, message=FALSE}
 soi <- download_enso(climate_idx = "soi")
 soi
 
+```
+
+And we can plot these values using `ggpot2` nicely
+```{r plot, warning=FALSE, message=FALSE}
+ggplot(enso, aes(x = Date, y = NPGO)) +
+  geom_line() +
+  theme_minimal() +
+  labs(x = "Year", y = "North Pacific Gyre Oscillation")
 ```
 
 ## Inspired by
