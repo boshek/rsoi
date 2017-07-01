@@ -9,12 +9,24 @@ matrix:
   include:
     - os: linux
       dist: precise
+      r: release
+    - os: linux
+      dist: precise
+      r: devel
+
     - os: linux
       dist: trusty
       env: R_CODECOV=true
+      r: release
+    - os: linux
+      dist: trusty
+      env: R_CODECOV=true
+      r: devel
+
     - os: osx
       osx_image: xcode8.1
+      r: release
+
     - os: osx
-      osx_image: beta-xcode6.4
-    - os: osx
+      r: release
     

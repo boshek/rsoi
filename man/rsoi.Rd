@@ -10,6 +10,6 @@ El Nino/Southern Oscillation (ENSO) and Related Climate Indices
 }
 \details{
 See the README on
-\href{https://cran.r-project.org/web/packages/rsoi/README.html}{CRAN}
+\href{https://CRAN.R-project.org/package=rsoi}{CRAN}
 or \href{https://github.com/boshek/rsoi/blob/master/README.md}{GitHub}
 }
