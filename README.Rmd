@@ -43,8 +43,8 @@ soi
 
 ```
 
-And we can plot these values using `ggpot2` nicely
-```{r plot, warning=FALSE, message=FALSE}
+And we can plot these values using `ggplot2` nicely
+```{r plot, eval = FALSE, echo = TRUE, warning=FALSE, message=FALSE}
 ggplot(enso, aes(x = Date, y = NPGO)) +
   geom_line() +
   theme_minimal() +

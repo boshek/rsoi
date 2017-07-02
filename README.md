@@ -60,7 +60,7 @@ soi
 #> # ... with 787 more rows
 ```
 
-And we can plot these values using `ggpot2` nicely
+And we can plot these values using `ggplot2` nicely
 
 ``` r
 ggplot(enso, aes(x = Date, y = NPGO)) +
@@ -68,8 +68,6 @@ ggplot(enso, aes(x = Date, y = NPGO)) +
   theme_minimal() +
   labs(x = "Year", y = "North Pacific Gyre Oscillation")
 ```
-
-![](README-plot-1.png)
 
 Inspired by
 -----------
