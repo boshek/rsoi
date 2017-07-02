@@ -24,9 +24,5 @@ matrix:
       r: devel
 
     - os: osx
-      osx_image: xcode8.1
-      r: release
-
-    - os: osx
       r: release
     
