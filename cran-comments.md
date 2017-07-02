@@ -14,10 +14,10 @@
 
 ## Test environments
 
-* local Windows 7, R 3.3.3
-* ubuntu, os x, R 3.3.3 (travis-ci)
+* local Windows 7, R 3.4.0
+* ubuntu, os x, R 3.4.0 (travis-ci)
 * win-builder (devel and release)
-* Windows, R 3.3.3 (on appveyor)
+* Windows, R 3.4.0 (on appveyor)
 
 ## R CMD check results
 
