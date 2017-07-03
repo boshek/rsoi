@@ -1,3 +1,6 @@
+## v0.3.1
+* Removed utils from Imports field because it was no longer being used. 
+
 ## v0.3.0
 * Adding Northern Pacific Gyre Oscillation
 * Added readr dependencies

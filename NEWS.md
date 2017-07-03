@@ -9,9 +9,12 @@
 * Added some tolerance to download_enso() tests to accommodate rounding errors from different sources
 * Modified output to be a tibble which then includes the tibble package
 
-## v0.3.0
+## rsoi v0.3.0
 * Adding Northern Pacific Gyre Oscillation
 * Added readr dependencies
 * Made soi and oni data download with readr tools
 * Streamlined download_enso such that each idx is individually called from a separate function.
 * Updated README
+
+## rsoi v0.3.1
+* Patch: Removed utils from Imports field because it was no longer being used. 
