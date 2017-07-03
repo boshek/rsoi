@@ -16,7 +16,6 @@ Imports:
     lubridate (>= 1.6.0),
     dplyr (>= 0.5.0),
     readr (>= 1.1.0),
-    utils,
     stats
 Suggests:
     testthat,
