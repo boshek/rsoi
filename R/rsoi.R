@@ -8,4 +8,12 @@
 #'
 #' @docType package
 #' @name rsoi
+#' 
+#' @importFrom dplyr full_join
+#' @importFrom readr write_csv
+#' @importFrom readr read_table
+#' @importFrom lubridate ymd
+#' @importFrom lubridate month
+#' @importFrom lubridate year
+#' @importFrom lubridate ymd
 NULL

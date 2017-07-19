@@ -18,3 +18,6 @@
 
 ## rsoi v0.3.1
 * Patch: Removed utils from Imports field because it was no longer being used. 
+
+## rsoi
+* 
