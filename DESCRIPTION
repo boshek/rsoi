@@ -1,26 +1,26 @@
-Package: rsoi
 Type: Package
+Package: rsoi
 Title: El Nino/Southern Oscillation (ENSO) and Related Climate Indices
 Version: 0.3.1
 Authors@R: c(
     person("Sam", "Albers", email = "sam.albers@gmail.com", role = c("aut", "cre")))
 Description: Downloads Southern Oscillation Index, Oceanic Nino Index and North Pacific Gyre Oscillation data. Data sources are described in the README file.
 License: GPL-3
+URL: https://github.com/boshek/rsoi
+BugReports: https://github.com/boshek/rsoi/issues
+Depends: 
+    R (>= 3.3.0)
+Imports: 
+    dplyr (>= 0.5.0),
+    httr (>= 1.3.1),
+    lubridate (>= 1.6.0),
+    readr (>= 1.1.0),
+    stats
+Suggests: 
+    devtools,
+    ggplot2,
+    rpdo (>= 0.2.1),
+    testthat
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 6.0.1
-URL: https://github.com/boshek/rsoi
-BugReports: https://github.com/boshek/rsoi/issues
-Depends:
-    R (>= 3.3.0)
-Imports:
-    lubridate (>= 1.6.0),
-    dplyr (>= 0.5.0),
-    readr (>= 1.1.0),
-    httr (>= 1.3.1),
-    stats
-Suggests:
-    testthat,
-    devtools,
-    ggplot2,
-    rpdo (>= 0.2.1)
