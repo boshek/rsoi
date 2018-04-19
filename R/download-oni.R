@@ -28,9 +28,19 @@
 
 ## Function to download ONI data
 download_oni <- function(){
-  oni = readr::read_table(
-    "http://www.cpc.ncep.noaa.gov/products/analysis_monitoring/ensostuff/detrend.nino34.ascii.txt", 
-    skip = 1, col_names = c("Year","Month","TOTAL","ClimAdjust","dSST3.4"))[,c("Year","Month","dSST3.4")]
+  rep <- httr::GET("http://www.cpc.ncep.noaa.gov/products/analysis_monitoring/ensostuff/detrend.nino34.ascii.txt")
+  httr::stop_for_status(rep)
+  
+  oni <- httr::content(rep, "text", encoding = "ISO-8859-1")
+  
+  oni <- readr::read_table(oni, col_names = c("Year","Month","TOTAL","ClimAdjust","dSST3.4"), skip = 1)
+  
+  oni <- oni[,c("Year","Month","dSST3.4")] ## only using ClimAdjusted data
+
+
+  # oni = readr::read_table(
+  #   "http://www.cpc.ncep.noaa.gov/products/analysis_monitoring/ensostuff/detrend.nino34.ascii.txt", 
+  #   skip = 1, col_names = c("Year","Month","TOTAL","ClimAdjust","dSST3.4"))[,c("Year","Month","dSST3.4")]
   ## Create Date formatted as date
   oni$Date = lubridate::ymd(paste0(oni$Year,"-",oni$Month,"-01"))
   
