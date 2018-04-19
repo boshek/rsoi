@@ -16,4 +16,5 @@
 #' @importFrom lubridate month
 #' @importFrom lubridate year
 #' @importFrom lubridate ymd
-NULL
+#' @keywords internal
+"_PACKAGE"
