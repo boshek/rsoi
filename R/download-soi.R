@@ -22,9 +22,11 @@
 
 ## Function to bring in SOI data
 download_soi <- function(){
-  soi = readr::read_csv(
+  soi = read.csv(
     "https://www.ncdc.noaa.gov/teleconnections/enso/indicators/soi/data.csv",
-    skip = 2, col_names = c("Date","SOI")
+    skip = 2,
+    stringsAsFactors = FALSE,
+    col.names = c("Date","SOI")
   )
   ## Create Date formatted as date
   soi$Date = lubridate::ymd(paste0(soi$Date, "01"))
@@ -36,7 +38,8 @@ download_soi <- function(){
   ## Create 3 month average window. Each row is a month
   soi$SOI_3MON_AVG = as.numeric(stats::filter(soi$SOI,rep(1/3,3), sides=2))
   
-  soi = soi[,c("Date", "Month", "Year", "SOI", "SOI_3MON_AVG")]
+  class(soi) <- c("tbl_df", "tbl", "data.frame") 
+  
+  soi[,c("Date", "Month", "Year", "SOI", "SOI_3MON_AVG")]
 
-  soi
 }

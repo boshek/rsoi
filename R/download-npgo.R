@@ -19,14 +19,18 @@
 
 
 download_npgo <- function() {
-  npgo <- readr::read_table("http://www.o3d.org/npgo/data/NPGO.txt", comment = "#", col_names = c("Year","Month","NPGO"))
+  npgo <- read.table("http://www.o3d.org/npgo/data/NPGO.txt", 
+                     comment.char = "#",
+                     col.names = c("Year","Month","NPGO"),
+                     stringsAsFactors = FALSE)
   
   npgo$Date = lubridate::ymd(paste0(npgo$Year,"-",npgo$Month,"-01"))
   
   ##Month label to collapse
   npgo$Month = lubridate::month(npgo$Date, abbr = TRUE, label = TRUE)
   
-  npgo = npgo[,c("Date","Year", "Month", "NPGO")]
+  #class(npgo) <- c("tbl_df", "tbl", "data.frame") 
   
-  npgo
+  npgo[,c("Date","Year", "Month", "NPGO")]
+
 }

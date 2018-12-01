@@ -31,7 +31,9 @@
 #' @references \url{https://www.ncdc.noaa.gov/teleconnections/enso/indicators/soi/} and \url{http://www.cpc.ncep.noaa.gov/products/analysis_monitoring/ensostuff/detrend.nino34.ascii.txt}
 
 
-download_enso <- function(climate_idx = "all", create_csv = FALSE) {
+download_enso <- function(climate_idx = c("all", "soi", "oni","npgo"), create_csv = FALSE) {
+  
+  match.arg(climate_idx)
   
   if(climate_idx == "soi") {
     soi_df = rsoi::download_soi()
@@ -48,6 +50,11 @@ download_enso <- function(climate_idx = "all", create_csv = FALSE) {
     return(npgo_df)
   }
   
+  if(create_csv==TRUE){
+    write.csv(enso, "ENSO_Index.csv")
+  }
+  
+  
   if(climate_idx == "all"){
   ## Join index data
     oni_df = rsoi::download_oni()
@@ -61,11 +68,7 @@ download_enso <- function(climate_idx = "all", create_csv = FALSE) {
   
   
   
-  if(create_csv==TRUE){
-    readr::write_csv(enso, "ENSO_Index.csv")
-  }
-  
-  #return(enso)
+
 
 }
 

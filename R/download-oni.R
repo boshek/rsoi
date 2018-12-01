@@ -28,10 +28,17 @@
 
 ## Function to download ONI data
 download_oni <- function(){
-  oni = readr::read_table(
-    "http://www.cpc.ncep.noaa.gov/products/analysis_monitoring/ensostuff/detrend.nino34.ascii.txt", 
-    skip = 1, col_names = c("Year","Month","TOTAL","ClimAdjust","dSST3.4"))[,c("Year","Month","dSST3.4")]
-  ## Create Date formatted as date
+
+  oni_link ="http://www.cpc.ncep.noaa.gov/products/analysis_monitoring/ensostuff/detrend.nino34.ascii.txt"
+
+  oni = read.table(oni_link, 
+                   col.names = c("Year","Month","TOTAL","ClimAdjust","dSST3.4"),
+                   skip = 1,
+                   stringsAsFactors = FALSE)
+  
+  oni = oni[,c("Year","Month","dSST3.4")]
+  
+
   oni$Date = lubridate::ymd(paste0(oni$Year,"-",oni$Month,"-01"))
   
   ##Month label to collapse
@@ -40,7 +47,7 @@ download_oni <- function(){
   ## Create 3 month average window. Each row is a month
   oni$ONI = as.numeric(stats::filter(oni$dSST3.4,rep(1/3,3), sides=2))
   
-  oni$ONI_month_window <- sapply(1:nrow(oni),function(x) paste(substr(oni$Month[x-1],1,1),
+  oni$ONI_month_window <- sapply(1:nrow(oni), function(x) paste(substr(oni$Month[x-1],1,1),
                                                                substr(oni$Month[x],1,1),
                                                                substr(oni$Month[x+1],1,1),
                                                                sep=""))
@@ -49,7 +56,10 @@ download_oni <- function(){
   oni$phase = factor(ifelse(oni$ONI >= 0.5,"Warm Phase/La Nina",
                             ifelse(oni$ONI<= -0.5, "Cool Phase/El Nino", "Neutral Phase")))
   
-  oni = oni[,c("Date", "Month", "Year", "ONI", "ONI_month_window", "phase")]
+  #class(oni) <- c("tbl_df", "tbl", "data.frame") 
   
-  oni
+  oni[,c("Date", "Month", "Year", "ONI", "ONI_month_window", "phase")]
+  
+  
+  
 }
