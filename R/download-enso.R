@@ -36,17 +36,17 @@ download_enso <- function(climate_idx = c("all", "soi", "oni","npgo"), create_cs
   match.arg(climate_idx)
   
   if(climate_idx == "soi") {
-    soi_df = rsoi::download_soi()
+    soi_df = download_soi()
     return(soi_df)
   } 
   
   if(climate_idx == "oni") {
-    oni_df = rsoi::download_oni()
+    oni_df = download_oni()
     return(oni_df)
   } 
   
   if(climate_idx == "npgo") {
-    npgo_df = rsoi::download_npgo()
+    npgo_df = download_npgo()
     return(npgo_df)
   }
   
@@ -57,11 +57,11 @@ download_enso <- function(climate_idx = c("all", "soi", "oni","npgo"), create_cs
   
   if(climate_idx == "all"){
   ## Join index data
-    oni_df = rsoi::download_oni()
-    soi_df = rsoi::download_soi()
-    npgo_df = rsoi::download_npgo()
-    enso <- dplyr::full_join(oni_df, soi_df,  by = c("Date","Month","Year"))
-    enso <- dplyr::full_join(enso, npgo_df,  by = c("Date","Month","Year"))
+    oni_df = download_oni()
+    soi_df = download_soi()
+    npgo_df = download_npgo()
+    enso <- merge(oni_df, soi_df)
+    enso <- merge(enso, npgo_df)
     enso <- enso[,c("Date", "Year", "Month", "ONI", "phase", "SOI", "NPGO")]
     return(enso)
   }
