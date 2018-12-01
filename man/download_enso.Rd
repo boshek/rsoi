@@ -4,7 +4,8 @@
 \alias{download_enso}
 \title{Download Southern Oscillation Index and Oceanic Nino Index data}
 \usage{
-download_enso(climate_idx = "all", create_csv = FALSE)
+download_enso(climate_idx = c("all", "soi", "oni", "npgo"),
+  create_csv = FALSE)
 }
 \arguments{
 \item{climate_idx}{Choose which ENSO related climate index to output. Current arguments supported are soi (the Southern Oscillation Index), oni (the Oceanic Nino Index), npgo (the North Pacific Gyre Oscillation) and all. all outputs each supported index variable as a slimmer dataset than each individual cliamte index call.}
