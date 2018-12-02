@@ -81,7 +81,7 @@ ggplot(enso, aes(x = Date, y = NPGO)) +
   labs(x = "Year", y = "North Pacific Gyre Oscillation")
 ```
 
-![](README-plot-1.png)<!-- -->
+![](man/figures/plot-1.png)<!-- -->
 
 ## Inspired by
 
