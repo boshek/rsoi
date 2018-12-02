@@ -2,6 +2,7 @@
 ## rsoi v0.4
 * Removed readr, dplyr, lubridate dependency
 * Optional tibble printing
+* Adding functions to import North Atlantic Oscillation and Arctic Oscillation
 
 
 ## rsoi v0.3.1

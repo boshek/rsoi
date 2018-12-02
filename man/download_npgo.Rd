@@ -22,5 +22,5 @@ npgo <- download_npgo()
 
 }
 \references{
-\url{http://www.o3d.org/npgo/}
+\url{http://www.oces.us/npgo}
 }
