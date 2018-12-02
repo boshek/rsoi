@@ -1,7 +1,7 @@
 Package: rsoi
 Type: Package
 Title: El Nino/Southern Oscillation (ENSO) and Related Climate Indices
-Version: 0.3.1
+Version: 0.3.1.9000
 Authors@R: c(
     person("Sam", "Albers", email = "sam.albers@gmail.com", role = c("aut", "cre")))
 Description: Downloads Southern Oscillation Index, Oceanic Nino Index and North Pacific Gyre Oscillation data. Data sources are described in the README file.

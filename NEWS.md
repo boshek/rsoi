@@ -1,8 +1,6 @@
 # rsoi NEWS
 
-## rsoi v0.2.0
-* Removed readr dependency
-* Remove dplyr dependency
+
 
 ## rsoi v0.1.0
 
@@ -23,5 +21,6 @@
 ## rsoi v0.3.1
 * Patch: Removed utils from Imports field because it was no longer being used. 
 
-## rsoi
-* 
+## rsoi v0.4
+* Removed readr dependency
+* Remove dplyr dependency
