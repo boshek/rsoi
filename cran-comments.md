@@ -1,3 +1,8 @@
+## v0.4.0
+* Removed readr, dplyr, lubridate dependency
+* Optional tibble printing
+* Adding functions to import North Atlantic Oscillation and Arctic Oscillation
+
 ## v0.3.1
 * Removed utils from Imports field because it was no longer being used. 
 
@@ -17,22 +22,14 @@
 
 ## Test environments
 
-* local Windows 7, R 3.4.0
-* ubuntu, os x, R 3.4.0 (travis-ci)
+* local Windows 10, R 3.5.01
+* ubuntu, os x, R 3.5.1 (travis-ci)
 * win-builder (devel and release)
-* Windows, R 3.4.0 (on appveyor)
+* Windows, R 3.5.1 (on appveyor)
 
 ## R CMD check results
 
 There were no ERRORs or WARNINGs.
-
-There was 1 NOTE:
-Possibly mis-spelled words in DESCRIPTION:
-  ENSO (3:38)
-  El (3:8)
-  Nino (3:11, 7:133)
-  
-All words are correctly spelled. 
 
 ## Downstream dependencies
 
