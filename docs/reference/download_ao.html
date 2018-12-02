@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Download Oceanic Nino Index data — download_oni • rsoi</title>
+<title>Download North Atlantic Oscillation data — download_ao • rsoi</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -30,13 +30,9 @@
 
 
 
-<meta property="og:title" content="Download Oceanic Nino Index data — download_oni" />
+<meta property="og:title" content="Download North Atlantic Oscillation data — download_ao" />
 
-<meta property="og:description" content="The Oceanic Nino Index is average sea surface temperature in the Nino 3.4 region (120W to 170W) averaged over three months. Phases are categorized by Oceanic Nino Index:
-Warm phase of El Nino/ Southern Oscillation when 3-month average sea-surface temperature departure of positive 0.5 degC
-Cool phase of La Nina/ Southern Oscillation when 3-month average sea-surface temperature departure of negative 0.5 degC
-Neutral phase is defined as when the three month temperature average is between +0.5 and -0.5 degC
-" />
+<meta property="og:description" content="surface sea-level pressure difference between the Subtropical (Azores) High and the Subpolar Low." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -106,43 +102,36 @@ Neutral phase is defined as when the three month temperature average is between 
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Download Oceanic Nino Index data</h1>
-    <small class="dont-index">Source: <a href='https://github.com/boshek/rsoi/blob/master/R/download-oni.R'><code>R/download-oni.R</code></a></small>
-    <div class="hidden name"><code>download_oni.Rd</code></div>
+    <h1>Download North Atlantic Oscillation data</h1>
+    <small class="dont-index">Source: <a href='https://github.com/boshek/rsoi/blob/master/R/download-ao.R'><code>R/download-ao.R</code></a></small>
+    <div class="hidden name"><code>download_ao.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>The Oceanic Nino Index is average sea surface temperature in the Nino 3.4 region (120W to 170W) averaged over three months. Phases are categorized by Oceanic Nino Index:</p><ul>
-<li><p>Warm phase of El Nino/ Southern Oscillation when 3-month average sea-surface temperature departure of positive 0.5 degC</p></li>
-<li><p>Cool phase of La Nina/ Southern Oscillation when 3-month average sea-surface temperature departure of negative 0.5 degC</p></li>
-<li><p>Neutral phase is defined as when the three month temperature average is between +0.5 and -0.5 degC</p></li>
-</ul>
+    <p>surface sea-level pressure difference between the Subtropical (Azores) High and the Subpolar Low.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>download_oni</span>()</pre>
+    <pre class="usage"><span class='fu'>download_ao</span>()</pre>
         
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     
 <ul>
-<li><p>Date: Date object that uses the first of the month as a placeholder. Date formatted as date on the first of the month because R only supports one partial of date time</p></li>
 <li><p>Month: Month of record</p></li>
 <li><p>Year: Year of record</p></li>
-<li><p>ONI: Oneanic Oscillation Index</p></li>
-<li><p>ONI_month_window: 3 month period over which the Oneanic Oscillation Index is calculated</p></li>
-<li><p>phase: ENSO phase</p></li>
+<li><p>NAO: North Atlantic Oscillation</p></li>
 </ul>
 
     
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
-    <p><a href='http://www.cpc.ncep.noaa.gov/products/analysis_monitoring/ensostuff/detrend.nino34.ascii.txt'>http://www.cpc.ncep.noaa.gov/products/analysis_monitoring/ensostuff/detrend.nino34.ascii.txt</a></p>
+    <p><a href='https://www.ncdc.noaa.gov/teleconnections/nao'>https://www.ncdc.noaa.gov/teleconnections/nao</a></p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='no'>oni</span> <span class='kw'>&lt;-</span> <span class='fu'>download_oni</span>()</div></pre>
+    <pre class="examples"><div class='input'><span class='no'>nao</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='download_nao.html'>download_nao</a></span>()</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
