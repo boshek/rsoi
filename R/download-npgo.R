@@ -24,12 +24,12 @@ download_npgo <- function() {
                      col.names = c("Year","Month","NPGO"),
                      stringsAsFactors = FALSE)
   
-  npgo$Date = lubridate::ymd(paste0(npgo$Year,"-",npgo$Month,"-01"))
+  npgo$Date = as.Date(paste0(npgo$Year,"-",npgo$Month,"-01"), "%Y-%m-%d")
   
   ##Month label to collapse
-  npgo$Month = lubridate::month(npgo$Date, abbr = TRUE, label = TRUE)
-  
-  #class(npgo) <- c("tbl_df", "tbl", "data.frame") 
+  npgo$Month = abbr_month(npgo$Date)
+
+  class(npgo) <- c("tbl_df", "tbl", "data.frame") 
   
   npgo[,c("Date","Year", "Month", "NPGO")]
 

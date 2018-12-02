@@ -39,10 +39,10 @@ download_oni <- function(){
   oni = oni[,c("Year","Month","dSST3.4")]
   
 
-  oni$Date = lubridate::ymd(paste0(oni$Year,"-",oni$Month,"-01"))
+  oni$Date = as.Date(paste0(oni$Year,"-",oni$Month,"-01"), "%Y-%m-%d")
   
   ##Month label to collapse
-  oni$Month = lubridate::month(oni$Date, abbr = TRUE, label = TRUE)
+  oni$Month = abbr_month(oni$Date)
   
   ## Create 3 month average window. Each row is a month
   oni$ONI = as.numeric(stats::filter(oni$dSST3.4,rep(1/3,3), sides=2))
@@ -56,7 +56,7 @@ download_oni <- function(){
   oni$phase = factor(ifelse(oni$ONI >= 0.5,"Warm Phase/La Nina",
                             ifelse(oni$ONI<= -0.5, "Cool Phase/El Nino", "Neutral Phase")))
   
-  #class(oni) <- c("tbl_df", "tbl", "data.frame") 
+  class(oni) <- c("tbl_df", "tbl", "data.frame") 
   
   oni[,c("Date", "Month", "Year", "ONI", "ONI_month_window", "phase")]
   

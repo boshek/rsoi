@@ -29,11 +29,11 @@ download_soi <- function(){
     col.names = c("Date","SOI")
   )
   ## Create Date formatted as date
-  soi$Date = lubridate::ymd(paste0(soi$Date, "01"))
+  soi$Date = as.Date(paste0(soi$Date, "01"),"%Y%m%d")
   
   ## Create Year and Month columns
-  soi$Month = lubridate::month(soi$Date, abbr = TRUE, label = TRUE)
-  soi$Year = lubridate::year(soi$Date)
+  soi$Month = abbr_month(soi$Date)
+  soi$Year = format(soi$Date, "%Y")
   
   ## Create 3 month average window. Each row is a month
   soi$SOI_3MON_AVG = as.numeric(stats::filter(soi$SOI,rep(1/3,3), sides=2))
