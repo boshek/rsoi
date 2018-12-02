@@ -15,11 +15,11 @@
 #' @examples
 #' npgo <- download_npgo()
 #'
-#' @references \url{http://www.o3d.org/npgo/} 
+#' @references \url{http://www.oces.us/npgo} 
 
 
 download_npgo <- function() {
-  npgo <- read.table("http://www.o3d.org/npgo/data/NPGO.txt", 
+  npgo <- read.table("http://www.oces.us/npgo/data/NPGO.txt", 
                      comment.char = "#",
                      col.names = c("Year","Month","NPGO"),
                      stringsAsFactors = FALSE)
