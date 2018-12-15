@@ -35,20 +35,20 @@ library(tibble)
 ``` r
 enso <- download_enso()
 enso
-#> # A tibble: 805 x 7
+#> # A tibble: 814 x 7
 #>    Date        Year Month    ONI phase                SOI   NPGO
 #>    <date>     <int> <ord>  <dbl> <fct>              <dbl>  <dbl>
-#>  1 1951-02-01  1951 Feb   -0.54  Cool Phase/El Nino   0.9 -0.414
+#>  1 1951-02-01  1951 Feb   -0.54  Warm Phase/El Nino   0.9 -0.414
 #>  2 1951-03-01  1951 Mar   -0.167 Neutral Phase       -0.1 -0.570
 #>  3 1951-04-01  1951 Apr    0.177 Neutral Phase       -0.3 -0.561
 #>  4 1951-05-01  1951 May    0.363 Neutral Phase       -0.7 -1.07 
-#>  5 1951-06-01  1951 Jun    0.587 Warm Phase/La Nina   0.2 -1.44 
-#>  6 1951-07-01  1951 Jul    0.7   Warm Phase/La Nina  -1   -1.10 
-#>  7 1951-08-01  1951 Aug    0.887 Warm Phase/La Nina  -0.2 -1.17 
-#>  8 1951-09-01  1951 Sep    0.993 Warm Phase/La Nina  -1.1 -1.42 
-#>  9 1951-10-01  1951 Oct    1.15  Warm Phase/La Nina  -1   -1.07 
-#> 10 1951-11-01  1951 Nov    1.04  Warm Phase/La Nina  -0.8 -1.01 
-#> # ... with 795 more rows
+#>  5 1951-06-01  1951 Jun    0.587 Cool Phase/La Nina   0.2 -1.44 
+#>  6 1951-07-01  1951 Jul    0.7   Cool Phase/La Nina  -1   -1.10 
+#>  7 1951-08-01  1951 Aug    0.887 Cool Phase/La Nina  -0.2 -1.17 
+#>  8 1951-09-01  1951 Sep    0.993 Cool Phase/La Nina  -1.1 -1.42 
+#>  9 1951-10-01  1951 Oct    1.15  Cool Phase/La Nina  -1   -1.07 
+#> 10 1951-11-01  1951 Nov    1.04  Cool Phase/La Nina  -0.8 -1.01 
+#> # ... with 804 more rows
 ```
 
 Or for index specific data use the  argument:
@@ -56,7 +56,7 @@ Or for index specific data use the  argument:
 ``` r
 soi <- download_enso(climate_idx = "soi")
 soi
-#> # A tibble: 813 x 5
+#> # A tibble: 814 x 5
 #>    Date       Month Year    SOI SOI_3MON_AVG
 #>    <date>     <ord> <chr> <dbl>        <dbl>
 #>  1 1951-02-01 Feb   1951    0.9       NA    
@@ -69,7 +69,7 @@ soi
 #>  8 1951-09-01 Sep   1951   -1.1       -0.767
 #>  9 1951-10-01 Oct   1951   -1         -0.967
 #> 10 1951-11-01 Nov   1951   -0.8       -0.833
-#> # ... with 803 more rows
+#> # ... with 804 more rows
 ```
 
 And we can plot these values using `ggplot2` nicely
@@ -117,3 +117,7 @@ doi:10.1007/s00382-012-1331-2](https://link.springer.com/article/10.1007%2Fs0038
 [The Victoria mode in the North Pacific linking extratropical sea level
 pressure variations to
 ENSO](http://onlinelibrary.wiley.com/doi/10.1002/2014JD022221/pdf)
+
+Please note that the ‘rsoi’ project is released with a [Contributor Code
+of Conduct](CODE_OF_CONDUCT.md). By contributing to this project, you
+agree to abide by its terms.

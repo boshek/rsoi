@@ -78,3 +78,5 @@ The idea for this package borrows heavily from the rpdo package. The initial eff
 [L’Heureux, M. L., Collins, D. C., & Hu, Z.-Z. (2012, March.). Linear trends in sea surface temperature of the tropical Pacific Ocean and implications for the El Niño-Southern Oscillation. Climate Dynamics, 1–14. doi:10.1007/s00382-012-1331-2](https://link.springer.com/article/10.1007%2Fs00382-012-1331-2)
 
 [The Victoria mode in the North Pacific linking extratropical sea level pressure variations to ENSO](http://onlinelibrary.wiley.com/doi/10.1002/2014JD022221/pdf)
+
+Please note that the 'rsoi' project is released with a [Contributor Code of Conduct](CODE_OF_CONDUCT.md). By contributing to this project, you agree to abide by its terms.
