@@ -34,7 +34,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">rsoi</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.1.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.4.0.9000</span>
       </span>
     </div>
 
@@ -93,24 +93,24 @@
 <a href="#usage" class="anchor"></a>Usage</h2>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1">enso &lt;-<span class="st"> </span><span class="kw"><a href="reference/download_enso.html">download_enso</a></span>()</a>
 <a class="sourceLine" id="cb2-2" data-line-number="2">enso</a>
-<a class="sourceLine" id="cb2-3" data-line-number="3"><span class="co">#&gt; # A tibble: 805 x 7</span></a>
+<a class="sourceLine" id="cb2-3" data-line-number="3"><span class="co">#&gt; # A tibble: 814 x 7</span></a>
 <a class="sourceLine" id="cb2-4" data-line-number="4"><span class="co">#&gt;    Date        Year Month    ONI phase                SOI   NPGO</span></a>
 <a class="sourceLine" id="cb2-5" data-line-number="5"><span class="co">#&gt;    &lt;date&gt;     &lt;int&gt; &lt;ord&gt;  &lt;dbl&gt; &lt;fct&gt;              &lt;dbl&gt;  &lt;dbl&gt;</span></a>
-<a class="sourceLine" id="cb2-6" data-line-number="6"><span class="co">#&gt;  1 1951-02-01  1951 Feb   -0.54  Cool Phase/El Nino   0.9 -0.414</span></a>
+<a class="sourceLine" id="cb2-6" data-line-number="6"><span class="co">#&gt;  1 1951-02-01  1951 Feb   -0.54  Warm Phase/El Nino   0.9 -0.414</span></a>
 <a class="sourceLine" id="cb2-7" data-line-number="7"><span class="co">#&gt;  2 1951-03-01  1951 Mar   -0.167 Neutral Phase       -0.1 -0.570</span></a>
 <a class="sourceLine" id="cb2-8" data-line-number="8"><span class="co">#&gt;  3 1951-04-01  1951 Apr    0.177 Neutral Phase       -0.3 -0.561</span></a>
 <a class="sourceLine" id="cb2-9" data-line-number="9"><span class="co">#&gt;  4 1951-05-01  1951 May    0.363 Neutral Phase       -0.7 -1.07 </span></a>
-<a class="sourceLine" id="cb2-10" data-line-number="10"><span class="co">#&gt;  5 1951-06-01  1951 Jun    0.587 Warm Phase/La Nina   0.2 -1.44 </span></a>
-<a class="sourceLine" id="cb2-11" data-line-number="11"><span class="co">#&gt;  6 1951-07-01  1951 Jul    0.7   Warm Phase/La Nina  -1   -1.10 </span></a>
-<a class="sourceLine" id="cb2-12" data-line-number="12"><span class="co">#&gt;  7 1951-08-01  1951 Aug    0.887 Warm Phase/La Nina  -0.2 -1.17 </span></a>
-<a class="sourceLine" id="cb2-13" data-line-number="13"><span class="co">#&gt;  8 1951-09-01  1951 Sep    0.993 Warm Phase/La Nina  -1.1 -1.42 </span></a>
-<a class="sourceLine" id="cb2-14" data-line-number="14"><span class="co">#&gt;  9 1951-10-01  1951 Oct    1.15  Warm Phase/La Nina  -1   -1.07 </span></a>
-<a class="sourceLine" id="cb2-15" data-line-number="15"><span class="co">#&gt; 10 1951-11-01  1951 Nov    1.04  Warm Phase/La Nina  -0.8 -1.01 </span></a>
-<a class="sourceLine" id="cb2-16" data-line-number="16"><span class="co">#&gt; # ... with 795 more rows</span></a></code></pre></div>
+<a class="sourceLine" id="cb2-10" data-line-number="10"><span class="co">#&gt;  5 1951-06-01  1951 Jun    0.587 Cool Phase/La Nina   0.2 -1.44 </span></a>
+<a class="sourceLine" id="cb2-11" data-line-number="11"><span class="co">#&gt;  6 1951-07-01  1951 Jul    0.7   Cool Phase/La Nina  -1   -1.10 </span></a>
+<a class="sourceLine" id="cb2-12" data-line-number="12"><span class="co">#&gt;  7 1951-08-01  1951 Aug    0.887 Cool Phase/La Nina  -0.2 -1.17 </span></a>
+<a class="sourceLine" id="cb2-13" data-line-number="13"><span class="co">#&gt;  8 1951-09-01  1951 Sep    0.993 Cool Phase/La Nina  -1.1 -1.42 </span></a>
+<a class="sourceLine" id="cb2-14" data-line-number="14"><span class="co">#&gt;  9 1951-10-01  1951 Oct    1.15  Cool Phase/La Nina  -1   -1.07 </span></a>
+<a class="sourceLine" id="cb2-15" data-line-number="15"><span class="co">#&gt; 10 1951-11-01  1951 Nov    1.04  Cool Phase/La Nina  -0.8 -1.01 </span></a>
+<a class="sourceLine" id="cb2-16" data-line-number="16"><span class="co">#&gt; # ... with 804 more rows</span></a></code></pre></div>
 <p>Or for index specific data use the  argument:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1">soi &lt;-<span class="st"> </span><span class="kw"><a href="reference/download_enso.html">download_enso</a></span>(<span class="dt">climate_idx =</span> <span class="st">"soi"</span>)</a>
 <a class="sourceLine" id="cb3-2" data-line-number="2">soi</a>
-<a class="sourceLine" id="cb3-3" data-line-number="3"><span class="co">#&gt; # A tibble: 813 x 5</span></a>
+<a class="sourceLine" id="cb3-3" data-line-number="3"><span class="co">#&gt; # A tibble: 814 x 5</span></a>
 <a class="sourceLine" id="cb3-4" data-line-number="4"><span class="co">#&gt;    Date       Month Year    SOI SOI_3MON_AVG</span></a>
 <a class="sourceLine" id="cb3-5" data-line-number="5"><span class="co">#&gt;    &lt;date&gt;     &lt;ord&gt; &lt;chr&gt; &lt;dbl&gt;        &lt;dbl&gt;</span></a>
 <a class="sourceLine" id="cb3-6" data-line-number="6"><span class="co">#&gt;  1 1951-02-01 Feb   1951    0.9       NA    </span></a>
@@ -123,7 +123,7 @@
 <a class="sourceLine" id="cb3-13" data-line-number="13"><span class="co">#&gt;  8 1951-09-01 Sep   1951   -1.1       -0.767</span></a>
 <a class="sourceLine" id="cb3-14" data-line-number="14"><span class="co">#&gt;  9 1951-10-01 Oct   1951   -1         -0.967</span></a>
 <a class="sourceLine" id="cb3-15" data-line-number="15"><span class="co">#&gt; 10 1951-11-01 Nov   1951   -0.8       -0.833</span></a>
-<a class="sourceLine" id="cb3-16" data-line-number="16"><span class="co">#&gt; # ... with 803 more rows</span></a></code></pre></div>
+<a class="sourceLine" id="cb3-16" data-line-number="16"><span class="co">#&gt; # ... with 804 more rows</span></a></code></pre></div>
 <p>And we can plot these values using <code>ggplot2</code> nicely</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw">ggplot</span>(enso, <span class="kw">aes</span>(<span class="dt">x =</span> Date, <span class="dt">y =</span> NPGO)) <span class="op">+</span></a>
 <a class="sourceLine" id="cb4-2" data-line-number="2"><span class="st">  </span><span class="kw">geom_line</span>() <span class="op">+</span></a>
@@ -158,6 +158,7 @@
 <p><a href="https://www.climate.gov/news-features/understanding-climate/watching-el-ni%C3%B1o-and-la-ni%C3%B1a-noaa-adapts-global-warming">In Watching for El Niño and La Niña, NOAA Adapts to Global Warming</a></p>
 <p><a href="https://link.springer.com/article/10.1007%2Fs00382-012-1331-2">L’Heureux, M. L., Collins, D. C., &amp; Hu, Z.-Z. (2012, March.). Linear trends in sea surface temperature of the tropical Pacific Ocean and implications for the El Niño-Southern Oscillation. Climate Dynamics, 1–14. doi:10.1007/s00382-012-1331-2</a></p>
 <p><a href="http://onlinelibrary.wiley.com/doi/10.1002/2014JD022221/pdf">The Victoria mode in the North Pacific linking extratropical sea level pressure variations to ENSO</a></p>
+<p>Please note that the ‘rsoi’ project is released with a <a href="CODE_OF_CONDUCT.html">Contributor Code of Conduct</a>. By contributing to this project, you agree to abide by its terms.</p>
 </div>
   </div>
 
@@ -180,7 +181,7 @@
 <div class="developers">
 <h2>Developers</h2>
 <ul class="list-unstyled">
-<li>Sam Albers <br><small class="roles"> Author, maintainer </small>  </li>
+<li>Sam Albers <br><small class="roles"> Author, maintainer </small> <a href="https://orcid.org/0000-0002-9270-7884" target="orcid.widget"><img src="https://members.orcid.org/sites/default/files/vector_iD_icon.svg" class="orcid" alt="ORCID" height="16"></a> </li>
 </ul>
 </div>
 
