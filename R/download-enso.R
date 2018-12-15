@@ -33,6 +33,10 @@
 
 download_enso <- function(climate_idx = c("all", "soi", "oni","npgo"), create_csv = FALSE) {
   
+  if(!curl::has_internet()){
+    return(message("A working internet connection is required to download and import the climate indices."))
+  }
+  
   match.arg(climate_idx)
   
   if(climate_idx[1] == "soi") {

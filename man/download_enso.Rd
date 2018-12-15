@@ -8,7 +8,7 @@ download_enso(climate_idx = c("all", "soi", "oni", "npgo"),
   create_csv = FALSE)
 }
 \arguments{
-\item{climate_idx}{Choose which ENSO related climate index to output. Current arguments supported are soi (the Southern Oscillation Index), oni (the Oceanic Nino Index), npgo (the North Pacific Gyre Oscillation) and all. all outputs each supported index variable as a slimmer dataset than each individual cliamte index call.}
+\item{climate_idx}{Choose which ENSO related climate index to output. Current arguments supported are soi (the Southern Oscillation Index), oni (the Oceanic Nino Index), npgo (the North Pacific Gyre Oscillation) and all. all outputs each supported index variable as a slimmer dataset than each individual climate index call.}
 
 \item{create_csv}{Logical option to create a local copy of the data. Defaults to FALSE.}
 }
@@ -17,7 +17,7 @@ download_enso(climate_idx = c("all", "soi", "oni", "npgo"),
 \item Date: Date object that uses the first of the month as a placeholder. Date formatted as date on the first of the month because R only supports one partial of date time
 \item Month: Month of record
 \item Year: Year of record
-\item ONI: Oneanic Oscillation Index
+\item ONI: Oceanic Oscillation Index
 \item phase: ENSO phase 
 \item SOI: Southern Oscillation Index
 \item NPGO: North Pacific Gyre Oscillation

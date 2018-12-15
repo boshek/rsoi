@@ -1,4 +1,9 @@
 # rsoi NEWS
+## rsoi v0.4.1
+* Checks if internet is installed
+* Fixes El Nino/ La Nina mixup. 
+
+
 ## rsoi v0.4
 * Removed readr, dplyr, lubridate dependency
 * Optional tibble printing

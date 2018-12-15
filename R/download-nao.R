@@ -20,6 +20,10 @@
 ## Function to download ONI data
 download_nao <- function(){
   
+  if(!curl::has_internet()){
+    return(message("A working internet connection is required to download and import the climate indices."))
+  }
+  
   nao_link ="https://www.ncdc.noaa.gov/teleconnections/nao/data.csv"
   
   nao = read.csv(nao_link, 

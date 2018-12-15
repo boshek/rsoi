@@ -18,7 +18,7 @@ Useful links:
 
 }
 \author{
-\strong{Maintainer}: Sam Albers \email{sam.albers@gmail.com}
+\strong{Maintainer}: Sam Albers \email{sam.albers@gmail.com} (0000-0002-9270-7884)
 
 }
 \keyword{internal}

@@ -28,6 +28,10 @@
 
 ## Function to download ONI data
 download_oni <- function(){
+  
+  if(!curl::has_internet()){
+    return(message("A working internet connection is required to download and import the climate indices."))
+  }
 
   oni_link ="http://www.cpc.ncep.noaa.gov/products/analysis_monitoring/ensostuff/detrend.nino34.ascii.txt"
 
@@ -58,7 +62,7 @@ download_oni <- function(){
   
   class(oni) <- c("tbl_df", "tbl", "data.frame") 
   
-  oni[,c("Date", "Month", "Year", "ONI", "ONI_month_window", "phase")]
+  oni[,c("Date", "Month", "Year","dSST3.4", "ONI", "ONI_month_window", "phase")]
   
   
   

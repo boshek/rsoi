@@ -19,6 +19,11 @@
 
 
 download_npgo <- function() {
+  
+  if(!curl::has_internet()){
+    return(message("A working internet connection is required to download and import the climate indices."))
+  }
+  
   npgo <- read.table("http://www.oces.us/npgo/data/NPGO.txt", 
                      comment.char = "#",
                      col.names = c("Year","Month","NPGO"),
