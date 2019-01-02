@@ -2,6 +2,7 @@
 ## rsoi v0.4.1
 * Checks if internet is installed
 * Fixes El Nino/ La Nina mixup. 
+* Removed internal indices data as we do not have them licenced properly and they serve little value.
 
 
 ## rsoi v0.4
