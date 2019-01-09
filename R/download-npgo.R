@@ -11,11 +11,6 @@
 #' \item Month: Month of record
 #' \item NPGO: North Pacific Gyre Oscillation
 #' }
-
-#' @examples
-#' \dontrun{
-#' npgo <- download_npgo()
-#' }
 #'
 #' @references \url{http://www.oces.us/npgo} 
 

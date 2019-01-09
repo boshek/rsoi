@@ -17,12 +17,6 @@ download_npgo()
 \description{
 North Pacific Gyre Oscillation data also known as the Victoria mode
 }
-\examples{
-\dontrun{
-npgo <- download_npgo()
-}
-
-}
 \references{
 \url{http://www.oces.us/npgo}
 }
