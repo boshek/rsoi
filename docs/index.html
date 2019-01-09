@@ -93,37 +93,26 @@
 <a href="#usage" class="anchor"></a>Usage</h2>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1">enso &lt;-<span class="st"> </span><span class="kw"><a href="reference/download_enso.html">download_enso</a></span>()</a>
 <a class="sourceLine" id="cb2-2" data-line-number="2">enso</a>
-<a class="sourceLine" id="cb2-3" data-line-number="3"><span class="co">#&gt; # A tibble: 814 x 7</span></a>
-<a class="sourceLine" id="cb2-4" data-line-number="4"><span class="co">#&gt;    Date        Year Month    ONI phase                SOI   NPGO</span></a>
-<a class="sourceLine" id="cb2-5" data-line-number="5"><span class="co">#&gt;    &lt;date&gt;     &lt;int&gt; &lt;ord&gt;  &lt;dbl&gt; &lt;fct&gt;              &lt;dbl&gt;  &lt;dbl&gt;</span></a>
-<a class="sourceLine" id="cb2-6" data-line-number="6"><span class="co">#&gt;  1 1951-02-01  1951 Feb   -0.54  Warm Phase/El Nino   0.9 -0.414</span></a>
-<a class="sourceLine" id="cb2-7" data-line-number="7"><span class="co">#&gt;  2 1951-03-01  1951 Mar   -0.167 Neutral Phase       -0.1 -0.570</span></a>
-<a class="sourceLine" id="cb2-8" data-line-number="8"><span class="co">#&gt;  3 1951-04-01  1951 Apr    0.177 Neutral Phase       -0.3 -0.561</span></a>
-<a class="sourceLine" id="cb2-9" data-line-number="9"><span class="co">#&gt;  4 1951-05-01  1951 May    0.363 Neutral Phase       -0.7 -1.07 </span></a>
-<a class="sourceLine" id="cb2-10" data-line-number="10"><span class="co">#&gt;  5 1951-06-01  1951 Jun    0.587 Cool Phase/La Nina   0.2 -1.44 </span></a>
-<a class="sourceLine" id="cb2-11" data-line-number="11"><span class="co">#&gt;  6 1951-07-01  1951 Jul    0.7   Cool Phase/La Nina  -1   -1.10 </span></a>
-<a class="sourceLine" id="cb2-12" data-line-number="12"><span class="co">#&gt;  7 1951-08-01  1951 Aug    0.887 Cool Phase/La Nina  -0.2 -1.17 </span></a>
-<a class="sourceLine" id="cb2-13" data-line-number="13"><span class="co">#&gt;  8 1951-09-01  1951 Sep    0.993 Cool Phase/La Nina  -1.1 -1.42 </span></a>
-<a class="sourceLine" id="cb2-14" data-line-number="14"><span class="co">#&gt;  9 1951-10-01  1951 Oct    1.15  Cool Phase/La Nina  -1   -1.07 </span></a>
-<a class="sourceLine" id="cb2-15" data-line-number="15"><span class="co">#&gt; 10 1951-11-01  1951 Nov    1.04  Cool Phase/La Nina  -0.8 -1.01 </span></a>
-<a class="sourceLine" id="cb2-16" data-line-number="16"><span class="co">#&gt; # ... with 804 more rows</span></a></code></pre></div>
+<a class="sourceLine" id="cb2-3" data-line-number="3"><span class="co">#&gt; # A tibble: 0 x 7</span></a>
+<a class="sourceLine" id="cb2-4" data-line-number="4"><span class="co">#&gt; # ... with 7 variables: Date &lt;date&gt;, Year &lt;int&gt;, Month &lt;ord&gt;, ONI &lt;dbl&gt;,</span></a>
+<a class="sourceLine" id="cb2-5" data-line-number="5"><span class="co">#&gt; #   phase &lt;fct&gt;, SOI &lt;chr&gt;, NPGO &lt;dbl&gt;</span></a></code></pre></div>
 <p>Or for index specific data use the  argument:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1">soi &lt;-<span class="st"> </span><span class="kw"><a href="reference/download_enso.html">download_enso</a></span>(<span class="dt">climate_idx =</span> <span class="st">"soi"</span>)</a>
 <a class="sourceLine" id="cb3-2" data-line-number="2">soi</a>
-<a class="sourceLine" id="cb3-3" data-line-number="3"><span class="co">#&gt; # A tibble: 814 x 5</span></a>
-<a class="sourceLine" id="cb3-4" data-line-number="4"><span class="co">#&gt;    Date       Month Year    SOI SOI_3MON_AVG</span></a>
-<a class="sourceLine" id="cb3-5" data-line-number="5"><span class="co">#&gt;    &lt;date&gt;     &lt;ord&gt; &lt;chr&gt; &lt;dbl&gt;        &lt;dbl&gt;</span></a>
-<a class="sourceLine" id="cb3-6" data-line-number="6"><span class="co">#&gt;  1 1951-02-01 Feb   1951    0.9       NA    </span></a>
-<a class="sourceLine" id="cb3-7" data-line-number="7"><span class="co">#&gt;  2 1951-03-01 Mar   1951   -0.1        0.167</span></a>
-<a class="sourceLine" id="cb3-8" data-line-number="8"><span class="co">#&gt;  3 1951-04-01 Apr   1951   -0.3       -0.367</span></a>
-<a class="sourceLine" id="cb3-9" data-line-number="9"><span class="co">#&gt;  4 1951-05-01 May   1951   -0.7       -0.267</span></a>
-<a class="sourceLine" id="cb3-10" data-line-number="10"><span class="co">#&gt;  5 1951-06-01 Jun   1951    0.2       -0.5  </span></a>
-<a class="sourceLine" id="cb3-11" data-line-number="11"><span class="co">#&gt;  6 1951-07-01 Jul   1951   -1         -0.333</span></a>
-<a class="sourceLine" id="cb3-12" data-line-number="12"><span class="co">#&gt;  7 1951-08-01 Aug   1951   -0.2       -0.767</span></a>
-<a class="sourceLine" id="cb3-13" data-line-number="13"><span class="co">#&gt;  8 1951-09-01 Sep   1951   -1.1       -0.767</span></a>
-<a class="sourceLine" id="cb3-14" data-line-number="14"><span class="co">#&gt;  9 1951-10-01 Oct   1951   -1         -0.967</span></a>
-<a class="sourceLine" id="cb3-15" data-line-number="15"><span class="co">#&gt; 10 1951-11-01 Nov   1951   -0.8       -0.833</span></a>
-<a class="sourceLine" id="cb3-16" data-line-number="16"><span class="co">#&gt; # ... with 804 more rows</span></a></code></pre></div>
+<a class="sourceLine" id="cb3-3" data-line-number="3"><span class="co">#&gt; # A tibble: 27 x 5</span></a>
+<a class="sourceLine" id="cb3-4" data-line-number="4"><span class="co">#&gt;    Date       Month Year  SOI   SOI_3MON_AVG</span></a>
+<a class="sourceLine" id="cb3-5" data-line-number="5"><span class="co">#&gt;    &lt;date&gt;     &lt;ord&gt; &lt;chr&gt; &lt;chr&gt;        &lt;dbl&gt;</span></a>
+<a class="sourceLine" id="cb3-6" data-line-number="6"><span class="co">#&gt;  1 NA         &lt;NA&gt;  &lt;NA&gt;  ""              NA</span></a>
+<a class="sourceLine" id="cb3-7" data-line-number="7"><span class="co">#&gt;  2 NA         &lt;NA&gt;  &lt;NA&gt;  ""              NA</span></a>
+<a class="sourceLine" id="cb3-8" data-line-number="8"><span class="co">#&gt;  3 NA         &lt;NA&gt;  &lt;NA&gt;  ""              NA</span></a>
+<a class="sourceLine" id="cb3-9" data-line-number="9"><span class="co">#&gt;  4 NA         &lt;NA&gt;  &lt;NA&gt;  ""              NA</span></a>
+<a class="sourceLine" id="cb3-10" data-line-number="10"><span class="co">#&gt;  5 NA         &lt;NA&gt;  &lt;NA&gt;  ""              NA</span></a>
+<a class="sourceLine" id="cb3-11" data-line-number="11"><span class="co">#&gt;  6 NA         &lt;NA&gt;  &lt;NA&gt;  ""              NA</span></a>
+<a class="sourceLine" id="cb3-12" data-line-number="12"><span class="co">#&gt;  7 NA         &lt;NA&gt;  &lt;NA&gt;  ""              NA</span></a>
+<a class="sourceLine" id="cb3-13" data-line-number="13"><span class="co">#&gt;  8 NA         &lt;NA&gt;  &lt;NA&gt;  ""              NA</span></a>
+<a class="sourceLine" id="cb3-14" data-line-number="14"><span class="co">#&gt;  9 NA         &lt;NA&gt;  &lt;NA&gt;  ""              NA</span></a>
+<a class="sourceLine" id="cb3-15" data-line-number="15"><span class="co">#&gt; 10 NA         &lt;NA&gt;  &lt;NA&gt;  ""              NA</span></a>
+<a class="sourceLine" id="cb3-16" data-line-number="16"><span class="co">#&gt; # ... with 17 more rows</span></a></code></pre></div>
 <p>And we can plot these values using <code>ggplot2</code> nicely</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw">ggplot</span>(enso, <span class="kw">aes</span>(<span class="dt">x =</span> Date, <span class="dt">y =</span> NPGO)) <span class="op">+</span></a>
 <a class="sourceLine" id="cb4-2" data-line-number="2"><span class="st">  </span><span class="kw">geom_line</span>() <span class="op">+</span></a>
