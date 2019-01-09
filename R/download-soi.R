@@ -14,16 +14,28 @@
 #' }
 
 #' @examples
+#' \dontrun{
 #' soi <- download_soi()
 #' plot(x = enso$Date, y = enso$SOI, type = "l")
+#' }
 #'
 #' @references \url{https://www.ncdc.noaa.gov/teleconnections/enso/indicators/soi/} 
 
 
 ## Function to bring in SOI data
 download_soi <- function(){
+  
+  if(!curl::has_internet()){
+    return(message("A working internet connection is required to download and import the climate indices."))
+  }
+  
+  soi_link = "https://www.ncdc.noaa.gov/teleconnections/enso/indicators/soi/data.csv"
+  
+  res = check_response(soi_link)
+  
+  
   soi = read.csv(
-    "https://www.ncdc.noaa.gov/teleconnections/enso/indicators/soi/data.csv",
+    res,
     skip = 2,
     stringsAsFactors = FALSE,
     col.names = c("Date","SOI")

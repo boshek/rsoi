@@ -17,7 +17,9 @@ download_ao()
 surface sea-level pressure difference between the Subtropical (Azores) High and the Subpolar Low.
 }
 \examples{
+\dontrun{
 nao <- download_nao()
+}
 
 }
 \references{

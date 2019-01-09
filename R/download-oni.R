@@ -20,7 +20,9 @@
 #' }
 
 #' @examples
+#' \dontrun{
 #' oni <- download_oni()
+#' }
 #'
 #' @references \url{http://www.cpc.ncep.noaa.gov/products/analysis_monitoring/ensostuff/detrend.nino34.ascii.txt}
 
@@ -34,8 +36,10 @@ download_oni <- function(){
   }
 
   oni_link ="http://www.cpc.ncep.noaa.gov/products/analysis_monitoring/ensostuff/detrend.nino34.ascii.txt"
+  
+  res = check_response(oni_link)
 
-  oni = read.table(oni_link, 
+  oni = read.table(res, 
                    col.names = c("Year","Month","TOTAL","ClimAdjust","dSST3.4"),
                    skip = 1,
                    stringsAsFactors = FALSE)

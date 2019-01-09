@@ -3,6 +3,7 @@
 * Checks if internet is installed
 * Fixes El Nino/ La Nina mixup. 
 * Removed internal indices data as we do not have them licenced properly and they serve little value.
+* Makes test condition upon having internet and resilient to a government shutdown
 
 
 ## rsoi v0.4

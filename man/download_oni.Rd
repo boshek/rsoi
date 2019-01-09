@@ -25,7 +25,9 @@ The Oceanic Nino Index is average sea surface temperature in the Nino 3.4 region
 }
 }
 \examples{
+\dontrun{
 oni <- download_oni()
+}
 
 }
 \references{

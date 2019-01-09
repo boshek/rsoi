@@ -19,8 +19,10 @@ download_soi()
 The Southern Oscillation Index is defined as the standardized difference between barometric readings at Darwin, Australia and Tahiti.
 }
 \examples{
+\dontrun{
 soi <- download_soi()
 plot(x = enso$Date, y = enso$SOI, type = "l")
+}
 
 }
 \references{
