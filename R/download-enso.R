@@ -25,11 +25,11 @@
 #' }
 
 #' @examples
+#' \dontrun{
 #' enso <- download_enso()
 #' plot(x = enso$Date, y = enso$SOI, type = "l")
+#' }
 #'
-#' @references \url{https://www.ncdc.noaa.gov/teleconnections/enso/indicators/soi/} and \url{http://www.cpc.ncep.noaa.gov/products/analysis_monitoring/ensostuff/detrend.nino34.ascii.txt}
-
 
 download_enso <- function(climate_idx = c("all", "soi", "oni","npgo"), create_csv = FALSE) {
   
