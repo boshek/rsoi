@@ -1,3 +1,10 @@
+# rsoi NEWS
+## rsoi v0.5.0
+* Checks if internet is installed
+* Fixes El Nino/ La Nina mixup. 
+* Removed internal indices data as we do not have them licenced properly and they serve little value.
+* Makes test conditional upon having internet access and resilient to a government shutdown
+
 ## v0.4.0
 * Removed readr, dplyr, lubridate dependency
 * Optional tibble printing
