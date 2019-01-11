@@ -21,7 +21,6 @@ Imports:
     curl
 Suggests:
     devtools,
-    ggplot2,
     rpdo,
     testthat,
     tibble

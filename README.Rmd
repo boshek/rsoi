@@ -31,35 +31,28 @@ An R package to download the most up to date
 install.packages("rsoi")
 
 library(rsoi)
-library(ggplot2)
 library(tibble)
 ```
 
 ```{r, eval = TRUE, echo = FALSE}
 library(rsoi)
-library(ggplot2)
 library(tibble)
 ```
 
 ## Usage
+Download Oceanic Nino Index data
 ```{r, eval = TRUE, echo = TRUE, warning=FALSE, message=FALSE}
-enso <- download_enso()
-enso
+oni <- download_oni()
+oni
 ```
 
-Or for index specific data use the \code{cliamte_idx} argument:
-```{r, eval = TRUE, echo = TRUE, warning=FALSE, message=FALSE}
-soi <- download_enso(climate_idx = "soi")
-soi
-
-```
-
-And we can plot these values using `ggplot2` nicely
+And a quick plot with base R to illustrate the type of data:
 ```{r plot, eval = TRUE, echo = TRUE, warning=FALSE, message=FALSE}
-ggplot(enso, aes(x = Date, y = NPGO)) +
-  geom_line() +
-  theme_minimal() +
-  labs(x = "Year", y = "North Pacific Gyre Oscillation")
+barcols <- c('#edf8b1','#7fcdbb','#2c7fb8')
+
+barplot(oni$ONI, names.arg = oni$Date, ylab = "Oceanic Nino Index" , 
+    col = barcols[oni$phase], border = NA, space = 0,
+    xaxt = "n")
 ```
 
 ## Inspired by
