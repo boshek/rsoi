@@ -67,7 +67,7 @@ Neutral phase is defined as when the three month temperature average is between 
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">rsoi</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.4.0.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.4.1</span>
       </span>
     </div>
 
@@ -151,13 +151,12 @@ Neutral phase is defined as when the three month temperature average is between 
 </ul>
 
     
-    <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
-
-    <p><a href='https://www.ncdc.noaa.gov/teleconnections/enso/indicators/soi/'>https://www.ncdc.noaa.gov/teleconnections/enso/indicators/soi/</a> and <a href='http://www.cpc.ncep.noaa.gov/products/analysis_monitoring/ensostuff/detrend.nino34.ascii.txt'>http://www.cpc.ncep.noaa.gov/products/analysis_monitoring/ensostuff/detrend.nino34.ascii.txt</a></p>
-    
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='no'>enso</span> <span class='kw'>&lt;-</span> <span class='fu'>download_enso</span>()</div><div class='output co'>#&gt; <span class='error'>Error: Data source is currently unavailable due to a US government shutdown</span></div><div class='input'><span class='fu'><a href='https://www.rdocumentation.org/packages/graphics/topics/plot'>plot</a></span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='no'>enso</span>$<span class='no'>Date</span>, <span class='kw'>y</span> <span class='kw'>=</span> <span class='no'>enso</span>$<span class='no'>SOI</span>, <span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>"l"</span>)</div><div class='output co'>#&gt; <span class='error'>Error in plot(x = enso$Date, y = enso$SOI, type = "l"): object 'enso' not found</span></div><div class='input'>
+    <pre class="examples"><span class='co'># NOT RUN {</span>
+<span class='no'>enso</span> <span class='kw'>&lt;-</span> <span class='fu'>download_enso</span>()
+<span class='fu'><a href='https://www.rdocumentation.org/packages/graphics/topics/plot'>plot</a></span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='no'>enso</span>$<span class='no'>Date</span>, <span class='kw'>y</span> <span class='kw'>=</span> <span class='no'>enso</span>$<span class='no'>SOI</span>, <span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>"l"</span>)
+<span class='co'># }</span><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
@@ -166,8 +165,6 @@ Neutral phase is defined as when the three month temperature average is between 
       <li><a href="#arguments">Arguments</a></li>
       
       <li><a href="#value">Value</a></li>
-
-      <li><a href="#references">References</a></li>
       
       <li><a href="#examples">Examples</a></li>
     </ul>
