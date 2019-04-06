@@ -1,4 +1,8 @@
 # rsoi NEWS
+## rsoi v0.6.0
+* Reverts El Nino/ La Nina mixup
+
+
 ## rsoi v0.5.0
 * Checks if internet is installed
 * Fixes El Nino/ La Nina mixup. 
