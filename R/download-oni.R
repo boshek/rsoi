@@ -61,8 +61,8 @@ download_oni <- function(){
                                                                sep=""))
   
   ## Assign phase 
-  oni$phase = factor(ifelse(oni$ONI <= 0.5,"Cool Phase/La Nina",
-                            ifelse(oni$ONI >= -0.5, "Warm Phase/El Nino", "Neutral Phase")))
+  oni$phase = factor(ifelse(oni$ONI <= -0.5,"Cool Phase/La Nina",
+                            ifelse(oni$ONI >= 0.5, "Warm Phase/El Nino", "Neutral Phase")))
   
   class(oni) <- c("tbl_df", "tbl", "data.frame") 
   
