@@ -1,7 +1,7 @@
 # rsoi NEWS
-## rsoi v0.6.0
-* Reverts El Nino/ La Nina mixup
-
+## rsoi v0.5.1
+* Reverts El Nino/ La Nina mixup (Thanks to Arthur Chapman for the email submitted patch)
+* Remove rpdo and devtools from Suggests
 
 ## rsoi v0.5.0
 * Checks if internet is installed

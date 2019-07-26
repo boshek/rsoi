@@ -2,7 +2,7 @@ Type: Package
 Package: rsoi
 Title: Import Various Northern and Southern Hemisphere Climate
     Indices
-Version: 0.5.9999
+Version: 0.5.1
 Authors@R: 
     person(given = "Sam",
            family = "Albers",
@@ -17,11 +17,9 @@ URL: https://github.com/boshek/rsoi
 Depends:
     R (>= 3.3.0)
 Imports:
-    stats,
-    curl
+    curl,
+    stats
 Suggests:
-    devtools,
-    rpdo,
     testthat,
     tibble
 Encoding: UTF-8
