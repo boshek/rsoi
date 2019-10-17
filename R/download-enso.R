@@ -54,11 +54,6 @@ download_enso <- function(climate_idx = c("all", "soi", "oni","npgo"), create_cs
     return(npgo_df)
   }
   
-  if(create_csv==TRUE){
-    write.csv(enso, "ENSO_Index.csv")
-  }
-  
-  
   if(climate_idx[1] == "all"){
   ## Join index data
     oni_df = download_oni()
@@ -67,6 +62,11 @@ download_enso <- function(climate_idx = c("all", "soi", "oni","npgo"), create_cs
     enso <- merge(oni_df, soi_df)
     enso <- merge(enso, npgo_df)
     enso <- enso[,c("Date", "Year", "Month", "ONI", "phase", "SOI", "NPGO")]
+    
+    
+    if(create_csv == TRUE){
+      write.csv(enso, "ENSO_Index.csv")
+    }
     
     class(enso) <- c("tbl_df", "tbl", "data.frame") 
     return(enso)
