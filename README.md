@@ -36,20 +36,20 @@ Download Oceanic Nino Index data
 ``` r
 oni <- download_oni()
 oni
-#> # A tibble: 827 x 7
-#>    Date       Month  Year dSST3.4     ONI ONI_month_window phase           
-#>    <date>     <ord> <int>   <dbl>   <dbl> <chr>            <fct>           
-#>  1 1950-01-01 Jan    1950   -1.62  NA     JF               <NA>            
-#>  2 1950-02-01 Feb    1950   -1.32  -1.34  JFM              Warm Phase/El N~
-#>  3 1950-03-01 Mar    1950   -1.07  -1.17  FMA              Warm Phase/El N~
-#>  4 1950-04-01 Apr    1950   -1.11  -1.18  MAM              Warm Phase/El N~
-#>  5 1950-05-01 May    1950   -1.37  -1.07  AMJ              Warm Phase/El N~
-#>  6 1950-06-01 Jun    1950   -0.74  -0.85  MJJ              Warm Phase/El N~
-#>  7 1950-07-01 Jul    1950   -0.44  -0.533 JJA              Warm Phase/El N~
-#>  8 1950-08-01 Aug    1950   -0.42  -0.423 JAS              Neutral Phase   
-#>  9 1950-09-01 Sep    1950   -0.41  -0.383 ASO              Neutral Phase   
-#> 10 1950-10-01 Oct    1950   -0.32  -0.443 SON              Neutral Phase   
-#> # ... with 817 more rows
+#> # A tibble: 837 x 7
+#>    Date       Month  Year dSST3.4    ONI ONI_month_window phase            
+#>    <date>     <ord> <int>   <dbl>  <dbl> <chr>            <fct>            
+#>  1 1950-01-01 Jan    1950   -1.62 NA     JF               <NA>             
+#>  2 1950-02-01 Feb    1950   -1.32 -1.34  JFM              Cool Phase/La Ni~
+#>  3 1950-03-01 Mar    1950   -1.07 -1.17  FMA              Cool Phase/La Ni~
+#>  4 1950-04-01 Apr    1950   -1.11 -1.18  MAM              Cool Phase/La Ni~
+#>  5 1950-05-01 May    1950   -1.37 -1.07  AMJ              Cool Phase/La Ni~
+#>  6 1950-06-01 Jun    1950   -0.74 -0.85  MJJ              Cool Phase/La Ni~
+#>  7 1950-07-01 Jul    1950   -0.44 -0.533 JJA              Cool Phase/La Ni~
+#>  8 1950-08-01 Aug    1950   -0.42 -0.423 JAS              Neutral Phase    
+#>  9 1950-09-01 Sep    1950   -0.41 -0.383 ASO              Neutral Phase    
+#> 10 1950-10-01 Oct    1950   -0.32 -0.443 SON              Neutral Phase    
+#> # ... with 827 more rows
 ```
 
 And a quick plot with base R to illustrate the type of data:
@@ -73,16 +73,18 @@ github page can be found here:
 
 ## Data Sources
 
-  - Southern Oscillation Index
+  - Southern Oscillation Index:
     <https://www.ncdc.noaa.gov/teleconnections/enso/indicators/soi/>
-  - Oceanic Nino Index data
+  - Oceanic Nino Index data:
     <http://www.cpc.ncep.noaa.gov/products/analysis_monitoring/ensostuff/detrend.nino34.ascii.txt>
-  - Northern Pacific Gyre Oscillation
+  - Northern Pacific Gyre Oscillation:
     <http://www.o3d.org/npgo/data/NPGO.txt>
-  - North Atlantic Oscillation
+  - North Atlantic Oscillation:
     <https://www.ncdc.noaa.gov/teleconnections/nao/data.csv>
-  - Arctic Oscillation
+  - Arctic Oscillation:
     <https://www.ncdc.noaa.gov/teleconnections/ao/data.csv>
+  - Multivariate ENSO Index Version 2 (MEI.v2):
+    <https://www.esrl.noaa.gov/psd/enso/mei/>
 
 ## Helpful References
 
