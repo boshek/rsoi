@@ -33,3 +33,10 @@ test_that("Does download_ao download a data.frame?", {
   skip_if_shutdown()
   expect_is( download_ao(), "data.frame" )
 })
+
+
+test_that("Does download_mei download a data.frame?", {
+  skip_if_no_internet()
+  skip_if_shutdown()
+  expect_is( download_mei(), "data.frame" )
+})
