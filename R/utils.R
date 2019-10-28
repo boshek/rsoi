@@ -3,10 +3,11 @@
 abbr_month <- function(date){
   if(class(date) != "Date") stop("Not a date object", call. = FALSE)
   
+  levels <- format(seq(as.Date("2018-01-01"), as.Date("2018-12-01"), "1 month"), "%b")
+  
   factor(format(date, "%b"),
          ordered = TRUE,
-         levels = c("Jan", "Feb", "Mar", "Apr", "May", 
-                    "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"))
+         levels = levels)
 }
 
 ## Check the response from server.
