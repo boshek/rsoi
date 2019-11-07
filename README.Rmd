@@ -25,6 +25,7 @@ An R package to download the most up to date
 - North Pacific Gyre Oscillation data
 - North Atlantic Oscillation
 - Arctic Oscillation
+- Multivariate ENSO Index Version 2
 
 ## Installation
 ```{r, eval = FALSE, echo = TRUE}
