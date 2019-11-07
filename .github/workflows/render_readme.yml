@@ -17,8 +17,8 @@ jobs:
       - name: Install rmarkdown
         run: Rscript -e 'install.packages("rmarkdown")'
       - name: Render README
-        run: Rscript -e 'rmarkdown::render("examples/README.Rmd")'
+        run: Rscript -e 'rmarkdown::render("README.Rmd")'
       - name: Commit results
         run: |
-          git commit examples/README.md -m 'Re-build README.Rmd'
+          git commit README.md -m 'Re-build README.Rmd'
           git push https://${{github.actor}}:${{secrets.GITHUB_TOKEN}}@github.com/${{github.repository}}.git HEAD:master
