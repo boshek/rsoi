@@ -17,7 +17,7 @@ jobs:
       - name: Install packages
         run: Rscript -e 'install.packages(c("rmarkdown","rsoi", "tibble"))'
       - name: Render README
-        run: Rscript -e 'rmarkdown::render("README.Rmd")'
+        run: Rscript -e 'rmarkdown::render("README.Rmd", output_format = "github_document")'
       - name: Commit results
         run: |
           git commit README.md -m 'Re-build README.Rmd'
