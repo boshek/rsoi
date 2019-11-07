@@ -2,7 +2,7 @@ on:
   push:
     paths:
       - README.Rmd
-      - *yaml
+      - render_readme.yml
 
 name: Render README
 
