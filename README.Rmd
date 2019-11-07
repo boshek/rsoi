@@ -47,7 +47,7 @@ oni <- download_oni()
 oni
 ```
 
-And a quick plot with base R to illustrate the type of data:
+And a quick plot to illustrate the type of data:
 ```{r plot, eval = TRUE, echo = TRUE, warning=FALSE, message=FALSE}
 barcols <- c('#edf8b1','#7fcdbb','#2c7fb8')
 
