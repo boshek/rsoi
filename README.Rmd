@@ -20,6 +20,7 @@ knitr::opts_chunk$set(
 
 # rsoi
 An R package to download the most up to date of these climate indices:
+
 - Southern Oscillation Index
 - Oceanic Nino Index 
 - North Pacific Gyre Oscillation data
@@ -44,7 +45,7 @@ library(tibble)
 Download Oceanic Nino Index data
 ```{r, eval = TRUE, echo = TRUE, warning=FALSE, message=FALSE}
 oni <- download_oni()
-oni
+head(oni)
 ```
 
 And a quick plot to illustrate the data:
