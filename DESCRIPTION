@@ -27,7 +27,7 @@ Imports:
     memoise,
     readr
 Suggests:
-    testthat,
+    testthat (>= 2.1.0),
     tibble
 Encoding: UTF-8
 LazyData: true
