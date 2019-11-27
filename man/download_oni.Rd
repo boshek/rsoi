@@ -4,7 +4,14 @@
 \alias{download_oni}
 \title{Download Oceanic Nino Index data}
 \usage{
-download_oni()
+download_oni(cache = FALSE, file = NULL)
+}
+\arguments{
+\item{cache}{logical option to save and load from cache. If `TRUE`, results will be cached in memory
+if `file` is `NULL` or on disk if `file` is not `NULL`.}
+
+\item{file}{optional character with the full path of a file to save the data. If `cache` is `FALSE` but
+`file` is not `NULL`, the results will be downloaded from the internet and saved on disk.}
 }
 \value{
 \itemize{

@@ -18,7 +18,12 @@ Useful links:
 
 }
 \author{
-\strong{Maintainer}: Sam Albers \email{sam.albers@gmail.com} (0000-0002-9270-7884)
+\strong{Maintainer}: Sam Albers \email{sam.albers@gmail.com} (\href{https://orcid.org/0000-0002-9270-7884}{ORCID})
+
+Other contributors:
+\itemize{
+  \item Elio Campitelli \email{elio.campitelli@cima.fcen.uba.ar} (\href{https://orcid.org/0000-0002-7742-9230}{ORCID}) [contributor]
+}
 
 }
 \keyword{internal}
