@@ -29,3 +29,33 @@ check_response <- function(link){
   
   textConnection(rawToChar(response$content))
 }
+
+
+
+with_cache <- function(cache, file, memoised, unmemoised) {
+  # cache in memory
+  if (cache && is.null(file)) {
+    return(memoised())
+  }
+  
+  # cache in file  
+  if (cache && file.exists(file)) {
+    return(suppressMessages(readr::read_csv(file)))
+  }
+  
+  if(!curl::has_internet()){
+    message("A working internet connection is required to download and import the climate indices.")
+    return(NULL)
+  }
+  data <- unmemoised()
+  
+  if (!is.null(file)) { 
+    readr::write_csv(data, file)
+  }
+  
+  if (!cache) {
+    memoise::forget(memoised)
+  } 
+  
+  return(data)
+}

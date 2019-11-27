@@ -37,33 +37,6 @@ download_oni <-  function(cache = FALSE, file = NULL) {
 }
 
 
-with_cache <- function(cache, file, memoised, unmemoised) {
-  # cache in memory
-  if (cache && is.null(file)) {
-    return(memoised())
-  }
-  
-  # cache in file  
-  if (cache && file.exists(file)) {
-    return(suppressMessages(readr::read_csv(file)))
-  }
-  
-  if(!curl::has_internet()){
-    message("A working internet connection is required to download and import the climate indices.")
-    return(NULL)
-  }
-  data <- unmemoised()
-  
-  if (!is.null(file)) { 
-    readr::write_csv(data, file)
-  }
-  
-  if (!cache) {
-    memoise::forget(memoised)
-  } 
-  
-  return(data)
-}
 
 ## Function to download ONI data
 download_oni_unmemoised <- function() {
