@@ -24,8 +24,7 @@ Depends:
 Imports:
     curl,
     stats,
-    memoise,
-    readr
+    memoise
 Suggests:
     testthat (>= 2.1.0),
     tibble

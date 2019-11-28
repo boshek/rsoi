@@ -32,7 +32,9 @@ check_response <- function(link){
 
 
 
-with_cache <- function(cache, file, memoised, unmemoised) {
+with_cache <- function(cache, file, memoised, unmemoised, 
+                       read_function = read.csv, 
+                       write_function = function(data, file) write.csv(data, file, row.names = FALSE)) {
   # cache in memory
   if (cache && is.null(file)) {
     return(memoised())
@@ -40,7 +42,7 @@ with_cache <- function(cache, file, memoised, unmemoised) {
   
   # cache in file  
   if (cache && file.exists(file)) {
-    return(suppressMessages(readr::read_csv(file)))
+    return(read_function(file))
   }
   
   if(!curl::has_internet()){
@@ -50,7 +52,7 @@ with_cache <- function(cache, file, memoised, unmemoised) {
   data <- unmemoised()
   
   if (!is.null(file)) { 
-    readr::write_csv(data, file)
+    write_function(data, file)
   }
   
   if (!cache) {
@@ -59,3 +61,5 @@ with_cache <- function(cache, file, memoised, unmemoised) {
   
   return(data)
 }
+
+
