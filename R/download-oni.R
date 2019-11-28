@@ -31,7 +31,7 @@
 #' @references \url{http://www.cpc.ncep.noaa.gov/products/analysis_monitoring/ensostuff/detrend.nino34.ascii.txt}
 
 download_oni <-  function(use_cache = FALSE, file = NULL) {
-  with_cache(cache = cache, file = file, 
+  with_cache(use_cache = use_cache, file = file, 
              memoised = download_oni_memoised, 
              unmemoised = download_oni_unmemoised, 
              read_function = read_oni)
@@ -86,4 +86,5 @@ read_oni <- function(file) {
   data$ONI_month_window <- as.character(data$ONI_month_window)
   
   class(data) <- c("tbl_df", "tbl", "data.frame")
+  data
 }

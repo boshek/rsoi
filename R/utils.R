@@ -32,16 +32,17 @@ check_response <- function(link){
 
 
 
-with_cache <- function(cache, file, memoised, unmemoised, 
+with_cache <- function(use_cache, file, memoised, unmemoised, 
                        read_function = read.csv, 
-                       write_function = function(data, file) write.csv(data, file, row.names = FALSE)) {
+                       write_function = function(data, file) write.csv(data, file, row.names = FALSE), 
+                       ...) {
   # cache in memory
-  if (cache && is.null(file)) {
-    return(memoised())
+  if (use_cache && is.null(file)) {
+    return(memoised(...))
   }
   
   # cache in file  
-  if (cache && file.exists(file)) {
+  if (use_cache && file.exists(file)) {
     return(read_function(file))
   }
   
@@ -49,13 +50,13 @@ with_cache <- function(cache, file, memoised, unmemoised,
     message("A working internet connection is required to download and import the climate indices.")
     return(NULL)
   }
-  data <- unmemoised()
+  data <- unmemoised(...)
   
   if (!is.null(file)) { 
     write_function(data, file)
   }
   
-  if (!cache) {
+  if (!use_cache) {
     memoise::forget(memoised)
   } 
   
