@@ -1,6 +1,7 @@
 #' @export
 #' @title Download Southern Oscillation Index data
 #' 
+#' @inheritParams download_oni
 #' 
 #' @description The Southern Oscillation Index is defined as the standardized difference between barometric readings at Darwin, Australia and Tahiti. 
 #' 
@@ -20,15 +21,15 @@
 #' }
 #'
 #' @references \url{https://www.ncdc.noaa.gov/teleconnections/enso/indicators/soi/} 
-
+download_soi <- function(use_cache = FALSE, file = NULL) {
+  with_cache(use_cache = use_cache, file = file, 
+             memoised = download_soi_memoised, 
+             unmemoised = download_soi_unmemoised, 
+             read_function = read_soi)
+}
 
 ## Function to bring in SOI data
-download_soi <- function(){
-  
-  if(!curl::has_internet()){
-    return(message("A working internet connection is required to download and import the climate indices."))
-  }
-  
+download_soi_unmemoised <- function(){
   soi_link = "https://www.ncdc.noaa.gov/teleconnections/enso/indicators/soi/data.csv"
   
   res = check_response(soi_link)
@@ -54,4 +55,15 @@ download_soi <- function(){
   
   soi[,c("Date", "Month", "Year", "SOI", "SOI_3MON_AVG")]
 
+}
+
+download_soi_memoised <- memoise::memoise(download_soi_unmemoised)
+
+read_soi <- function(file) {
+  data <- read.csv(file)
+  data$Date <- as.Date(data$Date)
+  data$Month <- abbr_month(data$Date)
+  
+  class(data) <- c("tbl_df", "tbl", "data.frame")
+  data
 }

@@ -4,6 +4,8 @@
 #' 
 #' @description North Pacific Gyre Oscillation data also known as the Victoria mode
 #' 
+#' @inheritParams download_oni
+#' 
 #' @return 
 #' \itemize{
 #' \item Date: Date object that uses the first of the month as a placeholder. Date formatted as date on the first of the month because R only supports one partial of date time
@@ -17,14 +19,16 @@
 #' }
 #'
 #' @references \url{http://www.oces.us/npgo} 
+download_npgo <- function(use_cache = FALSE, file = NULL) {
+  with_cache(use_cache = use_cache, file = file, 
+             memoised = download_npgo_memoised, 
+             unmemoised = download_npgo_unmemoised, 
+             read_function = read_npgo)
+}
 
 
-download_npgo <- function() {
-  
-  if(!curl::has_internet()){
-    return(message("A working internet connection is required to download and import the climate indices."))
-  }
-  
+
+download_npgo_unmemoised <- function() {
   npgo_link ="http://www.oces.us/npgo/data/NPGO.txt"
   
   res = check_response(npgo_link)
@@ -40,7 +44,18 @@ download_npgo <- function() {
   npgo$Month = abbr_month(npgo$Date)
 
   class(npgo) <- c("tbl_df", "tbl", "data.frame") 
-  
-  npgo[,c("Date","Year", "Month", "NPGO")]
+  npgo[, c("Date","Year", "Month", "NPGO")]
+}
 
+download_npgo_memoised <- memoise::memoise(download_npgo_unmemoised)
+
+
+read_npgo <- function(file) {
+  data <- read.csv(file)
+  data$Date <- as.Date(data$Date)
+  data$Month <- abbr_month(data$Date)
+  data$Year <- as.double(data$Year)
+  
+  class(data) <- c("tbl_df", "tbl", "data.frame")
+  data
 }
