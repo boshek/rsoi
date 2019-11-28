@@ -1,7 +1,8 @@
 test_function <- function() {
-  tibble::tibble(x = rnorm(100),
+  data.frame(x = rnorm(100),
                  y = rnorm(100))
 }
+
 
 test_function_memoised <- memoise::memoise(test_function)
 
@@ -25,7 +26,7 @@ test_that("doesn't cache by default", {
   
   expect_false(same(res1, res2))
   
-  res_file <- readr::read_csv(file)
+  res_file <- read.csv(file)
   expect_equal(res2, res_file, check.attributes = FALSE)
 })
 
