@@ -10,7 +10,7 @@ abbr_month <- function(date){
          levels = levels)
 }
 
-## Check the response from server.
+## Check the response from server.tes
 check_response <- function(link){
   #browser()
   

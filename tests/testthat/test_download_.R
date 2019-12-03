@@ -9,7 +9,7 @@ test_download <- function(index) {
   test_that(paste0("Does ", function_name, " download a data.frame?"), {
     skip_if_no_internet()
     skip_if_shutdown()
-    expect_is( fun, "data.frame" )
+    expect_is( fun(), "data.frame" )
   })
 }
 
