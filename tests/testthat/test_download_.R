@@ -21,15 +21,20 @@ sink <- lapply(indexes, test_download)
 context("Read functions recover identical object")
 
 test_read <- function(index) {
-  file <- tempfile()
-  download_fun <- match.fun(paste0("download_", index))
-  
   test_that(paste0("read_", index, " recovers data"), {
+    file <- tempfile()
+    
+    download_fun <- match.fun(paste0("download_", index))
+    # read_fun <- match.fun(paste0("read_", index))
+    read_fun <- get(paste0("read_", index), asNamespace("rsoi"), mode = "function")
+    
     skip_if_no_internet()
     skip_if_shutdown()
     
     data <- download_fun(use_cache = FALSE, file = file)
-    data2 <- download_fun(use_cache = TRUE, file = file)
+    data2 <- read_fun(file)
+    
+    # data2 <- download_fun(use_cache = TRUE, file = file)
     expect_equal(data, data2)
   })
 }
