@@ -4,7 +4,14 @@
 \alias{download_mei}
 \title{Download Multivariate ENSO Index Version 2 (MEI.v2)}
 \usage{
-download_mei()
+download_mei(use_cache = FALSE, file = NULL)
+}
+\arguments{
+\item{use_cache}{logical option to save and load from cache. If `TRUE`, results will be cached in memory
+if `file` is `NULL` or on disk if `file` is not `NULL`.}
+
+\item{file}{optional character with the full path of a file to save the data. If `cache` is `FALSE` but
+`file` is not `NULL`, the results will be downloaded from the internet and saved on disk.}
 }
 \value{
 \itemize{

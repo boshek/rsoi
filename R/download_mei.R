@@ -9,6 +9,8 @@
 #' Warm phase is defined as MEI index greater or equal to 0.5. Cold phase is 
 #' defined as MEI index lesser or equal to -0.5.
 #' 
+#' @inheritParams download_oni
+#' 
 #' @return 
 #' \itemize{
 #' \item Date: Date object that uses the first of the month as a placeholder. Date formatted as date on the first of the month because R only supports one partial of date time
@@ -24,13 +26,14 @@
 #' }
 #'
 #' @references \url{https://www.esrl.noaa.gov/psd/enso/mei/}
+download_mei <- function(use_cache = FALSE, file = NULL) {
+  with_cache(use_cache = use_cache, file = file, 
+             memoised = download_mei_memoised, 
+             unmemoised = download_mei_unmemoised, 
+             read_function = read_mei)
+}
 
-
-download_mei = function() {
-  if(!curl::has_internet()){
-    return(message("A working internet connection is required to download and import the climate indices."))
-  }
-  
+download_mei_unmemoised = function() {
   mei_link = "https://www.esrl.noaa.gov/psd/enso/mei/data/meiv2.data"
   
   res = check_response(mei_link)
@@ -65,5 +68,18 @@ download_mei = function() {
   return(grid)
 }
 
+download_mei_memoised <- memoise::memoise(download_mei_unmemoised)
 
 
+read_mei <- function(file) {
+  data <- read.csv(file)
+  data$Date <- as.Date(data$Date)
+  data$Phase <- factor(data$Phase, levels = c("Cool Phase/La Nina", 
+                                               "Neutral Phase",
+                                               "Warm Phase/El Nino"), ordered = TRUE)
+  data$Month <- factor(data$Month, 
+                       levels =  c("DJ", "JF", "FM", "MA", "AM", "MJ", "JJ", "JA", "AS", "SO", "ON", "ND"))
+  
+  class(data) <- c("tbl_df", "tbl", "data.frame")
+  data
+}

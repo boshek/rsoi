@@ -1,6 +1,10 @@
 #' @export
 #' @title Download Oceanic Nino Index data
 #' 
+#' @param use_cache logical option to save and load from cache. If `TRUE`, results will be cached in memory
+#' if `file` is `NULL` or on disk if `file` is not `NULL`.
+#' @param file optional character with the full path of a file to save the data. If `cache` is `FALSE` but
+#' `file` is not `NULL`, the results will be downloaded from the internet and saved on disk. 
 #' 
 #' @description The Oceanic Nino Index is average sea surface temperature in the Nino 3.4 region (120W to 170W) averaged over three months. Phases are categorized by Oceanic Nino Index:
 #' \itemize{
@@ -26,15 +30,17 @@
 #'
 #' @references \url{http://www.cpc.ncep.noaa.gov/products/analysis_monitoring/ensostuff/detrend.nino34.ascii.txt}
 
+download_oni <-  function(use_cache = FALSE, file = NULL) {
+  with_cache(use_cache = use_cache, file = file, 
+             memoised = download_oni_memoised, 
+             unmemoised = download_oni_unmemoised, 
+             read_function = read_oni)
+}
+
 
 
 ## Function to download ONI data
-download_oni <- function(){
-  
-  if(!curl::has_internet()){
-    return(message("A working internet connection is required to download and import the climate indices."))
-  }
-
+download_oni_unmemoised <- function() {
   oni_link ="http://www.cpc.ncep.noaa.gov/products/analysis_monitoring/ensostuff/detrend.nino34.ascii.txt"
   
   res = check_response(oni_link)
@@ -67,7 +73,18 @@ download_oni <- function(){
   class(oni) <- c("tbl_df", "tbl", "data.frame") 
   
   oni[,c("Date", "Month", "Year","dSST3.4", "ONI", "ONI_month_window", "phase")]
+}
+
+# Memoised function
+download_oni_memoised <- memoise::memoise(download_oni_unmemoised)
+
+# Function to read oni data from file. 
+read_oni <- function(file) {
+  data <- read.csv(file)
+  data$Date <- as.Date(data$Date)
+  data$Month <- abbr_month(data$Date)
+  data$ONI_month_window <- as.character(data$ONI_month_window)
   
-  
-  
+  class(data) <- c("tbl_df", "tbl", "data.frame")
+  data
 }

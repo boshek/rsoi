@@ -1,42 +1,43 @@
+indexes <- c("oni", "ao", "nao", "soi", "mei", "npgo")
+
 context("Testing download")
 
-test_that("Does download_soi download a data.frame?", {
-  skip_if_no_internet()
-  skip_if_shutdown()
-  expect_is( download_soi(), "data.frame" )
-})
+
+test_download <- function(index) {
+  function_name <- paste0("download_", index)
+  fun <- match.fun(function_name)
+  
+  test_that(paste0("Does ", function_name, " download a data.frame?"), {
+    skip_if_no_internet()
+    skip_if_shutdown()
+    expect_is( fun(), "data.frame" )
+  })
+}
 
 
-test_that("Does download_oni download a data.frame?", {
-  skip_if_no_internet()
-  skip_if_shutdown()
-  expect_is( download_oni(), "data.frame" )
-})
+sink <- lapply(indexes, test_download)
 
 
-test_that("Does download_npgo download a data.frame?", {
-  skip_if_no_internet()
-  skip_if_shutdown()
-  expect_is( download_npgo(), "data.frame" )
-})
+context("Read functions recover identical object")
+
+test_read <- function(index) {
+  test_that(paste0("read_", index, " recovers data"), {
+    file <- tempfile()
+    
+    download_fun <- match.fun(paste0("download_", index))
+    # read_fun <- match.fun(paste0("read_", index))
+    read_fun <- get(paste0("read_", index), asNamespace("rsoi"), mode = "function")
+    
+    skip_if_no_internet()
+    skip_if_shutdown()
+    
+    data <- download_fun(use_cache = FALSE, file = file)
+    data2 <- read_fun(file)
+    
+    # data2 <- download_fun(use_cache = TRUE, file = file)
+    expect_equal(data, data2)
+  })
+}
 
 
-test_that("Does download_nao download a data.frame?", {
-  skip_if_no_internet()
-  skip_if_shutdown()
-  expect_is( download_nao(), "data.frame" )
-})
-
-
-test_that("Does download_ao download a data.frame?", {
-  skip_if_no_internet()
-  skip_if_shutdown()
-  expect_is( download_ao(), "data.frame" )
-})
-
-
-test_that("Does download_mei download a data.frame?", {
-  skip_if_no_internet()
-  skip_if_shutdown()
-  expect_is( download_mei(), "data.frame" )
-})
+sink <- lapply(indexes, test_read)

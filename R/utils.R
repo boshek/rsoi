@@ -10,7 +10,7 @@ abbr_month <- function(date){
          levels = levels)
 }
 
-## Check the response from server.
+## Check the response from server.tes
 check_response <- function(link){
   #browser()
   
@@ -29,3 +29,38 @@ check_response <- function(link){
   
   textConnection(rawToChar(response$content))
 }
+
+
+
+with_cache <- function(use_cache, file, memoised, unmemoised, 
+                       read_function = read.csv, 
+                       write_function = function(data, file) write.csv(data, file, row.names = FALSE), 
+                       ...) {
+  # cache in memory
+  if (use_cache && is.null(file)) {
+    return(memoised(...))
+  }
+  
+  # cache in file  
+  if (use_cache && file.exists(file)) {
+    return(read_function(file))
+  }
+  
+  if(!curl::has_internet()){
+    message("A working internet connection is required to download and import the climate indices.")
+    return(NULL)
+  }
+  data <- unmemoised(...)
+  
+  if (!is.null(file)) { 
+    write_function(data, file)
+  }
+  
+  if (!use_cache) {
+    memoise::forget(memoised)
+  } 
+  
+  return(data)
+}
+
+

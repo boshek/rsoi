@@ -1,6 +1,7 @@
 #' @export
 #' @title Download North Atlantic Oscillation data
 #' 
+#' @inheritParams download_oni
 #' 
 #' @description surface sea-level pressure difference between the Subtropical (Azores) High and the Subpolar Low. 
 #' @return 
@@ -16,16 +17,16 @@
 #' }
 #'
 #' @references \url{https://www.ncdc.noaa.gov/teleconnections/nao}
-
+download_ao <- function(use_cache = FALSE, file = NULL) {
+  with_cache(use_cache = use_cache, file = file, 
+             memoised = download_ao_memoised, 
+             unmemoised = download_ao_unmemoised, 
+             read_function = read_ao)
+}
 
 
 ## Function to download ONI data
-download_ao <- function(){
-  
-  if(!curl::has_internet()){
-    return(message("A working internet connection is required to download and import the climate indices."))
-  }
-  
+download_ao_unmemoised <- function(){
   ao_link ="https://www.ncdc.noaa.gov/teleconnections/ao/data.csv"
   
   res = check_response(ao_link)
@@ -46,4 +47,17 @@ download_ao <- function(){
   
   ao[,c("Year","Month", "AO")]
   
+}
+
+download_ao_memoised <- memoise::memoise(download_ao_unmemoised)
+
+
+# Function to read oni data from file. 
+read_ao <- function(file) {
+  data <- read.csv(file)
+  data$Year <- as.character(data$Year)
+  levels <- format(seq(as.Date("2018-01-01"), as.Date("2018-12-01"), "1 month"), "%b")
+  data$Month <- factor(data$Month, levels = levels, ordered = TRUE)
+  class(data) <- c("tbl_df", "tbl", "data.frame")
+  data
 }
