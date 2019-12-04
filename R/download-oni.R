@@ -65,6 +65,7 @@ download_oni_unmemoised <- function() {
                                                                substr(oni$Month[x],1,1),
                                                                substr(oni$Month[x+1],1,1),
                                                                sep=""))
+  oni$ONI_month_window[c(1, nrow(oni))] <- NA
   
   ## Assign phase 
   oni$phase = factor(ifelse(oni$ONI <= -0.5,"Cool Phase/La Nina",
