@@ -1,22 +1,23 @@
 #' @export
-#' @title Download North Atlantic Oscillation data
+#' @title Download Arctic Oscillation data
 #' 
 #' @inheritParams download_oni
 #' 
-#' @description surface sea-level pressure difference between the Subtropical (Azores) High and the Subpolar Low. 
+#' @description Projection of the daily 1000 hPa anomaly height field north of 20°N on the first EOF obtained
+#' from the monthly 1000 hPa height anomaly.
 #' @return 
 #' \itemize{
 #' \item Month: Month of record
 #' \item Year: Year of record
-#' \item NAO: North Atlantic Oscillation
+#' \item AO: Arctic Oscillation
 #' }
 
 #' @examples
 #' \dontrun{
-#' nao <- download_nao()
+#' ao <- download_ao()
 #' }
 #'
-#' @references \url{https://www.ncdc.noaa.gov/teleconnections/nao}
+#' @references \url{https://www.ncdc.noaa.gov/teleconnections/ao/}
 download_ao <- function(use_cache = FALSE, file = NULL) {
   with_cache(use_cache = use_cache, file = file, 
              memoised = download_ao_memoised, 

@@ -2,7 +2,7 @@
 % Please edit documentation in R/download-ao.R
 \name{download_ao}
 \alias{download_ao}
-\title{Download North Atlantic Oscillation data}
+\title{Download Arctic Oscillation data}
 \usage{
 download_ao(use_cache = FALSE, file = NULL)
 }
@@ -17,18 +17,19 @@ if `file` is `NULL` or on disk if `file` is not `NULL`.}
 \itemize{
 \item Month: Month of record
 \item Year: Year of record
-\item NAO: North Atlantic Oscillation
+\item AO: Arctic Oscillation
 }
 }
 \description{
-surface sea-level pressure difference between the Subtropical (Azores) High and the Subpolar Low.
+Projection of the daily 1000 hPa anomaly height field north of 20°N on the first EOF obtained
+from the monthly 1000 hPa height anomaly.
 }
 \examples{
 \dontrun{
-nao <- download_nao()
+ao <- download_ao()
 }
 
 }
 \references{
-\url{https://www.ncdc.noaa.gov/teleconnections/nao}
+\url{https://www.ncdc.noaa.gov/teleconnections/ao/}
 }
