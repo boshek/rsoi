@@ -9,5 +9,5 @@
 ^revdep$
 ^README\.Rmd$
 ^README-.*\.png$
-
+^.github$
 docs
