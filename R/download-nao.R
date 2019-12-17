@@ -40,7 +40,7 @@ download_nao_unmemoised <- function(){
   
   ##Month label to collapse
   nao$Month = abbr_month(nao$Date)
-  nao$Year = format(nao$Date, "%Y")
+  nao$Year = as.integer(format(nao$Date, "%Y"))
   
 
   class(nao) <- c("tbl_df", "tbl", "data.frame") 

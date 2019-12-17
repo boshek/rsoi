@@ -41,7 +41,7 @@ download_ao_unmemoised <- function(){
   
   ##Month label to collapse
   ao$Month = abbr_month(ao$Date)
-  ao$Year = format(ao$Date, "%Y")
+  ao$Year = as.integer(format(ao$Date, "%Y"))
   
 
   class(ao) <- c("tbl_df", "tbl", "data.frame") 

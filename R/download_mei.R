@@ -62,7 +62,7 @@ download_mei_unmemoised = function() {
                                              "Neutral Phase",
                                              "Warm Phase/El Nino"), ordered = TRUE)
   
-  grid <- grid[, c("Date", "Month", "Year", "MEI", "Phase")]
+  grid <- grid[, c("Year", "Month", "Date", "MEI", "Phase")]
   class(grid) = c("tbl_df", "tbl", "data.frame") 
   
   return(grid)
