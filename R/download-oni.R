@@ -73,7 +73,7 @@ download_oni_unmemoised <- function() {
   
   class(oni) <- c("tbl_df", "tbl", "data.frame") 
   
-  oni[,c("Date", "Month", "Year","dSST3.4", "ONI", "ONI_month_window", "phase")]
+  oni[,c("Year", "Month", "Date", "dSST3.4", "ONI", "ONI_month_window", "phase")]
 }
 
 # Memoised function

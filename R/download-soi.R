@@ -46,14 +46,14 @@ download_soi_unmemoised <- function(){
   
   ## Create Year and Month columns
   soi$Month = abbr_month(soi$Date)
-  soi$Year = format(soi$Date, "%Y")
+  soi$Year = as.integer(format(soi$Date, "%Y"))
   
   ## Create 3 month average window. Each row is a month
   soi$SOI_3MON_AVG = as.numeric(stats::filter(soi$SOI,rep(1/3,3), sides=2))
   
   class(soi) <- c("tbl_df", "tbl", "data.frame") 
   
-  soi[,c("Date", "Month", "Year", "SOI", "SOI_3MON_AVG")]
+  soi[,c("Year", "Month", "Date", "SOI", "SOI_3MON_AVG")]
 
 }
 
@@ -63,7 +63,7 @@ read_soi <- function(file) {
   data <- read.csv(file)
   data$Date <- as.Date(data$Date)
   data$Month <- abbr_month(data$Date)
-  data$Year <- as.character(data$Year)
+  data$Year <- as.integer(data$Year)
   class(data) <- c("tbl_df", "tbl", "data.frame")
   data
 }

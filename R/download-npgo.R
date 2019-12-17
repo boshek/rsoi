@@ -42,9 +42,10 @@ download_npgo_unmemoised <- function() {
   
   ##Month label to collapse
   npgo$Month = abbr_month(npgo$Date)
+  npgo$Year = as.integer(npgo$Year)
 
   class(npgo) <- c("tbl_df", "tbl", "data.frame") 
-  npgo[, c("Date","Year", "Month", "NPGO")]
+  npgo[, c("Year", "Month", "Date", "NPGO")]
 }
 
 download_npgo_memoised <- memoise::memoise(download_npgo_unmemoised)
