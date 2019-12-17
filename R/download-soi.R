@@ -63,7 +63,7 @@ read_soi <- function(file) {
   data <- read.csv(file)
   data$Date <- as.Date(data$Date)
   data$Month <- abbr_month(data$Date)
-  data$Year <- as.character(data$Year)
+  data$Year <- as.integer(data$Year)
   class(data) <- c("tbl_df", "tbl", "data.frame")
   data
 }

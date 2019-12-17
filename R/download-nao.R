@@ -55,7 +55,7 @@ download_nao_memoised <- memoise::memoise(download_nao_unmemoised)
 
 read_nao <- function(file) {
   data <- read.csv(file)
-  data$Year <- as.character(data$Year)
+  data$Year <- as.integer(data$Year)
   levels <- format(seq(as.Date("2018-01-01"), as.Date("2018-12-01"), "1 month"), "%b")
   data$Month <- factor(data$Month, levels = levels, ordered = TRUE)
   class(data) <- c("tbl_df", "tbl", "data.frame")
