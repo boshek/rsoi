@@ -5,15 +5,15 @@ Title: Import Various Northern and Southern Hemisphere Climate
 Version: 0.5.1
 Authors@R: 
     c(person(given = "Sam",
-           family = "Albers",
-           role = c("aut", "cre"),
-           email = "sam.albers@gmail.com",
-           comment = c(ORCID = "0000-0002-9270-7884")),
+             family = "Albers",
+             role = c("aut", "cre"),
+             email = "sam.albers@gmail.com",
+             comment = c(ORCID = "0000-0002-9270-7884")),
       person(given = "Elio",
-           family = "Campitelli",
-           role = c("ctb"),
-           email = "elio.campitelli@cima.fcen.uba.ar",
-           comment = c(ORCID = "0000-0002-7742-9230")))
+             family = "Campitelli",
+             role = "ctb",
+             email = "elio.campitelli@cima.fcen.uba.ar",
+             comment = c(ORCID = "0000-0002-7742-9230")))
 Description: Downloads Southern Oscillation Index, Oceanic Nino
     Index, North Pacific Gyre Oscillation data, North Atlantic Oscillation
     and Arctic Oscillation. Data sources are described in the README file.
@@ -23,8 +23,9 @@ Depends:
     R (>= 3.3.0)
 Imports:
     curl,
+    memoise,
     stats,
-    memoise
+    utils
 Suggests:
     testthat (>= 2.1.0),
     tibble

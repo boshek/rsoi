@@ -5,7 +5,7 @@
 #' or \href{https://github.com/boshek/rsoi/blob/master/README.md}{GitHub}
 #' 
 #' @importFrom stats filter
-#' @importFrom utils read.csv read.table write.csv
+#' @importFrom utils read.csv read.table write.csv read.fwf
 
 #' @keywords internal
 "_PACKAGE"

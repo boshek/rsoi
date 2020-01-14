@@ -15,7 +15,7 @@ knitr::opts_chunk$set(
 
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0) [![Travis-CI Build Status](http://travis-ci.org/boshek/rsoi.svg?branch=master)](https://travis-ci.org/boshek/rsoi) [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/boshek/rsoi?branch=master&svg=true)](https://ci.appveyor.com/project/boshek/rsoi)
 
-[![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/rsoi)](https://cran.r-project.org/package=rsoi) [![CRAN Downloads](https://cranlogs.r-pkg.org/badges/rsoi?color=brightgreen)](https://CRAN.R-project.org/package=rsoi) [![cran checks](https://cranchecks.info/badges/worst/rsoi)](https://cran.rstudio.com/web/checks/check_results_rsoi.html)
+[![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/rsoi)](https://cran.r-project.org/package=rsoi) [![CRAN Downloads](https://cranlogs.r-pkg.org/badges/rsoi?color=brightgreen)](https://CRAN.R-project.org/package=rsoi) [![cran checks](https://cranchecks.info/badges/worst/rsoi)](https://cran.r-project.org/web/checks/check_results_rsoi.html)
 
 
 # rsoi
@@ -23,12 +23,15 @@ An R package to download the most up to date of these climate indices:
 
 - Southern Oscillation Index
 - Oceanic Nino Index 
-- North Pacific Gyre Oscillation data
+- North Pacific Gyre Oscillation
 - North Atlantic Oscillation
 - Arctic Oscillation
+- Antarctic Oscillation
 - Multivariate ENSO Index Version 2
 
 ## Installation
+For the development version 
+
 ```{r, eval = FALSE, echo = TRUE}
 install.packages("rsoi")
 
@@ -66,6 +69,7 @@ The idea for this package borrows heavily from the rpdo package. The initial eff
 - Northern Pacific Gyre Oscillation: <http://www.o3d.org/npgo/data/NPGO.txt>
 - North Atlantic Oscillation: <https://www.ncdc.noaa.gov/teleconnections/nao/data.csv>
 - Arctic Oscillation: <https://www.ncdc.noaa.gov/teleconnections/ao/data.csv>
+- Anarctic Oscillation: <https://www.cpc.ncep.noaa.gov/products/precip/CWlink/daily_ao_index/aao/monthly.aao.index.b79.current.ascii>
 - Multivariate ENSO Index Version 2 (MEI.v2): <https://www.esrl.noaa.gov/psd/enso/mei/>
 
 ## Helpful References
@@ -75,4 +79,4 @@ The idea for this package borrows heavily from the rpdo package. The initial eff
 
 [The Victoria mode in the North Pacific linking extratropical sea level pressure variations to ENSO](http://onlinelibrary.wiley.com/doi/10.1002/2014JD022221/pdf)
 
-Please note that the 'rsoi' project is released with a [Contributor Code of Conduct](CODE_OF_CONDUCT.md). By contributing to this project, you agree to abide by its terms.
+Please note that the 'rsoi' project is released with a [Contributor Code of Conduct](https://github.com/boshek/rsoi/blob/master/CODE_OF_CONDUCT.md). By contributing to this project, you agree to abide by its terms.
