@@ -6,6 +6,7 @@
 * Download functions respect machine locale. 
 * Download functions can optionally cache data to memory or disk. 
 * Standard data types and column order.
+* Add Antarctic Oscillation. #27
 
 ## rsoi v0.5.0
 * Checks if internet is installed
