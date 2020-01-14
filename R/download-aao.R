@@ -32,7 +32,7 @@ download_aao_unmemoised <- function(){
   
   res = check_response(aao_link)
   
-  aao = read.fwf(aao_link, 
+  aao = utils::read.fwf(aao_link, 
                 c(5, 5,14), 
                 sep = ",",
                 col.names = c("Date","Month", "AAO"),
