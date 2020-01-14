@@ -44,15 +44,15 @@ Download Oceanic Nino Index data
 ``` r
 oni <- download_oni()
 head(oni)
-#> # A tibble: 6 x 7
+#> [90m# A tibble: 6 x 7[39m
 #>   Date       Month  Year dSST3.4   ONI ONI_month_window phase             
-#>   <date>     <ord> <int>   <dbl> <dbl> <chr>            <fct>             
-#> 1 1950-01-01 Jan    1950   -1.62 NA    JF               <NA>              
-#> 2 1950-02-01 Feb    1950   -1.32 -1.34 JFM              Warm Phase/El Nino
-#> 3 1950-03-01 Mar    1950   -1.07 -1.17 FMA              Warm Phase/El Nino
-#> 4 1950-04-01 Apr    1950   -1.11 -1.18 MAM              Warm Phase/El Nino
-#> 5 1950-05-01 May    1950   -1.37 -1.07 AMJ              Warm Phase/El Nino
-#> 6 1950-06-01 Jun    1950   -0.74 -0.85 MJJ              Warm Phase/El Nino
+#>   [3m[90m<date>[39m[23m     [3m[90m<ord>[39m[23m [3m[90m<int>[39m[23m   [3m[90m<dbl>[39m[23m [3m[90m<dbl>[39m[23m [3m[90m<chr>[39m[23m            [3m[90m<fct>[39m[23m             
+#> [90m1[39m 1950-01-01 Jan    [4m1[24m950   -[31m1[39m[31m.[39m[31m62[39m [31mNA[39m    JF               [31mNA[39m                
+#> [90m2[39m 1950-02-01 Feb    [4m1[24m950   -[31m1[39m[31m.[39m[31m32[39m -[31m1[39m[31m.[39m[31m34[39m JFM              Warm Phase/El Nino
+#> [90m3[39m 1950-03-01 Mar    [4m1[24m950   -[31m1[39m[31m.[39m[31m0[39m[31m7[39m -[31m1[39m[31m.[39m[31m17[39m FMA              Warm Phase/El Nino
+#> [90m4[39m 1950-04-01 Apr    [4m1[24m950   -[31m1[39m[31m.[39m[31m11[39m -[31m1[39m[31m.[39m[31m18[39m MAM              Warm Phase/El Nino
+#> [90m5[39m 1950-05-01 May    [4m1[24m950   -[31m1[39m[31m.[39m[31m37[39m -[31m1[39m[31m.[39m[31m0[39m[31m7[39m AMJ              Warm Phase/El Nino
+#> [90m6[39m 1950-06-01 Jun    [4m1[24m950   -[31m0[39m[31m.[39m[31m74[39m -[31m0[39m[31m.[39m[31m85[39m MJJ              Warm Phase/El Nino
 ```
 
 And a quick plot to illustrate the data:
