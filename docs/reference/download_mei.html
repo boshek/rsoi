@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Changelog • rsoi</title>
+<title>Download Multivariate ENSO Index Version 2 (MEI.v2) — download_mei • rsoi</title>
 
 
 <!-- jquery -->
@@ -35,7 +35,14 @@
 
 
 
-<meta property="og:title" content="Changelog" />
+<meta property="og:title" content="Download Multivariate ENSO Index Version 2 (MEI.v2) — download_mei" />
+<meta property="og:description" content="MEI.v2 is based on EOF analysis of level pressure, 
+sea surface temperature, surface zonal winds, surface meridional winds,
+and Outgoing Longwave Radiation. The analysis is conducted for 12 partially 
+overlapping 2-month &quot;seasons&quot;.
+Warm phase is defined as MEI index greater or equal to 0.5. Cold phase is 
+defined as MEI index lesser or equal to -0.5." />
+<meta name="twitter:card" content="summary" />
 
 
 
@@ -54,7 +61,7 @@
   </head>
 
   <body>
-    <div class="container template-news">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -106,20 +113,67 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Changelog <small></small></h1>
-      <small>Source: <a href='https://github.com/boshek/rsoi/blob/master/NEWS.md'><code>NEWS.md</code></a></small>
+    <h1>Download Multivariate ENSO Index Version 2 (MEI.v2)</h1>
+    <small class="dont-index">Source: <a href='https://github.com/boshek/rsoi/blob/master/R/download_mei.R'><code>R/download_mei.R</code></a></small>
+    <div class="hidden name"><code>download_mei.Rd</code></div>
     </div>
 
-  </div>
+    <div class="ref-description">
+    <p>MEI.v2 is based on EOF analysis of level pressure, 
+sea surface temperature, surface zonal winds, surface meridional winds,
+and Outgoing Longwave Radiation. The analysis is conducted for 12 partially 
+overlapping 2-month "seasons".</p>
+<p>Warm phase is defined as MEI index greater or equal to 0.5. Cold phase is 
+defined as MEI index lesser or equal to -0.5.</p>
+    </div>
 
+    <pre class="usage"><span class='fu'>download_mei</span>(<span class='kw'>use_cache</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>file</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
+
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>use_cache</th>
+      <td><p>logical option to save and load from cache. If `TRUE`, results will be cached in memory
+if `file` is `NULL` or on disk if `file` is not `NULL`.</p></td>
+    </tr>
+    <tr>
+      <th>file</th>
+      <td><p>optional character with the full path of a file to save the data. If `cache` is `FALSE` but
+`file` is not `NULL`, the results will be downloaded from the internet and saved on disk.</p></td>
+    </tr>
+    </table>
+
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    
+<ul>
+<li><p>Date: Date object that uses the first of the month as a placeholder. Date formatted as date on the first of the month because R only supports one partial of date time</p></li>
+<li><p>Month: Bi-moonthly season of record</p></li>
+<li><p>Year: Year of record</p></li>
+<li><p>MEI: Multivariate ENSO Index Version 2</p></li>
+<li><p>Phase: ENSO phase</p></li>
+</ul>
+
+    <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
+
+    <p><a href='https://www.esrl.noaa.gov/psd/enso/mei/'>https://www.esrl.noaa.gov/psd/enso/mei/</a></p>
+
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
+<span class='no'>mei</span> <span class='kw'>&lt;-</span> <span class='fu'>download_mei</span>()
+}</div></pre>
+  </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
-    <div id="tocnav">
-      <h2>Contents</h2>
-      <ul class="nav nav-pills nav-stacked">
-      </ul>
-    </div>
-  </div>
+    <h2>Contents</h2>
+    <ul class="nav nav-pills nav-stacked">
+      <li><a href="#arguments">Arguments</a></li>
+      <li><a href="#value">Value</a></li>
+      <li><a href="#references">References</a></li>
+      <li><a href="#examples">Examples</a></li>
+    </ul>
 
+  </div>
 </div>
 
 
