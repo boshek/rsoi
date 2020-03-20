@@ -7,6 +7,7 @@
 #' from the monthly 1000 hPa height anomaly.
 #' @return 
 #' \itemize{
+#' \item Date: Date object that uses the first of the month as a placeholder. Date formatted as date on the first of the month because R only supports one partial of date time
 #' \item Month: Month of record
 #' \item Year: Year of record
 #' \item AO: Arctic Oscillation
@@ -46,7 +47,7 @@ download_ao_unmemoised <- function(){
 
   class(ao) <- c("tbl_df", "tbl", "data.frame") 
   
-  ao[,c("Year","Month", "AO")]
+  ao[,c("Year","Month", "Date", "AO")]
   
 }
 
@@ -59,6 +60,7 @@ read_ao <- function(file) {
   data$Year <- as.integer(data$Year)
   levels <- format(seq(as.Date("2018-01-01"), as.Date("2018-12-01"), "1 month"), "%b")
   data$Month <- factor(data$Month, levels = levels, ordered = TRUE)
+  data$Date <- as.Date(data$Date)
   class(data) <- c("tbl_df", "tbl", "data.frame")
   data
 }

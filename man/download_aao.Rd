@@ -2,7 +2,7 @@
 % Please edit documentation in R/download-aao.R
 \name{download_aao}
 \alias{download_aao}
-\title{Download Arctic Oscillation data}
+\title{Download Antarctic Oscillation data}
 \usage{
 download_aao(use_cache = FALSE, file = NULL)
 }
@@ -15,14 +15,15 @@ if `file` is `NULL` or on disk if `file` is not `NULL`.}
 }
 \value{
 \itemize{
+\item Date: Date object that uses the first of the month as a placeholder. Date formatted as date on the first of the month because R only supports one partial of date time
 \item Month: Month of record
 \item Year: Year of record
-\item aao: Antarctic Oscillation
+\item AAO: Antarctic Oscillation
 }
 }
 \description{
-Projection of the daily 1000 hPa anomaly height field north of 20°N on the first EOF obtained
-from the monthly 1000 hPa height anomaly.
+Projection of the monthly 700 hPa anomaly height field south of 20°S on the first EOF obtained
+from the monthly 700 hPa height anomaly.
 }
 \examples{
 \dontrun{
@@ -31,5 +32,5 @@ aao <- download_aao()
 
 }
 \references{
-\url{https://www.cpc.ncep.noaa.gov/products/precip/CWlink/daily_ao_index/aao/aao_index.html}
+\url{https://www.cpc.ncep.noaa.gov/products/precip/CWlink/daily_ao_index/aao/aao.shtml}
 }
