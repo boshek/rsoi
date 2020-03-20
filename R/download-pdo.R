@@ -23,7 +23,7 @@
 #' \item Month: Month of record
 #' \item Year: Year of record
 #' \item PDO: Pacific Decadal Oscillation index
-#' \item PDO_e: Extended PDO (NCEP PDO index)
+#' \item PDO_e: Extended PDO (NCEI PDO index)
 #' }
 
 #' @examples
