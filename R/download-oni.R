@@ -85,6 +85,9 @@ read_oni <- function(file) {
   data$Date <- as.Date(data$Date)
   data$Month <- abbr_month(data$Date)
   data$ONI_month_window <- as.character(data$ONI_month_window)
+  data$phase <- factor(ifelse(data$ONI <= -0.5,"Cool Phase/La Nina",
+                              ifelse(data$ONI >= 0.5, "Warm Phase/El Nino", 
+                                     "Neutral Phase")))
   
   class(data) <- c("tbl_df", "tbl", "data.frame")
   data
