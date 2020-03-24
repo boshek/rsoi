@@ -14,6 +14,7 @@ knitr::opts_chunk$set(
 
 
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0) [![Travis-CI Build Status](http://travis-ci.org/boshek/rsoi.svg?branch=master)](https://travis-ci.org/boshek/rsoi) [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/boshek/rsoi?branch=master&svg=true)](https://ci.appveyor.com/project/boshek/rsoi)
+[![R build status](https://github.com/boshek/rsoi/workflows/R-CMD-check/badge.svg)](https://github.com/boshek/rsoi)
 
 [![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/rsoi)](https://cran.r-project.org/package=rsoi) [![CRAN Downloads](https://cranlogs.r-pkg.org/badges/rsoi?color=brightgreen)](https://CRAN.R-project.org/package=rsoi) [![cran checks](https://cranchecks.info/badges/worst/rsoi)](https://cran.r-project.org/web/checks/check_results_rsoi.html)
 
@@ -28,6 +29,7 @@ An R package to download the most up to date of these climate indices:
 - Arctic Oscillation
 - Antarctic Oscillation
 - Multivariate ENSO Index Version 2
+- Pacific Decadal Oscillation
 
 ## Installation
 For the development version 
@@ -61,7 +63,7 @@ barplot(oni$ONI, names.arg = oni$Date, ylab = "Oceanic Nino Index" ,
 ```
 
 ## Inspired by
-The idea for this package borrows heavily from the rpdo package. The initial efforts by these authors are gratefully acknowledged. The rpdo github page can be found here: [rpdo](https://github.com/poissonconsulting/rpdo)
+The idea for this package borrows heavily from the `rpdo` package. `rsoi` now superceded `rpdo` as a source of data in R for Pacific Decadal Oscillation. The rpdo github page can be found here: [rpdo](https://github.com/poissonconsulting/rpdo)
 
 ## Data Sources
 - Southern Oscillation Index:  <https://www.ncdc.noaa.gov/teleconnections/enso/indicators/soi/> 

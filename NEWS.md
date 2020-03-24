@@ -1,4 +1,7 @@
 # rsoi NEWS
+## rsoi v0.5.2
+* Adding PDO after rpdo maintainers requested we start importing. Thanks @eliocamp (#33)
+
 ## rsoi v0.5.1
 * Reverts El Nino/ La Nina mixup (Thanks to Arthur Chapman for the email submitted patch)
 * Remove rpdo and devtools from Suggests

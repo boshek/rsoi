@@ -7,6 +7,8 @@ v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org
 Status](http://travis-ci.org/boshek/rsoi.svg?branch=master)](https://travis-ci.org/boshek/rsoi)
 [![AppVeyor Build
 Status](https://ci.appveyor.com/api/projects/status/github/boshek/rsoi?branch=master&svg=true)](https://ci.appveyor.com/project/boshek/rsoi)
+[![R build
+status](https://github.com/boshek/rsoi/workflows/R-CMD-check/badge.svg)](https://github.com/boshek/rsoi)
 
 [![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/rsoi)](https://cran.r-project.org/package=rsoi)
 [![CRAN
@@ -25,6 +27,7 @@ An R package to download the most up to date of these climate indices:
   - Arctic Oscillation
   - Antarctic Oscillation
   - Multivariate ENSO Index Version 2
+  - Pacific Decadal Oscillation
 
 ## Installation
 
@@ -45,14 +48,14 @@ Download Oceanic Nino Index data
 oni <- download_oni()
 head(oni)
 #> # A tibble: 6 x 7
-#>   Date       Month  Year dSST3.4   ONI ONI_month_window phase             
-#>   <date>     <ord> <int>   <dbl> <dbl> <chr>            <fct>             
-#> 1 1950-01-01 Jan    1950   -1.62 NA    JF               <NA>              
-#> 2 1950-02-01 Feb    1950   -1.32 -1.34 JFM              Warm Phase/El Nino
-#> 3 1950-03-01 Mar    1950   -1.07 -1.17 FMA              Warm Phase/El Nino
-#> 4 1950-04-01 Apr    1950   -1.11 -1.18 MAM              Warm Phase/El Nino
-#> 5 1950-05-01 May    1950   -1.37 -1.07 AMJ              Warm Phase/El Nino
-#> 6 1950-06-01 Jun    1950   -0.74 -0.85 MJJ              Warm Phase/El Nino
+#>    Year Month Date       dSST3.4   ONI ONI_month_window phase             
+#>   <int> <ord> <date>       <dbl> <dbl> <chr>            <fct>             
+#> 1  1950 Jan   1950-01-01   -1.62 NA    <NA>             <NA>              
+#> 2  1950 Feb   1950-02-01   -1.32 -1.34 JFM              Cool Phase/La Nina
+#> 3  1950 Mar   1950-03-01   -1.07 -1.17 FMA              Cool Phase/La Nina
+#> 4  1950 Apr   1950-04-01   -1.11 -1.18 MAM              Cool Phase/La Nina
+#> 5  1950 May   1950-05-01   -1.37 -1.07 AMJ              Cool Phase/La Nina
+#> 6  1950 Jun   1950-06-01   -0.74 -0.85 MJJ              Cool Phase/La Nina
 ```
 
 And a quick plot to illustrate the data:
@@ -69,9 +72,9 @@ barplot(oni$ONI, names.arg = oni$Date, ylab = "Oceanic Nino Index" ,
 
 ## Inspired by
 
-The idea for this package borrows heavily from the rpdo package. The
-initial efforts by these authors are gratefully acknowledged. The rpdo
-github page can be found here:
+The idea for this package borrows heavily from the `rpdo` package.
+`rsoi` now superceded `rpdo` as a source of data in R for Pacific
+Decadal Oscillation. The rpdo github page can be found here:
 [rpdo](https://github.com/poissonconsulting/rpdo)
 
 ## Data Sources

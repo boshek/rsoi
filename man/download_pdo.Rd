@@ -23,7 +23,7 @@ if `file` is `NULL` or on disk if `file` is not `NULL`.}
 }
 }
 \description{
-The PDO index is derived as the leading PC of monthly SST anomalies in the North Pacific Ocean,
+The PDO index is derived as the leading principal of monthly SST anomalies in the North Pacific Ocean,
 poleward of 20N. The monthly mean global average SST anomalies are removed to separate this 
 pattern of variability from any "global warming" signal that may be present in the data.
 
