@@ -35,7 +35,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">rsoi</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.5.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.5.2</span>
       </span>
     </div>
 
@@ -88,6 +88,7 @@
 <li>Arctic Oscillation</li>
 <li>Antarctic Oscillation</li>
 <li>Multivariate ENSO Index Version 2</li>
+<li>Pacific Decadal Oscillation</li>
 </ul>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
@@ -105,14 +106,14 @@
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1">oni &lt;-<span class="st"> </span><span class="kw"><a href="reference/download_oni.html">download_oni</a></span>()</a>
 <a class="sourceLine" id="cb2-2" title="2"><span class="kw"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(oni)</a>
 <a class="sourceLine" id="cb2-3" title="3"><span class="co">#&gt; # A tibble: 6 x 7</span></a>
-<a class="sourceLine" id="cb2-4" title="4"><span class="co">#&gt;   Date       Month  Year dSST3.4   ONI ONI_month_window phase             </span></a>
-<a class="sourceLine" id="cb2-5" title="5"><span class="co">#&gt;   &lt;date&gt;     &lt;ord&gt; &lt;int&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;            &lt;fct&gt;             </span></a>
-<a class="sourceLine" id="cb2-6" title="6"><span class="co">#&gt; 1 1950-01-01 Jan    1950   -1.62 NA    JF               &lt;NA&gt;              </span></a>
-<a class="sourceLine" id="cb2-7" title="7"><span class="co">#&gt; 2 1950-02-01 Feb    1950   -1.32 -1.34 JFM              Warm Phase/El Nino</span></a>
-<a class="sourceLine" id="cb2-8" title="8"><span class="co">#&gt; 3 1950-03-01 Mar    1950   -1.07 -1.17 FMA              Warm Phase/El Nino</span></a>
-<a class="sourceLine" id="cb2-9" title="9"><span class="co">#&gt; 4 1950-04-01 Apr    1950   -1.11 -1.18 MAM              Warm Phase/El Nino</span></a>
-<a class="sourceLine" id="cb2-10" title="10"><span class="co">#&gt; 5 1950-05-01 May    1950   -1.37 -1.07 AMJ              Warm Phase/El Nino</span></a>
-<a class="sourceLine" id="cb2-11" title="11"><span class="co">#&gt; 6 1950-06-01 Jun    1950   -0.74 -0.85 MJJ              Warm Phase/El Nino</span></a></code></pre></div>
+<a class="sourceLine" id="cb2-4" title="4"><span class="co">#&gt;    Year Month Date       dSST3.4   ONI ONI_month_window phase             </span></a>
+<a class="sourceLine" id="cb2-5" title="5"><span class="co">#&gt;   &lt;int&gt; &lt;ord&gt; &lt;date&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;            &lt;fct&gt;             </span></a>
+<a class="sourceLine" id="cb2-6" title="6"><span class="co">#&gt; 1  1950 Jan   1950-01-01   -1.62 NA    &lt;NA&gt;             &lt;NA&gt;              </span></a>
+<a class="sourceLine" id="cb2-7" title="7"><span class="co">#&gt; 2  1950 Feb   1950-02-01   -1.32 -1.34 JFM              Cool Phase/La Nina</span></a>
+<a class="sourceLine" id="cb2-8" title="8"><span class="co">#&gt; 3  1950 Mar   1950-03-01   -1.07 -1.17 FMA              Cool Phase/La Nina</span></a>
+<a class="sourceLine" id="cb2-9" title="9"><span class="co">#&gt; 4  1950 Apr   1950-04-01   -1.11 -1.18 MAM              Cool Phase/La Nina</span></a>
+<a class="sourceLine" id="cb2-10" title="10"><span class="co">#&gt; 5  1950 May   1950-05-01   -1.37 -1.07 AMJ              Cool Phase/La Nina</span></a>
+<a class="sourceLine" id="cb2-11" title="11"><span class="co">#&gt; 6  1950 Jun   1950-06-01   -0.74 -0.85 MJJ              Cool Phase/La Nina</span></a></code></pre></div>
 <p>And a quick plot to illustrate the data:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1">barcols &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">'#edf8b1'</span>,<span class="st">'#7fcdbb'</span>,<span class="st">'#2c7fb8'</span>)</a>
 <a class="sourceLine" id="cb3-2" title="2"></a>
@@ -124,7 +125,7 @@
 <div id="inspired-by" class="section level2">
 <h2 class="hasAnchor">
 <a href="#inspired-by" class="anchor"></a>Inspired by</h2>
-<p>The idea for this package borrows heavily from the rpdo package. The initial efforts by these authors are gratefully acknowledged. The rpdo github page can be found here: <a href="https://github.com/poissonconsulting/rpdo">rpdo</a></p>
+<p>The idea for this package borrows heavily from the <code>rpdo</code> package. <code>rsoi</code> now supercedes <code>rpdo</code> as a source of data in R for Pacific Decadal Oscillation.</p>
 </div>
 <div id="data-sources" class="section level2">
 <h2 class="hasAnchor">
@@ -143,6 +144,8 @@
 <li>Anarctic Oscillation: <a href="https://www.cpc.ncep.noaa.gov/products/precip/CWlink/daily_ao_index/aao/monthly.aao.index.b79.current.ascii" class="uri">https://www.cpc.ncep.noaa.gov/products/precip/CWlink/daily_ao_index/aao/monthly.aao.index.b79.current.ascii</a>
 </li>
 <li>Multivariate ENSO Index Version 2 (MEI.v2): <a href="https://www.esrl.noaa.gov/psd/enso/mei/" class="uri">https://www.esrl.noaa.gov/psd/enso/mei/</a>
+</li>
+<li>Pacific Decadal Oscillation: <a href="https://oceanview.pfeg.noaa.gov/erddap/tabledap/cciea_OC_PDO.html" class="uri">https://oceanview.pfeg.noaa.gov/erddap/tabledap/cciea_OC_PDO.html</a>
 </li>
 </ul>
 </div>
@@ -194,6 +197,7 @@
 <li><a href="https://www.gnu.org/licenses/gpl-3.0"><img src="https://img.shields.io/badge/License-GPL%20v3-blue.svg" alt="License: GPL v3"></a></li>
 <li><a href="https://travis-ci.org/boshek/rsoi"><img src="http://travis-ci.org/boshek/rsoi.svg?branch=master" alt="Travis-CI Build Status"></a></li>
 <li><a href="https://ci.appveyor.com/project/boshek/rsoi"><img src="https://ci.appveyor.com/api/projects/status/github/boshek/rsoi?branch=master&amp;svg=true" alt="AppVeyor Build Status"></a></li>
+<li><a href="https://github.com/boshek/rsoi"><img src="https://github.com/boshek/rsoi/workflows/R-CMD-check/badge.svg" alt="R build status"></a></li>
 </ul>
 </div>
 </div>

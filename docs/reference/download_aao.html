@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Download Arctic Oscillation data — download_aao • rsoi</title>
+<title>Download Antarctic Oscillation data — download_aao • rsoi</title>
 
 
 <!-- jquery -->
@@ -35,9 +35,9 @@
 
 
 
-<meta property="og:title" content="Download Arctic Oscillation data — download_aao" />
-<meta property="og:description" content="Projection of the daily 1000 hPa anomaly height field north of 20°N on the first EOF obtained
-from the monthly 1000 hPa height anomaly." />
+<meta property="og:title" content="Download Antarctic Oscillation data — download_aao" />
+<meta property="og:description" content="Projection of the monthly 700 hPa anomaly height field south of 20°S on the first EOF obtained
+from the monthly 700 hPa height anomaly." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -70,7 +70,7 @@ from the monthly 1000 hPa height anomaly." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">rsoi</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.5.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.5.2</span>
       </span>
     </div>
 
@@ -109,14 +109,14 @@ from the monthly 1000 hPa height anomaly." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Download Arctic Oscillation data</h1>
+    <h1>Download Antarctic Oscillation data</h1>
     <small class="dont-index">Source: <a href='https://github.com/boshek/rsoi/blob/master/R/download-aao.R'><code>R/download-aao.R</code></a></small>
     <div class="hidden name"><code>download_aao.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Projection of the daily 1000 hPa anomaly height field north of 20°N on the first EOF obtained
-from the monthly 1000 hPa height anomaly.</p>
+    <p>Projection of the monthly 700 hPa anomaly height field south of 20°S on the first EOF obtained
+from the monthly 700 hPa height anomaly.</p>
     </div>
 
     <pre class="usage"><span class='fu'>download_aao</span>(<span class='kw'>use_cache</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>file</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
@@ -140,14 +140,15 @@ if `file` is `NULL` or on disk if `file` is not `NULL`.</p></td>
 
     
 <ul>
+<li><p>Date: Date object that uses the first of the month as a placeholder. Date formatted as date on the first of the month because R only supports one partial of date time</p></li>
 <li><p>Month: Month of record</p></li>
 <li><p>Year: Year of record</p></li>
-<li><p>aao: Antarctic Oscillation</p></li>
+<li><p>AAO: Antarctic Oscillation</p></li>
 </ul>
 
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
-    <p><a href='https://www.cpc.ncep.noaa.gov/products/precip/CWlink/daily_ao_index/aao/aao_index.html'>https://www.cpc.ncep.noaa.gov/products/precip/CWlink/daily_ao_index/aao/aao_index.html</a></p>
+    <p><a href='https://www.cpc.ncep.noaa.gov/products/precip/CWlink/daily_ao_index/aao/aao.shtml'>https://www.cpc.ncep.noaa.gov/products/precip/CWlink/daily_ao_index/aao/aao.shtml</a></p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
