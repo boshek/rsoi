@@ -73,9 +73,8 @@ barplot(oni$ONI, names.arg = oni$Date, ylab = "Oceanic Nino Index" ,
 ## Inspired by
 
 The idea for this package borrows heavily from the `rpdo` package.
-`rsoi` now superceded `rpdo` as a source of data in R for Pacific
-Decadal Oscillation. The rpdo github page can be found here:
-[rpdo](https://github.com/poissonconsulting/rpdo)
+`rsoi` now supercedes `rpdo` as a source of data in R for Pacific
+Decadal Oscillation.
 
 ## Data Sources
 
@@ -93,6 +92,8 @@ Decadal Oscillation. The rpdo github page can be found here:
     <https://www.cpc.ncep.noaa.gov/products/precip/CWlink/daily_ao_index/aao/monthly.aao.index.b79.current.ascii>
   - Multivariate ENSO Index Version 2 (MEI.v2):
     <https://www.esrl.noaa.gov/psd/enso/mei/>
+  - Pacific Decadal Oscillation:
+    <https://oceanview.pfeg.noaa.gov/erddap/tabledap/cciea_OC_PDO.html>
 
 ## Helpful References
 
