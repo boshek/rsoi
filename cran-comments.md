@@ -1,7 +1,8 @@
 # rsoi NEWS
 
-## rsoi v0.5.2
-* Adding PDO after rpdo maintainers requested we start importing. Thanks @eliocamp (#33)
+## rsoi v0.5.3
+* Removed extended PDO data source
+* Fail more gracefully with data source issues
 
 ## Test environments
 
