@@ -16,7 +16,7 @@
 
 ## R CMD check results
 
-There were no ERRORs or WARNINGs.
+There were no ERRORs or WARNINGs. This fixes the error currently happening on CRAN right now. 
 
 ## Downstream dependencies
 
