@@ -17,7 +17,7 @@ check_response <- function(link){
   response <- curl::curl_fetch_memory(link)
   
   if(!response$status_code == 200){
-    stop(paste0("Non successful http request. Target server returning a ", response$status_code, " error code"),
+    warning(paste0("Non successful http request. Target server returning a ", response$status_code, " error code"),
         call. = FALSE)
   }
   
