@@ -23,7 +23,6 @@
 #' \item Month: Month of record
 #' \item Year: Year of record
 #' \item PDO: Pacific Decadal Oscillation index
-#' \item PDO_e: Extended PDO (NCEI PDO index)
 #' }
 
 #' @examples
@@ -33,7 +32,6 @@
 #'
 #' @references 
 #' Original PDO: \url{https://oceanview.pfeg.noaa.gov/erddap/info/cciea_OC_PDO/index.html}
-#' Extended PDO: \url{https://www.ncdc.noaa.gov/teleconnections/pdo/}
 download_pdo <-  function(use_cache = FALSE, file = NULL) {
   with_cache(use_cache = use_cache, file = file, 
              memoised = download_pdo_memoised, 
@@ -58,30 +56,30 @@ download_pdo_unmemoised <- function() {
   pdo$Date = as.Date(pdo$Date)
   
   # pdo extended reconstruction
-  pdo_link = paste0("https://www.ncdc.noaa.gov/teleconnections/pdo/data.csv")
-  
-  res = check_response(pdo_link)
-  
-  pdo_e = read.table(res, 
-                     col.names = c("Date", "PDO_e"),
-                     skip = 2, 
-                     sep = ",",
-                     stringsAsFactors = FALSE)
-  pdo_e$Year = as.numeric(substr(pdo_e$Date, 1, 4))
-  pdo_e$Month = substr(pdo_e$Date, 5, 7)
-  pdo_e$Date = as.Date(paste0(pdo_e$Year, "-", pdo_e$Month, "-01"))
-  
-  pdo <- merge(pdo[, c("Date", "PDO")],
-               pdo_e[, c("Date", "PDO_e")], 
-               by = "Date",
-               all = TRUE)
+  # pdo_link = paste0("https://www.ncdc.noaa.gov/teleconnections/pdo/data.csv")
+  # 
+  # res = check_response(pdo_link)
+  # 
+  # pdo_e = read.table(res, 
+  #                    col.names = c("Date", "PDO_e"),
+  #                    skip = 2, 
+  #                    sep = ",",
+  #                    stringsAsFactors = FALSE)
+  # pdo_e$Year = as.numeric(substr(pdo_e$Date, 1, 4))
+  # pdo_e$Month = substr(pdo_e$Date, 5, 7)
+  # pdo_e$Date = as.Date(paste0(pdo_e$Year, "-", pdo_e$Month, "-01"))
+  # 
+  # pdo <- merge(pdo[, c("Date", "PDO")],
+  #              pdo_e[, c("Date", "PDO_e")], 
+  #              by = "Date",
+  #              all = TRUE)
   
   pdo$Year = as.numeric(substr(pdo$Date, 1, 4))
   
   pdo$Month = abbr_month(pdo$Date)
   
   class(pdo) <- c("tbl_df", "tbl", "data.frame") 
-  pdo[, c("Year", "Month", "Date", "PDO", "PDO_e")]
+  pdo[, c("Year", "Month", "Date", "PDO")]
 }
 
 # Memoised function

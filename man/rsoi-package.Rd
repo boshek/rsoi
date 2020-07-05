@@ -14,7 +14,7 @@ or \href{https://github.com/boshek/rsoi/blob/master/README.md}{GitHub}
 Useful links:
 \itemize{
   \item \url{https://github.com/boshek/rsoi}
-  \item \url{https://boshek.github.io/rsoi/}
+  \item \url{https://samalbers.science/rsoi}
 }
 
 }
