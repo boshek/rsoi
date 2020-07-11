@@ -2,7 +2,7 @@ Type: Package
 Package: rsoi
 Title: Import Various Northern and Southern Hemisphere Climate
     Indices
-Version: 0.5.2
+Version: 0.5.3
 Authors@R: 
     c(person(given = "Sam",
              family = "Albers",
@@ -31,4 +31,4 @@ Suggests:
     tibble
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 7.0.2
+RoxygenNote: 7.1.0
