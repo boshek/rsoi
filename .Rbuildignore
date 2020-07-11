@@ -11,3 +11,4 @@
 ^README-.*\.png$
 ^.github$
 docs
+^\.github$
