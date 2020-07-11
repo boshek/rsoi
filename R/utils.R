@@ -12,8 +12,7 @@ abbr_month <- function(date){
 
 ## Check the response from server.tes
 check_response <- function(link){
-  #browser()
-  
+
   response <- curl::curl_fetch_memory(link)
   
   if(!response$status_code == 200){

@@ -29,7 +29,13 @@ download_nao <- function(use_cache = FALSE, file = NULL) {
 download_nao_unmemoised <- function(){
   nao_link ="https://www.ncdc.noaa.gov/teleconnections/nao/data.csv"
   
-  res <- check_response(nao_link)
+  res <- tryCatch(
+    check_response(nao_link),
+    error = function(e) {
+      message(e)
+      return(invisible(NULL))
+    }
+  )
   
   nao = read.csv(res, 
                    col.names = c("Date","NAO"),

@@ -30,7 +30,13 @@ download_aao <- function(use_cache = FALSE, file = NULL) {
 download_aao_unmemoised <- function(){
   aao_link ="https://www.cpc.ncep.noaa.gov/products/precip/CWlink/daily_ao_index/aao/monthly.aao.index.b79.current.ascii"
   
-  res = check_response(aao_link)
+  res = tryCatch(
+    check_response(aao_link),
+    error = function(e) {
+      message(e)
+      return(invisible(NULL))
+    }
+  )
   
   aao = utils::read.fwf(aao_link, 
                 c(5, 5,14), 

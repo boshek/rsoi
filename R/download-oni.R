@@ -43,7 +43,13 @@ download_oni <-  function(use_cache = FALSE, file = NULL) {
 download_oni_unmemoised <- function() {
   oni_link ="http://www.cpc.ncep.noaa.gov/products/analysis_monitoring/ensostuff/detrend.nino34.ascii.txt"
   
-  res = check_response(oni_link)
+  res = tryCatch(
+    check_response(oni_link),
+    error = function(e) {
+      message(e)
+      return(invisible(NULL))
+    }
+  )
 
   oni = read.table(res, 
                    col.names = c("Year","Month","TOTAL","ClimAdjust","dSST3.4"),

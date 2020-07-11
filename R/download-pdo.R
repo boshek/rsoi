@@ -46,7 +46,14 @@ download_pdo_unmemoised <- function() {
   # Original pdo
   pdo_link = paste0("https://oceanview.pfeg.noaa.gov/erddap/tabledap/cciea_OC_PDO.csv?time%2CPDO&time%3E=1900-01-01&time%3C=", 
                     Sys.Date())
-  res = check_response(pdo_link)
+  
+  res = tryCatch(
+    check_response(pdo_link),
+    error = function(e) {
+      message(e)
+      return(invisible(NULL))
+    }
+  )
   
   pdo = read.table(res, 
                    col.names = c("Date", "PDO"),

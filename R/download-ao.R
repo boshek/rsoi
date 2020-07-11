@@ -31,7 +31,13 @@ download_ao <- function(use_cache = FALSE, file = NULL) {
 download_ao_unmemoised <- function(){
   ao_link ="https://www.ncdc.noaa.gov/teleconnections/ao/data.csv"
   
-  res = check_response(ao_link)
+  res = tryCatch(
+    check_response(ao_link),
+    error = function(e) {
+      message(e)
+      return(invisible(NULL))
+    }
+  )
   
   ao = read.csv(res, 
                    col.names = c("Date","AO"),
