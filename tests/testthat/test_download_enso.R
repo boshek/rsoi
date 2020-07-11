@@ -1,6 +1,7 @@
 context("Testing download_enso")
 
 test_that("Does download_enso() download a data.frame?", {
+  skip_on_cran()
   skip_if_no_internet()
   skip_if_shutdown()
   expect_is( download_enso(), "data.frame" )
@@ -8,6 +9,7 @@ test_that("Does download_enso() download a data.frame?", {
 
 
 test_that("Does download_enso() save to a file?", {
+  skip_on_cran()
   skip_if_no_internet()
   skip_if_shutdown()
   
