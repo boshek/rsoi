@@ -17,7 +17,6 @@
 #' @examples
 #' \dontrun{
 #' soi <- download_soi()
-#' plot(x = enso$Date, y = enso$SOI, type = "l")
 #' }
 #'
 #' @references \url{https://www.ncdc.noaa.gov/teleconnections/enso/indicators/soi/} 
