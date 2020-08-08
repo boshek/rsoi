@@ -28,7 +28,7 @@
 #' oni <- download_oni()
 #' }
 #'
-#' @references \url{http://www.cpc.ncep.noaa.gov/products/analysis_monitoring/ensostuff/detrend.nino34.ascii.txt}
+#' @references \url{https://www.cpc.ncep.noaa.gov/products/precip/CWlink/MJO/enso.shtml}
 
 download_oni <-  function(use_cache = FALSE, file = NULL) {
   with_cache(use_cache = use_cache, file = file, 

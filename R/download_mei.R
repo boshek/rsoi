@@ -25,7 +25,7 @@
 #' mei <- download_mei()
 #' }
 #'
-#' @references \url{https://www.esrl.noaa.gov/psd/enso/mei/}
+#' @references \url{https://psl.noaa.gov/enso/mei/}
 download_mei <- function(use_cache = FALSE, file = NULL) {
   with_cache(use_cache = use_cache, file = file, 
              memoised = download_mei_memoised, 

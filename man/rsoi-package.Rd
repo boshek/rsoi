@@ -6,24 +6,24 @@
 \alias{rsoi-package}
 \title{El Nino/Southern Oscillation (ENSO) and Related Climate Indices}
 \description{
-See the README on
-\href{https://CRAN.R-project.org/package=rsoi}{CRAN}
-or \href{https://github.com/boshek/rsoi/blob/master/README.md}{GitHub}
+Downloads Southern Oscillation Index, Oceanic Nino
+    Index, North Pacific Gyre Oscillation data, North Atlantic Oscillation
+    and Arctic Oscillation. Data sources are described in the README file.
 }
 \seealso{
 Useful links:
 \itemize{
   \item \url{https://github.com/boshek/rsoi}
-  \item \url{https://samalbers.science/rsoi}
+  \item \url{https://boshek.github.io/rsoi/}
 }
 
 }
 \author{
-\strong{Maintainer}: Sam Albers \email{sam.albers@gmail.com} (\href{https://orcid.org/0000-0002-9270-7884}{ORCID})
+\strong{Maintainer}: Sam Albers \email{sam.albers@gmail.com}
 
 Other contributors:
 \itemize{
-  \item Elio Campitelli \email{elio.campitelli@cima.fcen.uba.ar} (\href{https://orcid.org/0000-0002-7742-9230}{ORCID}) [contributor]
+  \item Elio Campitelli \email{elio.campitelli@cima.fcen.uba.ar} [contributor]
 }
 
 }
