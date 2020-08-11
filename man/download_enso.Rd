@@ -33,7 +33,6 @@ The Southern Oscillation Index is defined as the standardized difference between
 \examples{
 \dontrun{
 enso <- download_enso()
-plot(x = enso$Date, y = enso$SOI, type = "l")
 }
 
 }

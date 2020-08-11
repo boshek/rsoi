@@ -17,7 +17,6 @@
 #' @examples
 #' \dontrun{
 #' soi <- download_soi()
-#' plot(x = enso$Date, y = enso$SOI, type = "l")
 #' }
 #'
 #' @references \url{https://www.ncdc.noaa.gov/teleconnections/enso/indicators/soi/} 
@@ -32,7 +31,13 @@ download_soi <- function(use_cache = FALSE, file = NULL) {
 download_soi_unmemoised <- function(){
   soi_link = "https://www.ncdc.noaa.gov/teleconnections/enso/indicators/soi/data.csv"
   
-  res = check_response(soi_link)
+  res = tryCatch(
+    check_response(soi_link),
+    error = function(e) {
+      message(e)
+      return(invisible(NULL))
+    }
+  )
   
   
   soi = read.csv(

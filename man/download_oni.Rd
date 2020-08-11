@@ -38,5 +38,5 @@ oni <- download_oni()
 
 }
 \references{
-\url{http://www.cpc.ncep.noaa.gov/products/analysis_monitoring/ensostuff/detrend.nino34.ascii.txt}
+\url{https://www.cpc.ncep.noaa.gov/products/precip/CWlink/MJO/enso.shtml}
 }

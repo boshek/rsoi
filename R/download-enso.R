@@ -27,7 +27,6 @@
 #' @examples
 #' \dontrun{
 #' enso <- download_enso()
-#' plot(x = enso$Date, y = enso$SOI, type = "l")
 #' }
 #'
 

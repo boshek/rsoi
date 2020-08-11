@@ -25,7 +25,7 @@
 #' mei <- download_mei()
 #' }
 #'
-#' @references \url{https://www.esrl.noaa.gov/psd/enso/mei/}
+#' @references \url{https://psl.noaa.gov/enso/mei/}
 download_mei <- function(use_cache = FALSE, file = NULL) {
   with_cache(use_cache = use_cache, file = file, 
              memoised = download_mei_memoised, 
@@ -36,7 +36,13 @@ download_mei <- function(use_cache = FALSE, file = NULL) {
 download_mei_unmemoised = function() {
   mei_link = "https://www.esrl.noaa.gov/psd/enso/mei/data/meiv2.data"
   
-  res = check_response(mei_link)
+  res = tryCatch(
+    check_response(mei_link),
+    error = function(e) {
+      message(e)
+      return(invisible(NULL))
+    }
+  )
   
   years = strsplit(readLines(res, n = 1), "     ", 2)[[1]]
   rows = diff(as.numeric(years)) + 1

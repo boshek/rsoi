@@ -8,6 +8,7 @@ test_download <- function(index) {
   fun <- match.fun(function_name)
   
   test_that(paste0("Does ", function_name, " download a data.frame?"), {
+    skip_on_cran()
     skip_if_offline()
     skip_if_shutdown()
     expect_is( fun(), "data.frame" )
@@ -28,6 +29,7 @@ test_read <- function(index) {
     # read_fun <- match.fun(paste0("read_", index))
     read_fun <- get(paste0("read_", index), asNamespace("rsoi"), mode = "function")
     
+    skip_on_cran()
     skip_if_offline()
     skip_if_shutdown()
     
