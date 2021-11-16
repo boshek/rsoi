@@ -38,5 +38,5 @@ mei <- download_mei()
 
 }
 \references{
-\url{https://www.esrl.noaa.gov/psd/enso/mei/}
+\url{https://psl.noaa.gov/enso/mei/}
 }

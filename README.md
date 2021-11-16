@@ -20,14 +20,14 @@ checks](https://cranchecks.info/badges/worst/rsoi)](https://cran.r-project.org/w
 
 An R package to download the most up to date of these climate indices:
 
-  - Southern Oscillation Index
-  - Oceanic Nino Index
-  - North Pacific Gyre Oscillation
-  - North Atlantic Oscillation
-  - Arctic Oscillation
-  - Antarctic Oscillation
-  - Multivariate ENSO Index Version 2
-  - Pacific Decadal Oscillation
+-   Southern Oscillation Index
+-   Oceanic Nino Index
+-   North Pacific Gyre Oscillation
+-   North Atlantic Oscillation
+-   Arctic Oscillation
+-   Antarctic Oscillation
+-   Multivariate ENSO Index Version 2
+-   Pacific Decadal Oscillation
 
 ## Installation
 
