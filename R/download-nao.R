@@ -27,7 +27,7 @@ download_nao <- function(use_cache = FALSE, file = NULL) {
 
 ## Function to download ONI data
 download_nao_unmemoised <- function(){
-  nao_link ="https://www.ncdc.noaa.gov/teleconnections/nao/data.csv"
+  nao_link ="https://www.cpc.ncep.noaa.gov/products/precip/CWlink/pna/norm.nao.monthly.b5001.current.ascii.table"
   
   res <- tryCatch(
     check_response(nao_link),
@@ -37,21 +37,32 @@ download_nao_unmemoised <- function(){
     }
   )
   
-  nao = read.csv(res, 
-                   col.names = c("Date","NAO"),
-                   skip = 1,
-                   stringsAsFactors = FALSE)
+  nao = read.fwf(nao_link, 
+                widths = c(4, rep(7, 12)),
+                header = FALSE, 
+                col.names = c("Year", month.abb))
   
-  nao$Date = as.Date(paste0(nao$Date,"01"), "%Y%m%d")
+  reshaped_list <- lapply(
+    month.abb, 
+    function(x) {
+      d <- nao[,c("Year",x)]
+      d$Date <- grep(x, month.abb)
+      d$Date <- as.Date(paste(d$Year, d$Date,"01", sep = "-"))
+      colnames(d) <- c("Year", "NAO", "Date")
+      d
+    }
+  )
+  
+  nao_long <- do.call(rbind, reshaped_list)
+  nao_long <- nao_long[order(nao_long$Date),]
   
   ##Month label to collapse
-  nao$Month = abbr_month(nao$Date)
-  nao$Year = as.integer(format(nao$Date, "%Y"))
+  nao_long$Month = abbr_month(nao_long$Date)
   
 
-  class(nao) <- c("tbl_df", "tbl", "data.frame") 
+  class(nao_long) <- c("tbl_df", "tbl", "data.frame") 
   
-  nao[,c("Year","Month", "NAO")]
+  nao_long[,c("Year","Month", "NAO")]
   
   
 }

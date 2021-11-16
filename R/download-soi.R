@@ -19,7 +19,7 @@
 #' soi <- download_soi()
 #' }
 #'
-#' @references \url{https://www.ncdc.noaa.gov/teleconnections/enso/indicators/soi/} 
+#' @references \url{"https://www.cpc.ncep.noaa.gov/data/indices/soi"} 
 download_soi <- function(use_cache = FALSE, file = NULL) {
   with_cache(use_cache = use_cache, file = file, 
              memoised = download_soi_memoised, 
@@ -29,7 +29,8 @@ download_soi <- function(use_cache = FALSE, file = NULL) {
 
 ## Function to bring in SOI data
 download_soi_unmemoised <- function(){
-  soi_link = "https://www.ncdc.noaa.gov/teleconnections/enso/indicators/soi/data.csv"
+  
+  soi_link = "https://www.cpc.ncep.noaa.gov/data/indices/soi"
   
   res = tryCatch(
     check_response(soi_link),
@@ -39,15 +40,35 @@ download_soi_unmemoised <- function(){
     }
   )
   
+
+  raw <- readLines(soi_link)
+  raw <- raw[grep("STANDARDIZED", raw):length(raw)]
+  raw <- raw[grep("YEAR", raw):length(raw)]
   
-  soi = read.csv(
-    res,
-    skip = 2,
-    stringsAsFactors = FALSE,
-    col.names = c("Date","SOI")
+  fwf_file <- tempfile(fileext = ".fwf")
+  writeLines(raw, fwf_file)
+  
+  dat <- utils::read.fwf(fwf_file, skip = 1, 
+                         widths = c(4, rep(6, 12)), 
+                         col.names = c("YEAR", month.abb), 
+                         na.strings = "-999.9")
+  
+  reshaped_list <- lapply(
+    names(dat)[!names(dat) %in% "YEAR"], 
+    function(x) {
+      d <- dat[,c("YEAR",x)]
+      d$Date <- grep(x, month.abb)
+      d$Date <- as.Date(paste(d$YEAR, d$Date,"01", sep = "-"))
+      d$YEAR <- NULL
+      colnames(d) <- c("SOI", "Date")
+      
+      d
+    }
   )
-  ## Create Date formatted as date
-  soi$Date = as.Date(paste0(soi$Date, "01"),"%Y%m%d")
+  
+  soi <- do.call(rbind, reshaped_list)
+  soi <- soi[order(soi$Date),]
+  
   
   ## Create Year and Month columns
   soi$Month = abbr_month(soi$Date)

@@ -29,7 +29,7 @@ download_ao <- function(use_cache = FALSE, file = NULL) {
 
 ## Function to download ONI data
 download_ao_unmemoised <- function(){
-  ao_link ="https://www.ncdc.noaa.gov/teleconnections/ao/data.csv"
+  ao_link ="https://www.cpc.ncep.noaa.gov/products/precip/CWlink/daily_ao_index/monthly.ao.index.b50.current.ascii.table"
   
   res = tryCatch(
     check_response(ao_link),
@@ -39,21 +39,33 @@ download_ao_unmemoised <- function(){
     }
   )
   
-  ao = read.csv(res, 
-                   col.names = c("Date","AO"),
-                   skip = 1,
-                   stringsAsFactors = FALSE)
+  ao = read.fwf(ao_link, 
+                widths = c(4, rep(7, 12)),
+                skip = 1, 
+                col.names = c("Year", month.abb))
   
-  ao$Date = as.Date(paste0(ao$Date,"01"), "%Y%m%d")
+  reshaped_list <- lapply(
+    month.abb, 
+    function(x) {
+      d <- ao[,c("Year",x)]
+      d$Date <- grep(x, month.abb)
+      d$Date <- as.Date(paste(d$Year, d$Date,"01", sep = "-"))
+      colnames(d) <- c("Year", "AO", "Date")
+      d
+    }
+  )
+  
+  ao_long <- do.call(rbind, reshaped_list)
+  ao_long <- ao_long[order(ao_long$Date),]
+  
   
   ##Month label to collapse
-  ao$Month = abbr_month(ao$Date)
-  ao$Year = as.integer(format(ao$Date, "%Y"))
+  ao_long$Month = abbr_month(ao_long$Date)
   
 
-  class(ao) <- c("tbl_df", "tbl", "data.frame") 
+  class(ao_long) <- c("tbl_df", "tbl", "data.frame") 
   
-  ao[,c("Year","Month", "Date", "AO")]
+  ao_long[,c("Year","Month", "Date", "AO")]
   
 }
 
