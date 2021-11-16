@@ -2,7 +2,7 @@ Type: Package
 Package: rsoi
 Title: Import Various Northern and Southern Hemisphere Climate
     Indices
-Version: 0.5.4
+Version: 0.5.4.9000
 Authors@R: 
     c(person(given = "Sam",
              family = "Albers",
