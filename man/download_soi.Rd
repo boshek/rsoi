@@ -32,5 +32,5 @@ soi <- download_soi()
 
 }
 \references{
-\url{https://www.ncdc.noaa.gov/teleconnections/enso/indicators/soi/}
+\url{"https://www.cpc.ncep.noaa.gov/data/indices/soi"}
 }
