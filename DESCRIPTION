@@ -16,7 +16,8 @@ Description: Downloads Southern Oscillation Index, Oceanic Nino
     Index, North Pacific Gyre Oscillation data, North Atlantic Oscillation
     and Arctic Oscillation. Data sources are described in the help files for each function.
 License: GPL-3
-URL: https://github.com/boshek/rsoi, https://boshek.github.io/rsoi/
+URL: https://github.com/boshek/rsoi,
+    https://boshek.github.io/rsoi/
 Depends:
     R (>= 3.3.0)
 Imports:
