@@ -62,6 +62,8 @@ download_ao_unmemoised <- function(){
   ##Month label to collapse
   ao_long$Month = abbr_month(ao_long$Date)
   
+  row.names(ao_long) <- NULL
+  
 
   class(ao_long) <- c("tbl_df", "tbl", "data.frame") 
   
