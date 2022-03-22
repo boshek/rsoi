@@ -77,6 +77,8 @@ download_soi_unmemoised <- function(){
   ## Create 3 month average window. Each row is a month
   soi$SOI_3MON_AVG = as.numeric(stats::filter(soi$SOI,rep(1/3,3), sides=2))
   
+  row.names(soi) <- NULL
+  
   class(soi) <- c("tbl_df", "tbl", "data.frame") 
   
   soi[,c("Year", "Month", "Date", "SOI", "SOI_3MON_AVG")]
