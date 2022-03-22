@@ -36,6 +36,9 @@ test_read <- function(index) {
     data <- download_fun(use_cache = FALSE, file = file)
     data2 <- read_fun(file)
     
+    row.names(data) <- NULL
+    row.names(data2) <- NULL
+    
     # data2 <- download_fun(use_cache = TRUE, file = file)
     expect_equal(data, data2)
   })
