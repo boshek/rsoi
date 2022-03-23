@@ -1,4 +1,4 @@
-indexes <- c("oni", "ao", "nao", "soi", "mei", "npgo", "aao", "pdo")
+indexes <- c("oni", "ao", "nao", "soi", "mei", "npgo", "aao", "pdo", "dmi")
 
 context("Testing download")
 

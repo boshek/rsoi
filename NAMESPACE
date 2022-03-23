@@ -2,6 +2,7 @@
 
 export(download_aao)
 export(download_ao)
+export(download_dmi)
 export(download_enso)
 export(download_mei)
 export(download_nao)
