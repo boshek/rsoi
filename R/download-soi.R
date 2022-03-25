@@ -19,7 +19,7 @@
 #' soi <- download_soi()
 #' }
 #'
-#' @references \url{"https://www.cpc.ncep.noaa.gov/data/indices/soi"} 
+#' @references \url{https://www.cpc.ncep.noaa.gov/data/indices/soi} 
 download_soi <- function(use_cache = FALSE, file = NULL) {
   with_cache(use_cache = use_cache, file = file, 
              memoised = download_soi_memoised, 

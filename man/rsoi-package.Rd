@@ -11,7 +11,7 @@ Downloads Southern Oscillation Index, Oceanic Nino Index, North Pacific Gyre Osc
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://github.com/boshek/rsoi}
+  \item \url{https://github.com/boshek/rsoi/}
   \item \url{https://boshek.github.io/rsoi/}
 }
 

@@ -23,6 +23,7 @@ An R package to download the most up to date of these climate indices:
 -   Antarctic Oscillation
 -   Multivariate ENSO Index Version 2
 -   Pacific Decadal Oscillation
+-   Dipole Mode Index
 
 ## Installation
 

@@ -16,7 +16,7 @@
 #' nao <- download_nao()
 #' }
 #'
-#' @references \url{https://www.ncdc.noaa.gov/teleconnections/nao}
+#' @references \url{https://www.ncdc.noaa.gov/teleconnections/nao/}
 
 download_nao <- function(use_cache = FALSE, file = NULL) {
   with_cache(use_cache = use_cache, file = file, 

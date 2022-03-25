@@ -1,5 +1,12 @@
 # rsoi NEWS
 
+## Resubmission note
+Removed quotes from URL markup
+
+## rsoi v0.5.5
+* Adds Dipole Mode Index. #42
+* Fix a row numbering error
+
 ## rsoi v0.5.4
 This is a re-submission after rsoi was archived. I believe I have fixed all problems. 
 

@@ -1,11 +1,13 @@
 # rsoi NEWS
+## rsoi v0.5.5
+* Adds Dipole Mode Index. #42
+* Fix a row numbering error
 
 ## rsoi v0.5.4
 * Catch network errors gracefully and return informative error
 * Skip some tests on CRAN and use CI services to catch errors.
 * Removed links causing this failures:
 > Check process probably crashed or hung up for 20 minutes ... killed
-* Adds Dipole Mode Index. #42
 
 ## rsoi v0.5.3
 * Remove Extended PDO because data is no longer available. 

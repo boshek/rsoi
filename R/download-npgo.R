@@ -18,7 +18,7 @@
 #' npgo <- download_npgo()
 #' }
 #'
-#' @references \url{http://www.oces.us/npgo} 
+#' @references \url{http://www.oces.us/npgo/} 
 download_npgo <- function(use_cache = FALSE, file = NULL) {
   with_cache(use_cache = use_cache, file = file, 
              memoised = download_npgo_memoised, 
