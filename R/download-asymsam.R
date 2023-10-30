@@ -9,6 +9,10 @@
 #' 
 #' @inheritParams download_oni
 #' @param levels atmospheric levels in hPa to download. 
+#' If \code{"all"} download all available levels. 
+#' Available levels are: 1, 2, 3, 5, 7, 10, 20, 30, 50, 70, 100, 125, 150, 175,
+#'  200, 225, 250, 300, 350, 400, 450, 500, 550, 600, 650, 700, 750, 775, 800,
+#'  825, 850, 875, 900, 925, 950, 975 and 1000.
 #' 
 #' @return 
 #' \itemize{
