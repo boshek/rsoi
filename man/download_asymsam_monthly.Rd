@@ -16,7 +16,7 @@ if `file` is `NULL` or on disk if `file` is not `NULL`.}
 \item{file}{optional character with the full path of a file to save the data. If `cache` is `FALSE` but
 `file` is not `NULL`, the results will be downloaded from the internet and saved on disk.}
 
-\item{level}{atmospheric levels in hPa to download.}
+\item{levels}{atmospheric levels in hPa to download.}
 }
 \value{
 \itemize{
@@ -31,7 +31,9 @@ if `file` is `NULL` or on disk if `file` is not `NULL`.}
 \description{
 The Asymmetric and Symmetric SAM indices are computed as the 
 projection of geopotential height anomalies onto the zonally asymmetric and 
-zonally symmetric parts of the SAM field.
+zonally symmetric parts of the SAM field. 
+The detailed methodology can be found in Campitelli et al. (2022).
+The source of the data is \url{https://www.cima.fcen.uba.ar/~elio.campitelli/asymsam/}
 }
 \examples{
 \dontrun{
@@ -40,5 +42,5 @@ asymsam <- download_asymsam_monthly()
 
 }
 \references{
-\url{https://www.cima.fcen.uba.ar/~elio.campitelli/asymsam/}
+Campitelli, E., Díaz, L. B., & Vera, C. (2022). Assessment of zonally symmetric and asymmetric components of the Southern Annular Mode using a novel approach. Climate Dynamics, 58(1), 161–178. \url{https://doi.org/10.1007/s00382-021-05896-5}
 }
