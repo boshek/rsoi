@@ -15,7 +15,7 @@ knitr::opts_chunk$set(
 
 
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0) 
-[![R-CMD-check](https://github.com/boshek/rsoi/workflows/R-CMD-check/badge.svg)](https://github.com/boshek/rsoi/actions)
+[![R-CMD-check](https://github.com/boshek/rsoi/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/boshek/rsoi/actions/workflows/R-CMD-check.yaml)
 
 [![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/rsoi)](https://cran.r-project.org/package=rsoi) [![CRAN Downloads](https://cranlogs.r-pkg.org/badges/rsoi?color=brightgreen)](https://CRAN.R-project.org/package=rsoi) [![cran checks](https://cranchecks.info/badges/worst/rsoi)](https://cran.r-project.org/web/checks/check_results_rsoi.html)
 
