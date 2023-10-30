@@ -39,7 +39,8 @@ download_nao_unmemoised <- function(){
   
   nao = read.fwf(nao_link, 
                 widths = c(4, rep(7, 12)),
-                header = FALSE, 
+                header = FALSE,
+                skip = 1, 
                 col.names = c("Year", month.abb))
   
   reshaped_list <- lapply(
