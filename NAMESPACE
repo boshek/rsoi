@@ -2,6 +2,8 @@
 
 export(download_aao)
 export(download_ao)
+export(download_asymsam_daily)
+export(download_asymsam_monthly)
 export(download_dmi)
 export(download_enso)
 export(download_mei)
