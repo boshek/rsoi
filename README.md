@@ -11,7 +11,7 @@ Downloads](https://cranlogs.r-pkg.org/badges/rsoi?color=brightgreen)](https://CR
 [![cran
 checks](https://cranchecks.info/badges/worst/rsoi)](https://cran.r-project.org/web/checks/check_results_rsoi.html)
 
-# rsoi
+# rsoi package
 
 An R package to download the most up to date of these climate indices:
 
