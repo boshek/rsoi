@@ -10,7 +10,7 @@
 #' \itemize{
 #' \item The cold phase was defined as periods in which the RONI values within a sliding five-season window were all below −0.5 degC
 #' \item The warm phase was defined as periods in which the RONI values within a sliding five-season window were all above 0.5 degC
-#' \item The neutral phase was defined as periods in which the RONI values within a sliding five-season window fell within the range of −0.5 to 0.5 degC
+#' \item The neutral phase was defined as the situation outside the definitions of warm phase and cold phase
 #' }
 #' 
 #' @return 
@@ -107,9 +107,9 @@ read_roni <- function(file) {
   
   data$phase <- c("Neutral Phase")  
   for (i in 1:(n - 4)) {
-    if(all(roni$RONI[i:(i + 4)] >= 0.5)){  
+    if(all(data$RONI[i:(i + 4)] >= 0.5)){  
       data$Phase[i:(i + 4)] = "Warm Phase/El Nino"
-    } else if (all(roni$RONI[i:(i + 4)] <= -0.5)){
+    } else if (all(data$RONI[i:(i + 4)] <= -0.5)){
       data$Phase[i:(i + 4)] = "Cool Phase/La Nina"
     }
   }
