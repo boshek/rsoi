@@ -7,7 +7,7 @@
 \usage{
 download_asymsam_monthly(use_cache = FALSE, file = NULL)
 
-download_asymsam_daily(levels = 700, use_cache = FALSE, file = NULL)
+download_asymsam_daily(use_cache = FALSE, file = NULL)
 }
 \arguments{
 \item{use_cache}{logical option to save and load from cache. If `TRUE`, results will be cached in memory

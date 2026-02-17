@@ -23,7 +23,7 @@ download_asymsam_monthly <- function(use_cache = FALSE, file = NULL) {
 
 #' @export
 #' @rdname download_asymsam_monthly
-download_asymsam_daily <- function(levels = 700, use_cache = FALSE, file = NULL) {
+download_asymsam_daily <- function(use_cache = FALSE, file = NULL) {
   warning("`download_asymsam_daily()` is deprecated. The upstream API (https://www.cima.fcen.uba.ar/~elio.campitelli/asymsam/) is no longer available.",
           call. = FALSE)
   invisible(NULL)
