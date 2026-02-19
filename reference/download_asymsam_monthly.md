@@ -1,0 +1,46 @@
+# Download Asymmetric and Symmetric SAM indices
+
+**Deprecated.** The upstream API for the Asymmetric and Symmetric SAM
+indices is no longer available. These functions now return `NULL` with a
+warning.
+
+## Usage
+
+``` r
+download_asymsam_monthly(use_cache = FALSE, file = NULL)
+
+download_asymsam_daily(use_cache = FALSE, file = NULL)
+```
+
+## Arguments
+
+- use_cache:
+
+  logical option to save and load from cache. If \`TRUE\`, results will
+  be cached in memory if \`file\` is \`NULL\` or on disk if \`file\` is
+  not \`NULL\`.
+
+- file:
+
+  optional character with the full path of a file to save the data. If
+  \`cache\` is \`FALSE\` but \`file\` is not \`NULL\`, the results will
+  be downloaded from the internet and saved on disk.
+
+## Value
+
+`NULL` (invisibly). A warning is issued.
+
+## References
+
+Campitelli, E., Diaz, L. B., & Vera, C. (2022). Assessment of zonally
+symmetric and asymmetric components of the Southern Annular Mode using a
+novel approach. Climate Dynamics, 58(1), 161-178.
+<https://doi.org/10.1007/s00382-021-05896-5>
+
+## Examples
+
+``` r
+if (FALSE) { # \dontrun{
+asymsam <- download_asymsam_monthly()
+} # }
+```

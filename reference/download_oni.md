@@ -1,0 +1,63 @@
+# Download Oceanic Nino Index data
+
+The Oceanic Nino Index is average sea surface temperature in the Nino
+3.4 region (120W to 170W) averaged over three months. Phases are
+categorized by Oceanic Nino Index:
+
+- Warm phase of El Nino/ Southern Oscillation when 3-month average
+  sea-surface temperature departure of positive 0.5 degC
+
+- Cool phase of La Nina/ Southern Oscillation when 3-month average
+  sea-surface temperature departure of negative 0.5 degC
+
+- Neutral phase is defined as when the three month temperature average
+  is between +0.5 and -0.5 degC
+
+## Usage
+
+``` r
+download_oni(use_cache = FALSE, file = NULL)
+```
+
+## Arguments
+
+- use_cache:
+
+  logical option to save and load from cache. If \`TRUE\`, results will
+  be cached in memory if \`file\` is \`NULL\` or on disk if \`file\` is
+  not \`NULL\`.
+
+- file:
+
+  optional character with the full path of a file to save the data. If
+  \`cache\` is \`FALSE\` but \`file\` is not \`NULL\`, the results will
+  be downloaded from the internet and saved on disk.
+
+## Value
+
+- Date: Date object that uses the first of the month as a placeholder.
+  Date formatted as date on the first of the month because R only
+  supports one partial of date time
+
+- Month: Month of record
+
+- Year: Year of record
+
+- ONI: Oneanic Oscillation Index
+
+- ONI_month_window: 3 month period over which the Oneanic Oscillation
+  Index is calculated
+
+- phase: ENSO phase
+
+## References
+
+<https://www.cpc.ncep.noaa.gov/products/precip/CWlink/MJO/enso.shtml>
+
+## Examples
+
+``` r
+if (FALSE) { # \dontrun{
+oni <- download_oni()
+} # }
+```
