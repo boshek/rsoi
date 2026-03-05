@@ -29,7 +29,7 @@
 #' }
 #'
 #' @references \url{https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso/roni/#latest-data}
-#' \url{https://journals.ametsoc.org/view/journals/clim/37/4/JCLI-D-23-0406.1.xml}
+#' \doi{10.1175/JCLI-D-23-0406.1}
 
 download_roni <- function(use_cache = FALSE, file = NULL) {
   with_cache(

@@ -30,5 +30,5 @@ nao <- download_nao()
 
 }
 \references{
-\url{https://www.ncdc.noaa.gov/teleconnections/nao/}
+\url{https://www.ncei.noaa.gov/access/monitoring/nao/}
 }

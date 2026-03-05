@@ -31,7 +31,7 @@
 #' }
 #'
 #' @references
-#' Original PDO: \url{https://oceanview.pfeg.noaa.gov/erddap/info/cciea_OC_PDO/index.html}
+#' Original PDO: \url{https://www.ncei.noaa.gov/access/monitoring/pdo/}
 download_pdo <- function(use_cache = FALSE, file = NULL) {
   with_cache(
     use_cache = use_cache,

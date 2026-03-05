@@ -18,7 +18,7 @@
 #' ao <- download_ao()
 #' }
 #'
-#' @references \url{https://www.ncdc.noaa.gov/teleconnections/ao/}
+#' @references \url{https://www.ncei.noaa.gov/access/monitoring/ao/}
 download_ao <- function(use_cache = FALSE, file = NULL) {
   with_cache(
     use_cache = use_cache,
