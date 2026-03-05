@@ -14,7 +14,7 @@
 #' asymsam <- download_asymsam_monthly()
 #' }
 #'
-#' @references Campitelli, E., Diaz, L. B., & Vera, C. (2022). Assessment of zonally symmetric and asymmetric components of the Southern Annular Mode using a novel approach. Climate Dynamics, 58(1), 161-178. \url{https://doi.org/10.1007/s00382-021-05896-5}
+#' @references Campitelli, E., Diaz, L. B., & Vera, C. (2022). Assessment of zonally symmetric and asymmetric components of the Southern Annular Mode using a novel approach. Climate Dynamics, 58(1), 161-178. \doi{10.1007/s00382-021-05896-5}
 download_asymsam_monthly <- function(use_cache = FALSE, file = NULL) {
   warning(
     "`download_asymsam_monthly()` is deprecated. The upstream API (https://www.cima.fcen.uba.ar/~elio.campitelli/asymsam/) is no longer available.",
