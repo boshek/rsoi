@@ -20,7 +20,7 @@ if `file` is `NULL` or on disk if `file` is not `NULL`.}
 \item roni: Relative Oceanic Niño Index, using the 1991–2020 base period "3 month running mean of ERSST.v5 SST anomalies in the Niño 3.4 region (5°N–5°S, 120°–170°W) with average tropical mean (20°N–20°S) SST anomalies subtracted. The difference is then adjusted so the variance equals the original Niño 3.4 index".
 \item Start_Month: Start month of record
 \item End_Month: End month of record
-\item phase: ENSO phase  
+\item phase: ENSO phase
 }
 }
 \description{

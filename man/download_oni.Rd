@@ -20,7 +20,7 @@ if `file` is `NULL` or on disk if `file` is not `NULL`.}
 \item Year: Year of record
 \item ONI: Oneanic Oscillation Index
 \item ONI_month_window: 3 month period over which the Oneanic Oscillation Index is calculated
-\item phase: ENSO phase  
+\item phase: ENSO phase
 }
 }
 \description{

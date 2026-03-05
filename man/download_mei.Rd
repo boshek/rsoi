@@ -19,16 +19,16 @@ if `file` is `NULL` or on disk if `file` is not `NULL`.}
 \item Month: Bi-moonthly season of record
 \item Year: Year of record
 \item MEI: Multivariate ENSO Index Version 2
-\item Phase: ENSO phase  
+\item Phase: ENSO phase
 }
 }
 \description{
-MEI.v2 is based on EOF analysis of level pressure, 
+MEI.v2 is based on EOF analysis of level pressure,
 sea surface temperature, surface zonal winds, surface meridional winds,
-and Outgoing Longwave Radiation. The analysis is conducted for 12 partially 
-overlapping 2-month "seasons".  
+and Outgoing Longwave Radiation. The analysis is conducted for 12 partially
+overlapping 2-month "seasons".
 
-Warm phase is defined as MEI index greater or equal to 0.5. Cold phase is 
+Warm phase is defined as MEI index greater or equal to 0.5. Cold phase is
 defined as MEI index lesser or equal to -0.5.
 }
 \examples{

@@ -1,6 +1,6 @@
 context('testing download_oni')
 
-test_that('the first and last rows of ONI_month_window are NA',{
+test_that('the first and last rows of ONI_month_window are NA', {
   skip_on_cran()
   oni <- download_oni()
   expect_true(is.na(oni$ONI_month_window[1]))
