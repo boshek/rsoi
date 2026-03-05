@@ -77,8 +77,8 @@ download_roni_unmemoised <- function() {
   #If the RONI values for any sliding five-season window all exceeded the threshold, 
   #the first through fifth seasons were classified as a La Niña or El Niño event; 
   #otherwise, conditions were classified as neutral.
-  for (i in 1:(n - 4)) {
-    if(all(roni$RONI[i:(i + 4)] >= 0.5)){  
+  for (i in 1:(nrow(roni) - 4)) {
+    if(all(roni$RONI[i:(i + 4)] >= 0.5)){
       roni$Phase[i:(i + 4)] = "Warm Phase/El Nino"
     } else if (all(roni$RONI[i:(i + 4)] <= -0.5)){
       roni$Phase[i:(i + 4)] = "Cool Phase/La Nina"
@@ -106,8 +106,8 @@ read_roni <- function(file) {
   )
   
   data$phase <- c("Neutral Phase")  
-  for (i in 1:(n - 4)) {
-    if(all(data$RONI[i:(i + 4)] >= 0.5)){  
+  for (i in 1:(nrow(data) - 4)) {
+    if(all(data$RONI[i:(i + 4)] >= 0.5)){
       data$Phase[i:(i + 4)] = "Warm Phase/El Nino"
     } else if (all(data$RONI[i:(i + 4)] <= -0.5)){
       data$Phase[i:(i + 4)] = "Cool Phase/La Nina"
