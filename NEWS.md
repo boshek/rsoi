@@ -1,6 +1,6 @@
 # rsoi NEWS
 
-## rsoi v0.5.6
+## rsoi v0.5.7
 * Adds support for downloading the RONI (Relative Oceanic Niño Index). #55 Thanks @CorLeonis-FFXV
 
 ## rsoi v0.5.5
