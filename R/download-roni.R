@@ -8,7 +8,7 @@
 #'
 #' @description El Niño–Southern Oscillation (ENSO) is often characterized through the use of sea surface temperature (SST) departures from their climatological values, as in the Niño-3.4 index. However, this approach is problematic in a changing climate when the climatology itself is varying. To address this issue, van Oldenborgh et al. proposed a relative Niño-3.4 SST index, which subtracts the tropical mean SST anomaly from the Niño-3.4 index and multiplies by a scaling factor.
 #' \itemize{
-#' \item The cold phase was defined as periods in which the RONI values within a sliding five-season window were all below −0.5 degC
+#' \item The cold phase was defined as periods in which the RONI values within a sliding five-season window were all below -0.5 degC
 #' \item The warm phase was defined as periods in which the RONI values within a sliding five-season window were all above 0.5 degC
 #' \item The neutral phase was defined as the situation outside the definitions of warm phase and cold phase
 #' }
