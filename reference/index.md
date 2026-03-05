@@ -23,5 +23,7 @@
   : Download Oceanic Nino Index data
 - [`download_pdo()`](https://boshek.github.io/rsoi/reference/download_pdo.md)
   : Download Pacific Decadal Oscillation Data
+- [`download_roni()`](https://boshek.github.io/rsoi/reference/download_roni.md)
+  : Download Relative Oceanic Nino Index data
 - [`download_soi()`](https://boshek.github.io/rsoi/reference/download_soi.md)
   : Download Southern Oscillation Index data
