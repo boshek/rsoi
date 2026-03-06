@@ -9,7 +9,7 @@
 ## Citation
 
 Source:
-[`DESCRIPTION`](https://github.com/boshek/rsoi/blob/master/DESCRIPTION)
+[`DESCRIPTION`](https://github.com/boshek/rsoi/blob/0.5.7/DESCRIPTION)
 
 Albers S (2026). *rsoi: Import Various Northern and Southern Hemisphere
 Climate Indices*. R package version 0.5.7,
