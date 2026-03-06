@@ -32,5 +32,5 @@ ao <- download_ao()
 
 }
 \references{
-\url{https://www.ncdc.noaa.gov/teleconnections/ao/}
+\url{https://www.ncei.noaa.gov/access/monitoring/ao/}
 }

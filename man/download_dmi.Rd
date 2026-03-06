@@ -22,10 +22,10 @@ if `file` is `NULL` or on disk if `file` is not `NULL`.}
 }
 }
 \description{
-Intensity of the IOD is represented by anomalous SST gradient 
-between the western equatorial Indian Ocean (50E-70E and 10S-10N) and the 
-south eastern equatorial Indian Ocean (90E-110E and 10S-0N). 
-This gradient is named as Dipole Mode Index (DMI). 
+Intensity of the IOD is represented by anomalous SST gradient
+between the western equatorial Indian Ocean (50E-70E and 10S-10N) and the
+south eastern equatorial Indian Ocean (90E-110E and 10S-0N).
+This gradient is named as Dipole Mode Index (DMI).
 When the DMI is positive then, the phenomenon is refereed as the positive
 IOD and when it is negative, it is refereed as negative IOD.
 }

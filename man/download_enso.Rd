@@ -17,7 +17,7 @@ download_enso(climate_idx = c("all", "soi", "oni", "npgo"), create_csv = FALSE)
 \item Month: Month of record
 \item Year: Year of record
 \item ONI: Oceanic Oscillation Index
-\item phase: ENSO phase 
+\item phase: ENSO phase
 \item SOI: Southern Oscillation Index
 \item NPGO: North Pacific Gyre Oscillation
 }
