@@ -9,9 +9,11 @@ function.
 
 Useful links:
 
-- <https://github.com/boshek/rsoi/>
-
 - <https://boshek.github.io/rsoi/>
+
+- <https://github.com/boshek/rsoi>
+
+- Report bugs at <https://github.com/boshek/rsoi/issues>
 
 ## Author
 

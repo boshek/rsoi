@@ -9,7 +9,7 @@ relative Niño-3.4 SST index, which subtracts the tropical mean SST
 anomaly from the Niño-3.4 index and multiplies by a scaling factor.
 
 - The cold phase was defined as periods in which the RONI values within
-  a sliding five-season window were all below −0.5 degC
+  a sliding five-season window were all below -0.5 degC
 
 - The warm phase was defined as periods in which the RONI values within
   a sliding five-season window were all above 0.5 degC
@@ -58,7 +58,7 @@ download_roni(use_cache = FALSE, file = NULL)
 ## References
 
 <https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso/roni/#latest-data>
-<https://journals.ametsoc.org/view/journals/clim/37/4/JCLI-D-23-0406.1.xml>
+[doi:10.1175/JCLI-D-23-0406.1](https://doi.org/10.1175/JCLI-D-23-0406.1)
 
 ## Examples
 

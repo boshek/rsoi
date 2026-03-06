@@ -36,7 +36,7 @@ Download Oceanic Nino Index data
 ``` r
 oni <- download_oni()
 head(oni)
-#> # A tibble: 6 x 7
+#> # A tibble: 6 × 7
 #>    Year Month Date       dSST3.4   ONI ONI_month_window phase             
 #>   <int> <ord> <date>       <dbl> <dbl> <chr>            <fct>             
 #> 1  1950 Jan   1950-01-01   -1.62 NA    <NA>             <NA>              
@@ -50,11 +50,17 @@ head(oni)
 And a quick plot to illustrate the data:
 
 ``` r
-barcols <- c('#edf8b1','#7fcdbb','#2c7fb8')
+barcols <- c('#edf8b1', '#7fcdbb', '#2c7fb8')
 
-barplot(oni$ONI, names.arg = oni$Date, ylab = "Oceanic Nino Index" , 
-    col = barcols[oni$phase], border = NA, space = 0,
-    xaxt = "n")
+barplot(
+  oni$ONI,
+  names.arg = oni$Date,
+  ylab = "Oceanic Nino Index",
+  col = barcols[oni$phase],
+  border = NA,
+  space = 0,
+  xaxt = "n"
+)
 ```
 
 ![](reference/figures/plot-1.png)

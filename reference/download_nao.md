@@ -33,7 +33,7 @@ download_nao(use_cache = FALSE, file = NULL)
 
 ## References
 
-<https://www.ncdc.noaa.gov/teleconnections/nao/>
+<https://www.ncei.noaa.gov/access/monitoring/nao/>
 
 ## Examples
 

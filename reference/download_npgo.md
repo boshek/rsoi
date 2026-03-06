@@ -36,7 +36,7 @@ download_npgo(use_cache = FALSE, file = NULL)
 
 ## References
 
-<http://www.oces.us/npgo/>
+<https://www.oces.us/npgo/>
 
 ## Examples
 

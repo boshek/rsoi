@@ -22,7 +22,7 @@
 
     <a class="navbar-brand me-2" href="index.html">rsoi</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.5.5</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.5.7</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -70,7 +70,7 @@
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"rsoi"</span><span class="op">)</span></span>
 <span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/boshek/rsoi/" class="external-link">rsoi</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://boshek.github.io/rsoi/">rsoi</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://tibble.tidyverse.org/" class="external-link">tibble</a></span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
@@ -80,7 +80,7 @@
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">oni</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/download_oni.html">download_oni</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">oni</span><span class="op">)</span></span>
-<span><span class="co">#&gt; # A tibble: 6 x 7</span></span>
+<span><span class="co">#&gt; # A tibble: 6 × 7</span></span>
 <span><span class="co">#&gt;    Year Month Date       dSST3.4   ONI ONI_month_window phase             </span></span>
 <span><span class="co">#&gt;   &lt;int&gt; &lt;ord&gt; &lt;date&gt;       &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;            &lt;fct&gt;             </span></span>
 <span><span class="co">#&gt; 1  1950 Jan   1950-01-01   -1.62 NA    &lt;NA&gt;             &lt;NA&gt;              </span></span>
@@ -91,11 +91,17 @@
 <span><span class="co">#&gt; 6  1950 Jun   1950-06-01   -0.74 -0.85 MJJ              Cool Phase/La Nina</span></span></code></pre></div>
 <p>And a quick plot to illustrate the data:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">barcols</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">'#edf8b1'</span>,<span class="st">'#7fcdbb'</span>,<span class="st">'#2c7fb8'</span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="va">barcols</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">'#edf8b1'</span>, <span class="st">'#7fcdbb'</span>, <span class="st">'#2c7fb8'</span><span class="op">)</span></span>
 <span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/barplot.html" class="external-link">barplot</a></span><span class="op">(</span><span class="va">oni</span><span class="op">$</span><span class="va">ONI</span>, names.arg <span class="op">=</span> <span class="va">oni</span><span class="op">$</span><span class="va">Date</span>, ylab <span class="op">=</span> <span class="st">"Oceanic Nino Index"</span> , </span>
-<span>    col <span class="op">=</span> <span class="va">barcols</span><span class="op">[</span><span class="va">oni</span><span class="op">$</span><span class="va">phase</span><span class="op">]</span>, border <span class="op">=</span> <span class="cn">NA</span>, space <span class="op">=</span> <span class="fl">0</span>,</span>
-<span>    xaxt <span class="op">=</span> <span class="st">"n"</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/barplot.html" class="external-link">barplot</a></span><span class="op">(</span></span>
+<span>  <span class="va">oni</span><span class="op">$</span><span class="va">ONI</span>,</span>
+<span>  names.arg <span class="op">=</span> <span class="va">oni</span><span class="op">$</span><span class="va">Date</span>,</span>
+<span>  ylab <span class="op">=</span> <span class="st">"Oceanic Nino Index"</span>,</span>
+<span>  col <span class="op">=</span> <span class="va">barcols</span><span class="op">[</span><span class="va">oni</span><span class="op">$</span><span class="va">phase</span><span class="op">]</span>,</span>
+<span>  border <span class="op">=</span> <span class="cn">NA</span>,</span>
+<span>  space <span class="op">=</span> <span class="fl">0</span>,</span>
+<span>  xaxt <span class="op">=</span> <span class="st">"n"</span></span>
+<span><span class="op">)</span></span></code></pre></div>
 <p><img src="reference/figures/plot-1.png"><!-- --></p>
 </div>
 <div class="section level2">
@@ -110,13 +116,15 @@
 <ul class="list-unstyled">
 <li><a href="https://cloud.r-project.org/package=rsoi" class="external-link">View on CRAN</a></li>
 <li><a href="https://github.com/boshek/rsoi/" class="external-link">Browse source code</a></li>
+<li><a href="https://github.com/boshek/rsoi/issues" class="external-link">Report a bug</a></li>
 </ul>
 </div>
 
 <div class="license">
 <h2 data-toc-skip>License</h2>
 <ul class="list-unstyled">
-<li><a href="https://www.r-project.org/Licenses/GPL-3" class="external-link">GPL-3</a></li>
+<li><a href="LICENSE.html">Full license</a></li>
+<li><small>GPL (&gt;= 3)</small></li>
 </ul>
 </div>
 
@@ -145,8 +153,7 @@
 <div class="dev-status">
 <h2 data-toc-skip>Dev status</h2>
 <ul class="list-unstyled">
-<li><a href="https://www.gnu.org/licenses/gpl-3.0" class="external-link"><img src="https://img.shields.io/badge/License-GPL%20v3-blue.svg" alt="License: GPL v3"></a></li>
-<li><a href="https://github.com/boshek/rsoi/actions" class="external-link"><img src="https://github.com/boshek/rsoi/workflows/R-CMD-check/badge.svg" alt="R-CMD-check"></a></li>
+<li><a href="https://github.com/boshek/rsoi/actions/workflows/R-CMD-check.yaml" class="external-link"><img src="https://github.com/boshek/rsoi/actions/workflows/R-CMD-check.yaml/badge.svg" alt="R-CMD-check"></a></li>
 </ul>
 </div>
 

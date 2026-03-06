@@ -47,8 +47,7 @@ download_pdo(use_cache = FALSE, file = NULL)
 
 ## References
 
-Original PDO:
-<https://oceanview.pfeg.noaa.gov/erddap/info/cciea_OC_PDO/index.html>
+Original PDO: <https://www.ncei.noaa.gov/access/monitoring/pdo/>
 
 ## Examples
 

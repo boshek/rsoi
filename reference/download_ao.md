@@ -37,7 +37,7 @@ download_ao(use_cache = FALSE, file = NULL)
 
 ## References
 
-<https://www.ncdc.noaa.gov/teleconnections/ao/>
+<https://www.ncei.noaa.gov/access/monitoring/ao/>
 
 ## Examples
 
