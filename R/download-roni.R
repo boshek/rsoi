@@ -63,35 +63,19 @@ download_roni_unmemoised <- function() {
 
   roni = roni[, c("Year", "Season", "RONI")]
 
-  roni$Start_Month = c(
-    "12",
-    "01",
-    "02",
-    "03",
-    "04",
-    "05",
-    "06",
-    "07",
-    "08",
-    "09",
-    "10",
-    "11"
+  season_start = c(
+    DJF = "12", JFM = "01", FMA = "02", MAM = "03",
+    AMJ = "04", MJJ = "05", JJA = "06", JAS = "07",
+    ASO = "08", SON = "09", OND = "10", NDJ = "11"
+  )
+  season_end = c(
+    DJF = "02", JFM = "03", FMA = "04", MAM = "05",
+    AMJ = "06", MJJ = "07", JJA = "08", JAS = "09",
+    ASO = "10", SON = "11", OND = "12", NDJ = "01"
   )
 
-  roni$End_Month = c(
-    "02",
-    "03",
-    "04",
-    "05",
-    "06",
-    "07",
-    "08",
-    "09",
-    "10",
-    "11",
-    "12",
-    "01"
-  )
+  roni$Start_Month = season_start[roni$Season]
+  roni$End_Month = season_end[roni$Season]
 
   ## Assign phase
 
@@ -119,34 +103,19 @@ download_roni_memoised <- memoise::memoise(download_roni_unmemoised)
 # Function to read roni data from file.
 read_roni <- function(file) {
   data <- read.csv(file)
-  data$Start_Month = c(
-    "12",
-    "01",
-    "02",
-    "03",
-    "04",
-    "05",
-    "06",
-    "07",
-    "08",
-    "09",
-    "10",
-    "11"
+  season_start = c(
+    DJF = "12", JFM = "01", FMA = "02", MAM = "03",
+    AMJ = "04", MJJ = "05", JJA = "06", JAS = "07",
+    ASO = "08", SON = "09", OND = "10", NDJ = "11"
   )
-  data$End_Month = c(
-    "02",
-    "03",
-    "04",
-    "05",
-    "06",
-    "07",
-    "08",
-    "09",
-    "10",
-    "11",
-    "12",
-    "01"
+  season_end = c(
+    DJF = "02", JFM = "03", FMA = "04", MAM = "05",
+    AMJ = "06", MJJ = "07", JJA = "08", JAS = "09",
+    ASO = "10", SON = "11", OND = "12", NDJ = "01"
   )
+
+  data$Start_Month = season_start[data$Season]
+  data$End_Month = season_end[data$Season]
 
   data$phase <- c("Neutral Phase")
   for (i in 1:(nrow(data) - 4)) {
