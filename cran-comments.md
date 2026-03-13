@@ -1,5 +1,16 @@
 # rsoi NEWS
 
+## rsoi v0.5.8
+* Find merging bug in `download_roni`
+
+## Test environments
+* win-builder (via `devtools::check_win_devel()` and `devtools::check_win_release()`)
+* local macOS, R 4.5.2 (via R CMD check --as-cran)
+* ubuntu-20.04, r: 'release' (github actions)
+* ubuntu-20.04, r: 'devel' (github actions)
+* macOS,        r: 'release' (github actions)
+* windows,      r: 'release' (github actions)
+
 ## rsoi v0.5.7
 * Adds support for downloading the RONI (Relative Oceanic Niño Index). #55 Thanks @CorLeonis-FFXV
 
