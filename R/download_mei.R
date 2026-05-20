@@ -37,7 +37,7 @@ download_mei <- function(use_cache = FALSE, file = NULL) {
 }
 
 download_mei_unmemoised = function() {
-  mei_link = "https://www.esrl.noaa.gov/psd/enso/mei/data/meiv2.data"
+  mei_link = "https://psl.noaa.gov/enso/mei/data/meiv2.data"
 
   res = tryCatch(
     check_response(mei_link),
