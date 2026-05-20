@@ -23,6 +23,7 @@ An R package to download the most up to date of these climate indices:
 For the development version
 
 ``` r
+
 install.packages("rsoi")
 
 library(rsoi)
@@ -34,6 +35,7 @@ library(tibble)
 Download Oceanic Nino Index data
 
 ``` r
+
 oni <- download_oni()
 head(oni)
 #> # A tibble: 6 × 7
@@ -50,6 +52,7 @@ head(oni)
 And a quick plot to illustrate the data:
 
 ``` r
+
 barcols <- c('#edf8b1', '#7fcdbb', '#2c7fb8')
 
 barplot(
